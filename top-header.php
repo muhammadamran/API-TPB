@@ -13,7 +13,7 @@
             </div>
             <div>
                 <a href="logout.php" title="Logout">
-                    <i class="nc-icon nc-button-power" style="font-size: 16px;"></i>
+                    <i class="fas fa-power-off" style="font-size: 16px;"></i>
                     <!-- <p>Logout</p> -->
                 </a>
             </div>

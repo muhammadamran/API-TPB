@@ -1,0 +1,48 @@
+.sidebar .nav>li.nav-header {
+    margin: 0;
+    padding: 0px 20px 0px;
+    line-height: 20px;
+    font-size: 11px;
+    color: rgba(0, 0, 0);
+    font-weight: 600;
+}
+
+.sidebar-tpb {
+    background: #d8121a;
+    color: #fff;
+    border-radius: 5px;
+    padding: 5px 0px 5px 0px;
+}
+
+.text-sidebar-tpb {
+    text-shadow: 0px 0px 14px white;
+    font-weight: 600;
+}
+
+.profile-user-tpb {
+    background: linear-gradient(45deg, #d8121a, #ff3a3a);
+    color: #fff;
+    padding: 20px;
+    margin-bottom: -15px;
+}
+
+.line-page {
+    height: 1.5px;
+    margin: 21px 0px -10px 0px;
+    background: #d8121a;
+    box-shadow: 2px 3px 4px rgb(0 0 0 / 52%);
+}
+
+.code-profile {
+    font-size: 87.5%;
+    color: #ffffff;
+    word-break: break-word;
+}
+
+.li.active>a,i.ac {
+    background: #f3f3f3;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 18px;
+    box-shadow: 0 6px 20px -4px #d8121a;
+}
