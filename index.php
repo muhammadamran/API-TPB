@@ -28,7 +28,3 @@
       include "login.php";
     }
   }
-
-
-?>
-

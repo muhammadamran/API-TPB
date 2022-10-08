@@ -6,7 +6,7 @@
             </div>
         </a>
         <a href="index.php" class="simple-text logo-normal">
-            Vue Backend
+            TPB Backend
         </a>
     </div>
     <div class="sidebar-wrapper">

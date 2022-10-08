@@ -9,11 +9,11 @@
           }
         </style>
         <div class="card-header" style="background-image: url('assets/img/register_bg_2.png');background-repeat: no-repeat, repeat;background-size: cover;">
-          <img src="assets/logo/logo.png" alt="Logo Vue Backend" width="200px" style="margin:30px 0;">
-          <h5 class="card-title">Admin Web Vue Backend</h5>
+          <img src="assets/logo/logo.png" alt="Logo TPB Backend" width="200px" style="margin:30px 0;">
+          <h5 class="card-title">Admin Web TPB Backend</h5>
         </div>
         <div class="card-body ">
-          Selamat datang di Vue Backend
+          Selamat datang di TPB Backend
           <div style="margin-top:30px;"></div>
         </div>
       </div>

@@ -6,9 +6,7 @@ function login($data)
 {
   if ($data['password_hash'] == $data['password']) {
     $_SESSION['id'] = $data['id'];
-    $_SESSION['fname'] = $data['fname'];
-    $_SESSION['lname'] = $data['lname'];
-    $_SESSION['gender'] = $data['gender'];
+    $_SESSION['nama'] = $data['nama'];
     $_SESSION['email'] = $data['email'];
     $_SESSION['role'] = $data['role'];
     return 2;
@@ -26,13 +24,11 @@ if (isset($_POST["password"])) {
   $password_ = "";
 }
 
-$user = $db->query("SELECT id, password, fname, lname, gender, email, role FROM tbl_users WHERE username='" . $username_ . "' AND password='" . md5($password_) . "'", 0);
+$user = $db->query("SELECT id, password, nama, email, role FROM user WHERE username='" . $username_ . "' AND password='" . md5($password_) . "'", 0);
 $result = $user->fetch_assoc();
 $id = $result['id'];
 $password = $result['password'];
-$fname = $result['fname'];
-$lname = $result['lname'];
-$gender = $result['gender'];
+$nama = $result['nama'];
 $email = $result['email'];
 $role = $result['role'];
 
@@ -41,20 +37,18 @@ if ($role == 'admin') {
     'id' => $id,
     'password' => $password,
     'password_hash' => md5($password_),
-    'fname' => $fname,
-    'lname' => $lname,
-    'gender' => $gender,
+    'nama' => $nama,
     'email' => $email,
-    'role' => $role,
+    'role' => $role
   ];
 
   $loginArea = login($data);
 
   if ($loginArea == 2) {
-    echo '<script>alert("Hai, ' . $fname . '. you have successfully logged in!");location.href = "index.php"</script>';
+    echo '<script>alert("Hai, ' . $nama . '. kamu berhasil login");location.href = "index.php"</script>';
   } else if ($loginArea == 1) {
-    echo '<script>alert("Failed Login!");window.history.go(-1);</script>';
+    echo '<script>alert("Gagal Login");window.history.go(-1);</script>';
   }
 } else {
-  echo '<script>alert("Failed Login, You dont have access!");window.history.go(-1);</script>';
+  echo '<script>alert("Gagal Login, Anda tidak memiliki akses");window.history.go(-1);</script>';
 }
