@@ -52,11 +52,11 @@ a.breadcrumb-item-title {
 }
 
 .for-icon-page {
-  background: #fd6400;
+  background: #d8121a;
   padding: 10px;
   border-radius: 10px;
   color: #ffffff;
-  box-shadow: 2px 2px 8px #fd6400;
+  box-shadow: 2px 2px 8px #d8121a;
 }
 
 .line-page {
@@ -5560,7 +5560,7 @@ License - nucleoapp.com/license/
 }
 
 .card .card-body {
-  padding: 45px 15px 10px 15px;
+  padding: 15px 15px 10px 15px;
 }
 
 .card .card-body.table-full-width {

@@ -32,32 +32,32 @@
             </li>
             <li class="nav-header">MENU MODULES</li>
             <li class="nav-header"></li>
-            <li class="<?= !empty($_GET['m']) && $_GET['m'] == 'DokumenPabean' ? 'active' : '' ?>">
-                <a href="index.php?m=DokumenPabean&s=DokumenPabean">
+            <li class="<?= !empty($_GET['m']) && $_GET['m'] == 'dokumen-pabean' ? 'active' : '' ?>">
+                <a href="index.php?m=dokumen-pabean&s=dokumen-pabean">
                     <i class="fas fa-file-import"></i>
                     <p>Dokumen Pabean</p>
                 </a>
             </li>
-            <li class="<?= !empty($_GET['m']) && $_GET['m'] == 'GateMandiri' ? 'active' : '' ?>">
-                <a href="index.php?m=GateMandiri&s=GateMandiri">
+            <li class="<?= !empty($_GET['m']) && $_GET['m'] == 'gate-mandiri' ? 'active' : '' ?>">
+                <a href="index.php?m=gate-mandiri&s=gate-mandiri">
                     <i class="fas fa-university"></i>
                     <p>Gate Mandiri</p>
                 </a>
             </li>
-            <li class="<?= !empty($_GET['m']) && $_GET['m'] == 'Komunikasi' ? 'active' : '' ?>">
-                <a href="index.php?m=Komunikasi&s=Komunikasi">
+            <li class="<?= !empty($_GET['m']) && $_GET['m'] == 'komunikasi' ? 'active' : '' ?>">
+                <a href="index.php?m=komunikasi&s=komunikasi">
                     <i class="fas fa-window-restore"></i>
                     <p>Komunikasi</p>
                 </a>
             </li>
-            <li class="<?= !empty($_GET['m']) && $_GET['m'] == 'Referensi' ? 'active' : '' ?>">
-                <a href="index.php?m=Referensi&s=Referensi">
+            <li class="<?= !empty($_GET['m']) && $_GET['m'] == 'referensi' ? 'active' : '' ?>">
+                <a href="index.php?m=referensi&s=referensi">
                     <i class="fas fa-table"></i>
                     <p>Referensi</p>
                 </a>
             </li>
-            <li class="<?= !empty($_GET['m']) && $_GET['m'] == 'Utility' ? 'active' : '' ?>">
-                <a href="index.php?m=Utility&s=Utility">
+            <li class="<?= !empty($_GET['m']) && $_GET['m'] == 'utility' ? 'active' : '' ?>">
+                <a href="index.php?m=utility&s=utility">
                     <i class="fas fa-cogs"></i>
                     <p>Utility</p>
                 </a>
