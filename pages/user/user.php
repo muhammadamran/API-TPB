@@ -6,7 +6,7 @@
     <div class="row">
       <div class="col-md-12 col-sm-12">
         <div class="title-page">
-          <i class="icon-copy nc-icon nc-single-02 for-icon-page"></i>
+          <i class="icon-copy fas fa-users-cog for-icon-page"></i>
           <font class="font-title">Users</font>
         </div>
         <nav aria-label="breadcrumb" role="navigation">
@@ -35,9 +35,6 @@
                 <tr>
                   <th width="1%">#</th>
                   <th class="text-nowrap" style="text-align: center;">Username</th>
-                  <th class="text-nowrap" style="text-align: center;">First Name</th>
-                  <th class="text-nowrap" style="text-align: center;">Last Name</th>
-                  <th class="text-nowrap" style="text-align: center;">Gender</th>
                   <th class="text-nowrap" style="text-align: center;">Email</th>
                   <th class="text-nowrap" style="text-align: center;">Expired Date</th>
                   <th class="text-nowrap" style="text-align: center;">Level</th>
@@ -46,21 +43,18 @@
               </thead>
               <tbody>
                 <?php
-                $data = $db->query("SELECT * FROM tbl_users ORDER BY role ASC, id ASC", 0);
+                $data = $db->query("SELECT * FROM user ORDER BY role ASC, id ASC", 0);
                 $no = 0;
                 while ($row = $data->fetch_assoc()) {
                   $no++;
                 ?>
                   <tr>
                     <td width="1%" class="f-s-600 text-inverse"><?= $no ?>.</td>
-                    <td><?= $row['username'] ?></td>
-                    <td><?= $row['fname'] ?></td>
-                    <td><?= $row['lname'] ?></td>
-                    <td><?= $row['gender'] ?></td>
-                    <td><?= $row['email'] ?></td>
-                    <td><?= !empty($row['expired_date']) ? $row['expired_date'] : 'Tidak ada tanggal kadaluwarsa' ?></td>
-                    <td><?= $row['role'] == 'admin' ? 'Administrator' : 'Member' ?></td>
-                    <td>
+                    <td style="text-align: center;"><?= $row['username'] ?></td>
+                    <td style="text-align: center;"><?= $row['email'] ?></td>
+                    <td style="text-align: center;"><?= !empty($row['expired_date']) ? $row['expired_date'] : 'Tidak ada tanggal kadaluwarsa' ?></td>
+                    <td style="text-align: center;"><?= $row['role'] == 'admin' ? 'Administrator' : 'Member' ?></td>
+                    <td style="text-align: center;">
                       <div class="aksi-table">
                         <a href="index.php?m=user&s=user_edit&id=<?= $row['id'] ?>" class="btn btn-sm btn-aksi btn-primary" title="Edit"><i class="fas fa-edit"></i></a>
                         <a href="index.php?m=user&s=user_password&id=<?= $row['id'] ?>" class="btn btn-sm btn-aksi btn-secondary" title=" Change Password"><i class="fas fa-exchange-alt"></i></a>

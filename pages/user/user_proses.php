@@ -3,20 +3,17 @@ include '../../db/db.php';
 $aksi = $_GET['aksi'];
 
 if ($aksi == 'insert') {
-    $username = $_POST['FName'] . "." . $_POST['LName'];
+    $username = $_POST['username'];
     $forPass = '123123';
     $password = md5($forPass);
     // POST
-    $FName = $_POST['FName'];
-    $LName = $_POST['LName'];
-    $Gender = $_POST['Gender'];
     $Email = $_POST['Email'];
     $Role = $_POST['Role'];
     $ExpiredDate = $_POST['ExpiredDate'];
 
-    $insert = $db->query('INSERT INTO tbl_users (fname, lname, gender, email, role, expired_date, username, password) 
+    $insert = $db->query('INSERT INTO user (email, role, expired_date, username, password) 
                           VALUES 
-                          ("' . $FName . '", "' . $LName . '", "' . $Gender . '", "' . $Email . '", "' . $Role . '", ' . ($ExpiredDate == '' || empty($ExpiredDate) ? "NULL" : '"' . $ExpiredDate . '", "' . $username . '", "' . $password . '"') . ')');
+                          ("' . $Email . '", "' . $Role . '", ' . ($ExpiredDate == '' || empty($ExpiredDate) ? "NULL" : '"' . $ExpiredDate . '", "' . $username . '", "' . $password . '"') . ')');
 
     if ($insert) {
         echo '<script>alert("Data has been Added");location.href = "../../index.php?m=user&s=user"</script>';
@@ -25,14 +22,11 @@ if ($aksi == 'insert') {
     }
 } else if ($aksi == 'update') {
     $id = $_GET['id'];
-    $FName = $_POST['FName'];
-    $LName = $_POST['LName'];
-    $Gender = $_POST['Gender'];
     $Email = $_POST['Email'];
     $Role = $_POST['Role'];
     $ExpiredDate = $_POST['ExpiredDate'];
 
-    $update = $db->query('UPDATE tbl_users SET fname="' . $FName . '", lname="' . $LName . '", gender="' . $Gender . '", email="' . $Email . '", role="' . $Role . '", expired_date=' . ($ExpiredDate == '' || empty($ExpiredDate) ? "NULL" : '"' . $ExpiredDate . '"') . ' WHERE id="' . $id . '"');
+    $update = $db->query('UPDATE user SET email="' . $Email . '", role="' . $Role . '", expired_date=' . ($ExpiredDate == '' || empty($ExpiredDate) ? "NULL" : '"' . $ExpiredDate . '"') . ' WHERE id="' . $id . '"');
 
     if ($update) {
         echo '<script>alert("Data has been Updated");location.href = "../../index.php?m=user&s=user"</script>';
@@ -41,7 +35,7 @@ if ($aksi == 'insert') {
     }
 } else if ($aksi == 'hapus') {
     $id = $_GET['id'];
-    $hapus = $db->query('DELETE FROM tbl_users WHERE id="' . $id . '"');
+    $hapus = $db->query('DELETE FROM user WHERE id="' . $id . '"');
 
     if ($hapus) {
         echo '<script>alert("Data has been Deleted");location.href = "../../index.php?m=user&s=user"</script>';
@@ -52,7 +46,7 @@ if ($aksi == 'insert') {
     $id = $_GET['id'];
     $password = md5($_POST['password']);
 
-    $change = $db->query('UPDATE tbl_users SET password="' . $password . '" WHERE id="' . $id . '"');
+    $change = $db->query('UPDATE user SET password="' . $password . '" WHERE id="' . $id . '"');
 
     if ($change) {
         echo '<script>alert("Password has been Changed");location.href = "../../index.php?m=user&s=user"</script>';

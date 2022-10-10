@@ -5,7 +5,7 @@
                 <img src="assets/logo/logo.png">
             </div> -->
             <div class="sidebar-tpb">
-                <font class="text-sidebar-tpb">TPB</font>
+                <font class="text-sidebar-tpb">LTE</font>
             </div>
         </a>
         <a href="index.php" class="simple-text logo-normal">
@@ -21,7 +21,7 @@
                 <code class="code-profile"><?= $_SESSION['role']; ?></code>
             </div>
         </div>
-        <div class="line-page"></div>
+        <div class="sidebar-line-page"></div>
         <ul class="nav">
             <li class="nav-header">NAVIGATION</li>
             <li class="<?= empty($_GET['m']) ? 'active' : '' ?>">
@@ -30,7 +30,7 @@
                     <p>Dashboard</p>
                 </a>
             </li>
-            <li class="nav-header">MENU MODULES</li>
+            <li class="nav-header">MODULES</li>
             <li class="nav-header"></li>
             <li class="<?= !empty($_GET['m']) && $_GET['m'] == 'dokumen-pabean' ? 'active' : '' ?>">
                 <a href="index.php?m=dokumen-pabean&s=dokumen-pabean">
@@ -56,17 +56,17 @@
                     <p>Referensi</p>
                 </a>
             </li>
-            <li class="<?= !empty($_GET['m']) && $_GET['m'] == 'utility' ? 'active' : '' ?>">
-                <a href="index.php?m=utility&s=utility">
-                    <i class="fas fa-cogs"></i>
-                    <p>Utility</p>
-                </a>
-            </li>
             <li class="nav-header">ADMINISTRATOR</li>
             <li class="<?= !empty($_GET['m']) && $_GET['m'] == 'user' ? 'active' : '' ?>">
                 <a href="index.php?m=user&s=user">
                     <i class="fas fa-users-cog"></i>
                     <p>Users</p>
+                </a>
+            </li>
+            <li class="<?= !empty($_GET['m']) && $_GET['m'] == 'api' ? 'active' : '' ?>">
+                <a href="index.php?m=api&s=api">
+                    <i class="fa-solid fa-code"></i>
+                    <p>API</p>
                 </a>
             </li>
             <hr>

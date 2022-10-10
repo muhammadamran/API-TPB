@@ -34,6 +34,8 @@
   <link href="assets/plugins/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css" rel="stylesheet" />
   <!-- ================== END PAGE LEVEL STYLE ================== -->
   <link href="assets/css/style.css" rel="stylesheet" />
+  <!-- PRELOAD -->
+  <script src="http://code.jquery.com/jquery-2.2.1.min.js"></script>
 </head>
 <style>
   body {
@@ -43,7 +45,36 @@
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
   }
+
+  .preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background-color: #fff;
+  }
+
+  .preloader .loading {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 14px;
+  }
 </style>
+<script>
+  $(document).ready(function() {
+    $(".preloader").fadeOut();
+  })
+</script>
 
 <body class="">
+  <div class="preloader">
+    <div class="loading">
+      <img src="assets/gif/3.gif" width="150">
+      <p style="margin-left: 45px;" class="blink">Loading ...</p>
+    </div>
+  </div>
   <div class="wrapper ">

@@ -5158,6 +5158,8 @@ License - nucleoapp.com/license/
 
 .footer {
   padding: 24px 0;
+  background: #fff;
+  box-shadow: 6px 0px 10px -4px rgb(0 0 0 / 15%);
 }
 
 .footer.footer-default {
@@ -5560,7 +5562,7 @@ License - nucleoapp.com/license/
 }
 
 .card .card-body {
-  padding: 15px 15px 10px 15px;
+  padding: 15px 15px 15px 15px;
 }
 
 .card .card-body.table-full-width {

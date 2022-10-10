@@ -26,7 +26,7 @@
     margin-bottom: -15px;
 }
 
-.line-page {
+.sidebar-line-page {
     height: 1.5px;
     margin: 21px 0px -10px 0px;
     background: #d8121a;
@@ -45,4 +45,71 @@
     border-radius: 5px;
     font-size: 18px;
     box-shadow: 0 6px 20px -4px #d8121a;
+}
+
+.list-menu {
+    display: flex;
+    justify-content: space-around;
+    align-items: inherit;
+}
+
+.list-menu-icon {
+    background: linear-gradient(45deg, #f44336, #673ab7);
+    padding: 65px;
+    border-radius: 5px;
+}
+
+.list-menu-icon:hover {
+    background: linear-gradient(45deg, #673ab7, #f44336);
+    padding: 65px;
+    border-radius: 5px;
+    box-shadow: 10px 7px 0px 0px rgb(0 0 0 / 15%);
+}
+
+.list-font {
+    font-size: 12px;
+    font-weight: bold;
+    color: #ffffff;
+    text-shadow: 0 0 9px white;
+}
+
+.cj {
+    background: linear-gradient(45deg, #f44336, #673ab7);
+    border-radius: 5px;
+    padding: 65px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin: 10px;
+    text-align: center;
+}
+
+.cj:hover {
+    background: linear-gradient(45deg, #673ab7, #f44336);
+    border-radius: 5px;
+    padding: 65px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin: 10px;
+    box-shadow: 10px 7px 0px 0px rgb(0 0 0 / 15%);
+}
+
+/* Blink */
+.blink {
+    animation: 1s linear infinite condemned_blink_effect;
+}
+
+@keyframes condemned_blink_effect {
+    0% {
+        visibility: hidden;
+    }
+
+    50% {
+        visibility: hidden;
+    }
+
+    100% {
+        visibility: visible;
+    }
 }

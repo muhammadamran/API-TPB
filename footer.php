@@ -5,7 +5,10 @@
             </nav>
             <div class="credits ml-auto">
               <span class="copyright">
-                ©
+                © Copyright
+                <a href="https://hellos-id.com/" target="_blank">
+                  <font style="color:#070d2d"><b>HELLOS<sup>ID</sup></b></font>
+                </a> 2021 -
                 <script>
                   document.write(new Date().getFullYear())
                 </script>

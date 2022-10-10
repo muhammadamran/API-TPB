@@ -1,5 +1,5 @@
 <?php
-$data = $db->query('SELECT * FROM tbl_users WHERE id="' . $_GET['id'] . '"');
+$data = $db->query('SELECT * FROM user WHERE id="' . $_GET['id'] . '"');
 $row = $data->fetch_assoc()
 ?>
 <div class="content">
@@ -8,7 +8,7 @@ $row = $data->fetch_assoc()
     <div class="row">
       <div class="col-md-12 col-sm-12">
         <div class="title-page">
-          <i class="icon-copy nc-icon nc-single-02 for-icon-page"></i>
+          <i class="icon-copy fas fa-users-cog for-icon-page"></i>
           <font class="font-title">Users</font>
         </div>
         <nav aria-label="breadcrumb" role="navigation">
@@ -37,30 +37,6 @@ $row = $data->fetch_assoc()
                   <div class="form-group">
                     <label for="IDUsername" class="col-form-label">First Name</label>
                     <input id="IDUsername" name="Username" type="text" class="form-control" placeholder="Username ..." value="<?= $row['username']; ?>" readonly>
-                  </div>
-                </div>
-                <div class="col-sm-4">
-                  <div class="form-group">
-                    <label for="IDFName" class="col-form-label">First Name</label>
-                    <input id="IDFName" name="FName" type="text" class="form-control" placeholder="First Name ..." value="<?= $row['fname'] ?>">
-                  </div>
-                </div>
-                <div class="col-sm-4">
-                  <div class="form-group">
-                    <label for="IDLName" class="col-form-label">Last Name</label>
-                    <input id="IDLName" name="LName" type="text" class="form-control" placeholder="Last Name ..." value="<?= $row['lname'] ?>">
-                  </div>
-                </div>
-                <div class="col-sm-4">
-                  <div class="form-group">
-                    <label for="IDGender" class="col-form-label">Gender</label>
-                    <select id="IDGender" name="Gender" class="form-control">
-                      <option value="<?= $row['gender']; ?>"><?= $row['gender']; ?></option>
-                      <option value="">-- Select --</option>
-                      <option value="male">Male</option>
-                      <option value="female">Female</option>
-                      <option value="unknow">Unknow</option>
-                    </select>
                   </div>
                 </div>
                 <div class="col-sm-12">

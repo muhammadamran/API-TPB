@@ -4,7 +4,7 @@
     <div class="row">
       <div class="col-md-12 col-sm-12">
         <div class="title-page">
-          <i class="icon-copy nc-icon nc-single-02 for-icon-page"></i>
+          <i class="icon-copy fas fa-users-cog for-icon-page"></i>
           <font class="font-title">Users</font>
         </div>
         <nav aria-label="breadcrumb" role="navigation">
@@ -29,30 +29,13 @@
           <form action="pages/user/user_proses.php?aksi=insert" method="POST">
             <fieldset>
               <div class="row">
-                <div class="col-sm-4">
+                <div class="col-sm-6">
                   <div class="form-group">
-                    <label for="IDFName" class="col-form-label">First Name</label>
-                    <input id="IDFName" name="FName" type="text" class="form-control" placeholder="First Name ...">
+                    <label for="IDFName" class="col-form-label">Username</label>
+                    <input id="IDFName" name="username" type="text" class="form-control" placeholder="Username ...">
                   </div>
                 </div>
-                <div class="col-sm-4">
-                  <div class="form-group">
-                    <label for="IDLName" class="col-form-label">Last Name</label>
-                    <input id="IDLName" name="LName" type="text" class="form-control" placeholder="Last Name ...">
-                  </div>
-                </div>
-                <div class="col-sm-4">
-                  <div class="form-group">
-                    <label for="IDGender" class="col-form-label">Gender</label>
-                    <select id="IDGender" name="Gender" class="form-control">
-                      <option value="">-- Select --</option>
-                      <option value="male">Male</option>
-                      <option value="female">Female</option>
-                      <option value="unknow">Unknow</option>
-                    </select>
-                  </div>
-                </div>
-                <div class="col-sm-12">
+                <div class="col-sm-6">
                   <div class="form-group">
                     <label for="IDEmail" class="col-form-label">Email</label>
                     <input id="IDEmail" name="Email" type="email" class="form-control" placeholder="Email ...">

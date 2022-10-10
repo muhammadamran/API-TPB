@@ -1,5 +1,5 @@
 <?php
-$data = $db->query('SELECT * FROM tbl_users WHERE id="' . $_GET['id'] . '"');
+$data = $db->query('SELECT * FROM user WHERE id="' . $_GET['id'] . '"');
 $row = $data->fetch_assoc()
 ?>
 <div class="content">
@@ -8,7 +8,7 @@ $row = $data->fetch_assoc()
     <div class="row">
       <div class="col-md-12 col-sm-12">
         <div class="title-page">
-          <i class="icon-copy nc-icon nc-single-02 for-icon-page"></i>
+          <i class="icon-copy fas fa-users-cog for-icon-page"></i>
           <font class="font-title">Users</font>
         </div>
         <nav aria-label="breadcrumb" role="navigation">
