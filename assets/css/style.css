@@ -113,3 +113,21 @@
         visibility: visible;
     }
 }
+
+.dashboard-bar {
+    display: grid;
+    padding: 103px;
+    background: linear-gradient(45deg, #673ab7, #e91e63);
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 6px 14px -4px rgb(0 0 0 / 68%);
+}
+
+.dashboard-bar-bc {
+    display: grid;
+    padding: 35px;
+    background: linear-gradient(45deg, #607d8b, #f44336);
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 6px 14px -4px rgb(0 0 0 / 68%);
+}

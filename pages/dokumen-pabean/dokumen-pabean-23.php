@@ -27,23 +27,26 @@
                     <font class="card-title"><i class="fas fa-table"></i> Data</font>
                 </div>
                 <div class="card-body ">
-                    <a href="index.php?m=user&s=user_add" class="btn btn-sm btn-dark" title="Add User"><i
-                            class="fas fa-plus-circle"></i> Add User</a>
                     <div class="line-page"></div>
                     <div class="table-responsive">
                         <table id="example" class="table table-striped table-bordered table-td-valign-middle">
                             <thead>
                                 <tr>
-                                    <th width="1%">#</th>
-                                    <th class="text-nowrap" style="text-align: center;">Username</th>
-                                    <th class="text-nowrap" style="text-align: center;">Email</th>
-                                    <th class="text-nowrap" style="text-align: center;">Expired Date</th>
-                                    <th class="text-nowrap" style="text-align: center;">Level</th>
-                                    <th class="text-nowrap" style="text-align: center;">Aksi</th>
+                                    <th rowspan="2" width="1%">#</th>
+                                    <th class="text-nowrap" rowspan="2" style="text-align: center;">Nomor Pengajuan</th>
+                                    <th class="text-nowrap" rowspan="2" style="text-align: center;">Pemasok</th>
+                                    <th class="text-nowrap" rowspan="2" style="text-align: center;">Pengangkut</th>
+                                    <th class="text-nowrap" colspan="3" style="text-align: center;">Jumlah</th>
+                                    <th class="text-nowrap" rowspan="2" style="text-align: center;">Status</th>
+                                </tr>
+                                <tr>
+                                    <th class="text-nowrap" style="text-align: center;">Barang</th>
+                                    <th class="text-nowrap" style="text-align: center;">Kontainer</th>
+                                    <th class="text-nowrap" style="text-align: center;">Kemasan</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php include 'pages/user/tables.php'; ?>
+                                <?php include 'pages/dokumen-pabean/data/tables23.php'; ?>
                             </tbody>
                         </table>
                     </div>

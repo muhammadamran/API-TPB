@@ -42,7 +42,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php include 'pages/user/tables.php'; ?>
+                                <?php include 'pages/user/data/tables.php'; ?>
                             </tbody>
                         </table>
                     </div>
