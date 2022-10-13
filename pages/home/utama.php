@@ -25,13 +25,23 @@
     <div class="row">
         <div class="col-md-3">
             <div class="row">
-                <div class="col-md-12">
+                <!-- <div class="col-md-12">
                     <div class="card text-center">
                         <div class="dashboard-bar">
                             <font style="font-size: 30px;font-weight: 900;">
                                 <?= $data_count_table['total_table']; ?>
                             </font>
                             <font style="font-weight: 200;">Total Table TPB</font>
+                        </div>
+                    </div>
+                </div> -->
+                <div class="col-md-12">
+                    <div class="card text-center">
+                        <div class="dashboard-bar">
+                            <font style="font-size: 30px;font-weight: 900;">
+                                <?= $data_count_bc['total_bc']; ?>
+                            </font>
+                            <font style="font-weight: 200;">Total Data BC</font>
                         </div>
                     </div>
                 </div>

@@ -1,7 +1,14 @@
 <?php
 $count_table = $db->query("SELECT * FROM view_count_tpb");
 $data_count_table = $count_table->fetch_assoc();
-
+// BC
+$count_bc = $db->query("SELECT COUNT(*) AS total_bc FROM tpb_header WHERE KODE_DOKUMEN_PABEAN IS NOT NULL");
+$data_count_bc = $count_bc->fetch_assoc();
+if ($data_count_bc === NULL) {
+    $databc = 0;
+} else {
+    $databc = $data_count_bc['total_bc'];
+}
 // BC 2.3
 $count_23 = $db->query("SELECT COUNT(*) AS total_bc23 FROM tpb_header WHERE KODE_DOKUMEN_PABEAN=23");
 $data_count_23 = $count_23->fetch_assoc();
