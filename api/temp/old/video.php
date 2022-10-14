@@ -27,5 +27,3 @@
         'result' => 'Data not found'
     ]);
   }
-    
-?>
