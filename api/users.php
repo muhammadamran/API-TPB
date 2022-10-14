@@ -1,20 +1,12 @@
 <?php
 include "../db/db.php";
-$users = $db->query("SELECT * FROM tbl_users ORDER BY id DESC", 0);
+$users = $db->query("SELECT * FROM user ORDER BY id DESC", 0);
 $cek = $users->num_rows;
 $data = [];
 
 while ($row = $users->fetch_assoc()) {
     $data[] = [
-        'id' => $row['id'],
-        'fname' => $row['fname'],
-        'lname' => $row['lname'],
-        'gender' => $row['gender'],
-        'username' => $row['username'],
-        'password' => $row['password'],
-        'email' => $row['email'],
-        'role' => $row['role'],
-        'expired_date' => $row['expired_date'],
+        'id' => $row['id']
     ];
 }
 header("Access-Control-Allow-Origin: *");

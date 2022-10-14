@@ -14,8 +14,9 @@
                     <h5 class="card-title">Admin Web TPB Backend</h5>
                 </div>
                 <div class="card-body ">
-                    Selamat datang di TPB Backend
-                    <div style="margin-top:30px;"></div>
+                    <div style="margin-top:30px;margin-bottom:30px;">
+                        <font style="font-size: 20px;font-variant: unicase;">Selamat datang di TPB Backend</font>
+                    </div>
                 </div>
             </div>
         </div>
@@ -25,29 +26,33 @@
     <div class="row">
         <div class="col-md-3">
             <div class="row">
-                <!-- <div class="col-md-12">
+                <div class="col-md-12">
                     <div class="card text-center">
-                        <div class="dashboard-bar">
+                        <div class="dashboard-table">
                             <font style="font-size: 30px;font-weight: 900;">
                                 <?= $data_count_table['total_table']; ?>
                             </font>
-                            <font style="font-weight: 200;">Total Table TPB</font>
+                            <font style="font-weight: 200;">Total Table<br>TPB</font>
                         </div>
                     </div>
-                </div> -->
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="row">
                 <div class="col-md-12">
                     <div class="card text-center">
                         <div class="dashboard-bar">
                             <font style="font-size: 30px;font-weight: 900;">
                                 <?= $data_count_bc['total_bc']; ?>
                             </font>
-                            <font style="font-weight: 200;">Total Data BC</font>
+                            <font style="font-weight: 200;">Total Data<br>BC</font>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="col-md-9">
+        <div class="col-md-6">
             <div class="row">
                 <!-- BC 2.3 -->
                 <div class="col-md-4">
