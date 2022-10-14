@@ -6,8 +6,8 @@ if ($_GET["id_user"] == NULL) {
 } else {
     $video = $db->query("SELECT * FROM user WHERE id='" . $_GET['id_user'] . "' ORDER BY id ASC", 0);
 }
-
 $cek = $video->num_rows;
+
 if ($cek > 0) {
     $data = [];
 

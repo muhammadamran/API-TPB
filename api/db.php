@@ -2,7 +2,7 @@
 $dbhost = "182.23.104.212";
 $dbusername = "beacukai";
 $dbpassword = "beacukai";
-$dbname = "tpbdb";
+$dbname = "tpbdb_old";
 $dbport = "3307";
 $db = new mysqli($dbhost, $dbusername, $dbpassword, $dbname, $dbport) or die(mysqli_connect_errno());
 
@@ -56,4 +56,3 @@ class helpers {
 }
 
 $helpers = new helpers();
-?>
