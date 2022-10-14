@@ -7,13 +7,14 @@ if ($aksi == 'insert') {
     $forPass = '123123';
     $password = md5($forPass);
     // POST
+    $Nama = $_POST['nama'];
     $Email = $_POST['Email'];
     $Role = $_POST['Role'];
     $ExpiredDate = $_POST['ExpiredDate'];
 
-    $insert = $db->query('INSERT INTO user (email, role, expired_date, username, password) 
+    $insert = $db->query('INSERT INTO user (nama, email, role, expired_date, username, password) 
                           VALUES 
-                          ("' . $Email . '", "' . $Role . '", ' . ($ExpiredDate == '' || empty($ExpiredDate) ? "NULL" : '"' . $ExpiredDate . '", "' . $username . '", "' . $password . '"') . ')');
+                          ("' . $Nama . '","' . $Email . '", "' . $Role . '", ' . ($ExpiredDate == '' || empty($ExpiredDate) ? "NULL" : '"' . $ExpiredDate . '", "' . $username . '", "' . $password . '"') . ')');
 
     if ($insert) {
         echo '<script>alert("Data has been Added");location.href = "../../index.php?m=user&s=user"</script>';
@@ -22,11 +23,12 @@ if ($aksi == 'insert') {
     }
 } else if ($aksi == 'update') {
     $id = $_GET['id'];
+    $Nama = $_POST['Nama'];
     $Email = $_POST['Email'];
     $Role = $_POST['Role'];
     $ExpiredDate = $_POST['ExpiredDate'];
 
-    $update = $db->query('UPDATE user SET email="' . $Email . '", role="' . $Role . '", expired_date=' . ($ExpiredDate == '' || empty($ExpiredDate) ? "NULL" : '"' . $ExpiredDate . '"') . ' WHERE id="' . $id . '"');
+    $update = $db->query('UPDATE user SET nama="' . $Nama . '", email="' . $Email . '", role="' . $Role . '", expired_date=' . ($ExpiredDate == '' || empty($ExpiredDate) ? "NULL" : '"' . $ExpiredDate . '"') . ' WHERE id="' . $id . '"');
 
     if ($update) {
         echo '<script>alert("Data has been Updated");location.href = "../../index.php?m=user&s=user"</script>';

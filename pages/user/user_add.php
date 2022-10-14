@@ -31,19 +31,26 @@
                             <div class="row">
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        <label for="IDFName" class="col-form-label">Username</label>
-                                        <input id="IDFName" name="username" type="text" class="form-control"
+                                        <label for="IDUsername" class="col-form-label">Username</label>
+                                        <input id="IDUsername" name="username" type="text" class="form-control"
                                             placeholder="Username ...">
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="IDNama" class="col-form-label">Nama</label>
+                                        <input id="IDNama" name="nama" type="text" class="form-control"
+                                            placeholder="Nama ...">
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
                                     <div class="form-group">
                                         <label for="IDEmail" class="col-form-label">Email</label>
                                         <input id="IDEmail" name="Email" type="email" class="form-control"
                                             placeholder="Email ...">
                                     </div>
                                 </div>
-                                <div class="col-sm-6">
+                                <div class="col-sm-4">
                                     <div class="form-group">
                                         <label for="IDRole" class="col-form-label">Role</label>
                                         <select id="IDRole" name="Role" class="form-control">
@@ -53,7 +60,7 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div class="col-sm-6">
+                                <div class="col-sm-4">
                                     <div class="form-group">
                                         <label for="IDExpired" class="col-form-label">Expired Date</label>
                                         <input id="IDExpired" name="ExpiredDate" type="date" min="<?= date('Y-m-d') ?>"

@@ -35,6 +35,7 @@
                                 <tr>
                                     <th width="1%">#</th>
                                     <th class="text-nowrap" style="text-align: center;">Username</th>
+                                    <th class="text-nowrap" style="text-align: center;">Nama</th>
                                     <th class="text-nowrap" style="text-align: center;">Email</th>
                                     <th class="text-nowrap" style="text-align: center;">Expired Date</th>
                                     <th class="text-nowrap" style="text-align: center;">Level</th>

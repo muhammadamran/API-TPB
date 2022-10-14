@@ -7,6 +7,7 @@ while ($row = $data->fetch_assoc()) {
 <tr>
     <td width="1%" class="f-s-600 text-inverse"><?= $no ?>.</td>
     <td style="text-align: center;"><?= $row['username'] ?></td>
+    <td style="text-align: center;"><?= $row['nama'] ?></td>
     <td style="text-align: center;"><?= $row['email'] ?></td>
     <td style="text-align: center;">
         <?= !empty($row['expired_date']) ? $row['expired_date'] : 'Tidak ada tanggal kadaluwarsa' ?>
