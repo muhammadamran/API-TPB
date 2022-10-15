@@ -1,8 +1,23 @@
 <?php
+
+// API - 
+include "get_api.php";
+$content = get_content('https://itinventory-sarinah.com/api/databases.php');
+$data = json_decode($content, true);
+
+foreach ($data['result'] as $row) {
+
+  if ($data['status'] == 404) {
+    $apiDB = 'tpbdb';
+  } else {
+    $apiDB = $row['database_module'];
+  }
+}
+
 $dbhost = "182.23.104.212";
 $dbusername = "beacukai";
 $dbpassword = "beacukai";
-$dbname = "tpbdb_old";
+$dbname = $apiDB;
 $dbport = "3307";
 $db = new mysqli($dbhost, $dbusername, $dbpassword, $dbname, $dbport) or die(mysqli_connect_errno());
 
