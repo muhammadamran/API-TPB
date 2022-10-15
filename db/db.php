@@ -10,9 +10,12 @@ foreach ($data['result'] as $row) {
   if ($data['status'] == 404) {
     $apiDB = 'tpbdb';
   } else {
-    $apiDB = $row['database_module'];
+    $apiDB = $row['data'];
   }
 }
+
+// var_dump($apiDB);
+// exit;
 
 $dbhost = "182.23.104.212";
 $dbusername = "beacukai";

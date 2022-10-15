@@ -1,48 +1,68 @@
 <?php
+
+// API - 
+include "get_api.php";
+$content = get_content('https://itinventory-sarinah.com/api/databases.php');
+$data = json_decode($content, true);
+
+foreach ($data['result'] as $row) {
+
+  if ($data['status'] == 404) {
+    $apiDB = 'tpbdb';
+  } else {
+    $apiDB = $row['data'];
+  }
+}
+
+// var_dump($apiDB);
+// exit;
+
 $dbhost = "182.23.104.212";
 $dbusername = "beacukai";
 $dbpassword = "beacukai";
-$dbname = "tpbdb_old";
+$dbname = $apiDB;
 $dbport = "3307";
 $db = new mysqli($dbhost, $dbusername, $dbpassword, $dbname, $dbport) or die(mysqli_connect_errno());
 
 if ($db->connect_error) {
   die("Connection failed: " . $db->connect_error);
-} 
+}
 
-class helpers {
-  function dateIndonesia($date) {
+class helpers
+{
+  function dateIndonesia($date)
+  {
     $result = '';
-    if(!empty($date) && $date !== '0000-00-00') {
-        $BulanIndo = array("Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"); 
-        $tahun = substr($date, 0, 4);
-        $bulan = substr($date, 5, 2);
-        $tgl   = substr($date, 8, 2);
-     
-        $result = $tgl . " " . $BulanIndo[(int)$bulan-1] . " ". $tahun;
-        
+    if (!empty($date) && $date !== '0000-00-00') {
+      $BulanIndo = array("Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember");
+      $tahun = substr($date, 0, 4);
+      $bulan = substr($date, 5, 2);
+      $tgl   = substr($date, 8, 2);
+
+      $result = $tgl . " " . $BulanIndo[(int)$bulan - 1] . " " . $tahun;
     }
     return $result;
   }
 
-  function dateTimeIndonesia($date) {
+  function dateTimeIndonesia($date)
+  {
     $result = '';
-    if(!empty($date) && $date !== '0000-00-00 00:00:00') {
-        $BulanIndo = array("Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"); 
-        $tahun = substr($date, 0, 4);
-        $bulan = substr($date, 5, 2);
-        $tgl   = substr($date, 8, 2);
-     
-        $result = $tgl . " " . $BulanIndo[(int)$bulan-1] . " ". $tahun.' - '.substr($date, 11, 19);
-        
+    if (!empty($date) && $date !== '0000-00-00 00:00:00') {
+      $BulanIndo = array("Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember");
+      $tahun = substr($date, 0, 4);
+      $bulan = substr($date, 5, 2);
+      $tgl   = substr($date, 8, 2);
+
+      $result = $tgl . " " . $BulanIndo[(int)$bulan - 1] . " " . $tahun . ' - ' . substr($date, 11, 19);
     }
     return $result;
   }
 
-  function berita($content) {
+  function berita($content)
+  {
     $isi = strip_tags($content);
     if (strlen($isi) > 80) {
-      $berita = substr($isi, 0, 80).' ...';
+      $berita = substr($isi, 0, 80) . ' ...';
     } else {
       $berita = $content;
     }
@@ -50,8 +70,9 @@ class helpers {
     return $berita;
   }
 
-  function hargaRupiah($harga) {
-    return "Rp. " . number_format($harga,0,',','.');
+  function hargaRupiah($harga)
+  {
+    return "Rp. " . number_format($harga, 0, ',', '.');
   }
 }
 
