@@ -1,16 +1,16 @@
 <?php
 include "db.php";
 
-$dataBC23 = $db->query("SELECT *,sts.KODE_STATUS,sts.URAIAN_STATUS 
+$dataBC40 = $db->query("SELECT *,sts.KODE_STATUS,sts.URAIAN_STATUS 
                         FROM tpb_header AS hdr 
                         JOIN referensi_status AS sts ON hdr.KODE_STATUS=sts.KODE_STATUS 
-                        WHERE hdr.KODE_DOKUMEN_PABEAN=23 GROUP BY hdr.NOMOR_AJU ORDER BY hdr.NOMOR_AJU", 0);
-$cek = $dataBC23->num_rows;
+                        WHERE hdr.KODE_DOKUMEN_PABEAN=40 GROUP BY hdr.NOMOR_AJU ORDER BY hdr.NOMOR_AJU", 0);
+$cek = $dataBC40->num_rows;
 
 if ($cek > 0) {
     $data = [];
 
-    while ($result = $dataBC23->fetch_assoc()) {
+    while ($result = $dataBC40->fetch_assoc()) {
         $data[] = [
             'NOMOR_AJU' => $result['NOMOR_AJU'],
             'NAMA_PEMASOK' => $result['NAMA_PEMASOK'],
