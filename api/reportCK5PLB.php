@@ -567,7 +567,7 @@ function get_Kontainer()
                 'NOMOR_KONTAINER' => $result['NOMOR_KONTAINER'],
                 'NOMOR_SEGEL' => $result['NOMOR_SEGEL'],
                 'WAKTU_GATE_IN' => $result['WAKTU_GATE_IN'],
-                'WAKTU_GATE_OUT' => $result['total_bc41']
+                'WAKTU_GATE_OUT' => $result['WAKTU_GATE_OUT']
             ];
         }
 
@@ -667,7 +667,40 @@ function get_Log()
                 'filename' => $result['filename'],
                 'totalupload' => $result['totalupload'],
                 'dateupload' => $result['dateupload'],
-                'status' => $result['status'],
+                'status' => $result['status']
+            ];
+        }
+
+        echo json_encode([
+            'status' => 200,
+            'result' => $data
+        ]);
+    } else {
+        echo json_encode([
+            'status' => 404,
+            'result' => 'Data not found'
+        ]);
+    }
+}
+
+// LOG UPLOAD
+function get_LogUpload()
+{
+    global $db;
+    $getData = $db->query("SELECT * FROM plb_log ORDER BY ID DESC LIMIT 1", 0);
+    $cek = $getData->num_rows;
+
+    if ($cek > 0) {
+        $data = [];
+
+        while ($result = $getData->fetch_assoc()) {
+            $data[] = [
+                'ID' => $result['ID'],
+                'username' => $result['username'],
+                'filename' => $result['filename'],
+                'totalupload' => $result['totalupload'],
+                'dateupload' => $result['dateupload'],
+                'status' => $result['status']
             ];
         }
 
