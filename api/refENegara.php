@@ -11,7 +11,7 @@ if ($cek > 0) {
         $data[] = [
             'ID' => $result['ID'],
             'KODE_NEGARA' => $result['KODE_NEGARA'],
-            'URAIAN_NEGARA' => $result['URAIAN_NEGARA']
+            'URAIAN_NEGARA' => preg_replace('/[^a-zA-Z0-9]/', ' ', $result['URAIAN_NEGARA'])
         ];
     }
 

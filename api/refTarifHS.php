@@ -15,7 +15,7 @@ if ($cek > 0) {
             'KODE_SATUAN_BM' => $result['KODE_SATUAN_BM'],
             'KODE_SATUAN_CUKAI' => $result['KODE_SATUAN_CUKAI'],
             'NOMOR_HS' => $result['NOMOR_HS'],
-            'SERIS_HS' => $result['SERIS_HS'],
+            'SERI_HS' => $result['SERI_HS'],
             'TARIF_BM' => $result['TARIF_BM'],
             'TARIF_CUKAI' => $result['TARIF_CUKAI'],
             'TARIF_PPH' => $result['TARIF_PPH'],

@@ -17,7 +17,7 @@ if ($cek > 0) {
             'SERI' => $result['SERI'],
             'SPESIFIKASI_LAIN' => $result['SPESIFIKASI_LAIN'],
             'TIPE' => $result['TIPE'],
-            'URAIAN_BARANG' => preg_replace('/[^A-Za-z0-9\-]/', ' ', $result['URAIAN_BARANG'])
+            'URAIAN_BARANG' => preg_replace('/[^a-zA-Z0-9]/', ' ', $result['URAIAN_BARANG'])
         ];
     }
 
