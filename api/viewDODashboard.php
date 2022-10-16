@@ -5,6 +5,40 @@ if (function_exists($_GET['function'])) {
     $_GET['function']();
 }
 
+// BC PLB
+function get_PLB()
+{
+    global $db;
+    $dataGetBC = $db->query("SELECT NOMOR_AJU,KODE_DOKUMEN_PABEAN,
+                            (SELECT COUNT(*) AS total_bc FROM plb_header WHERE KODE_DOKUMEN_PABEAN IS NOT NULL) AS total_bc
+                            FROM plb_header
+                            WHERE KODE_DOKUMEN_PABEAN IS NOT NULL
+                            ORDER BY ID DESC LIMIT 1", 0);
+    $cek = $dataGetBC->num_rows;
+
+    if ($cek > 0) {
+        $data = [];
+
+        while ($result = $dataGetBC->fetch_assoc()) {
+            $data[] = [
+                'NOMOR_AJU' => $result['NOMOR_AJU'],
+                'KODE_DOKUMEN_PABEAN' => $result['KODE_DOKUMEN_PABEAN'],
+                'total_bc' => $result['total_bc']
+            ];
+        }
+
+        echo json_encode([
+            'status' => 200,
+            'result' => $data
+        ]);
+    } else {
+        echo json_encode([
+            'status' => 404,
+            'result' => 'Data not found'
+        ]);
+    }
+}
+
 // BC TPB
 function get_bcTPB()
 {
