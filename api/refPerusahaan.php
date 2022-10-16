@@ -1,24 +1,38 @@
 <?php
 include "db.php";
 
-$dataBC261 = $db->query("SELECT *,sts.KODE_STATUS,sts.URAIAN_STATUS 
-                        FROM tpb_header AS hdr 
-                        JOIN referensi_status AS sts ON hdr.KODE_STATUS=sts.KODE_STATUS 
-                        WHERE hdr.KODE_DOKUMEN_PABEAN=261 GROUP BY hdr.NOMOR_AJU ORDER BY hdr.NOMOR_AJU", 0);
-$cek = $dataBC261->num_rows;
+$dataREF = $db->query("SELECT a.ID,a.ALAMAT,a.CONTACT_PERSON,a.EMAIL,a.FAX,a.ID_PENGENAL,a.JENISTPB,a.KODE_ID,a.KODE_KANTOR,a.NAMA,a.NOMOR_PENGENAL,a.NOMOR_SKEP,a.NPWP,a.STATUS_IMPORTIR,
+                        a.TANGGAL_SKEP,a.TELEPON,a.NPPBKC,
+                        b.KODE_STATUS_PENGUSAHA,b.URAIAN_STATUS_PENGUSAHA
+                        FROM referensi_pengusaha AS a
+                        LEFT JOIN referensi_status_pengusaha AS b ON a.KODE_ID=b.KODE_STATUS_PENGUSAHA 
+                        ORDER BY a.ID DESC", 0);
+$cek = $dataREF->num_rows;
 
 if ($cek > 0) {
     $data = [];
 
-    while ($result = $dataBC261->fetch_assoc()) {
+    while ($result = $dataREF->fetch_assoc()) {
         $data[] = [
-            'NOMOR_AJU' => $result['NOMOR_AJU'],
-            'NAMA_PEMASOK' => $result['NAMA_PEMASOK'],
-            'NAMA_PENGANGKUT' => $result['NAMA_PENGANGKUT'],
-            'JUMLAH_BARANG' => $result['JUMLAH_BARANG'],
-            'JUMLAH_KONTAINER' => $result['JUMLAH_KONTAINER'],
-            'JUMLAH_KEMASAN' => $result['JUMLAH_KEMASAN'],
-            'URAIAN_STATUS' => $result['URAIAN_STATUS']
+            'ID' => $result['ID'],
+            'ALAMAT' => $result['ALAMAT'],
+            'CONTACT_PERSON' => $result['CONTACT_PERSON'],
+            'EMAIL' => $result['EMAIL'],
+            'FAX' => $result['FAX'],
+            'ID_PENGENAL' => $result['ID_PENGENAL'],
+            'JENISTPB' => $result['JENISTPB'],
+            'KODE_ID' => $result['KODE_ID'],
+            'KODE_KANTOR' => $result['KODE_KANTOR'],
+            'NAMA' => $result['NAMA'],
+            'NOMOR_PENGENAL' => $result['NOMOR_PENGENAL'],
+            'NOMOR_SKEP' => $result['NOMOR_SKEP'],
+            'NPWP' => $result['NPWP'],
+            'STATUS_IMPORTIR' => $result['STATUS_IMPORTIR'],
+            'TANGGAL_SKEP' => $result['TANGGAL_SKEP'],
+            'TELEPON' => $result['TELEPON'],
+            'NPPBKC' => $result['NPPBKC'],
+            'KODE_STATUS_PENGUSAHA' => $result['KODE_STATUS_PENGUSAHA'],
+            'URAIAN_STATUS_PENGUSAHA' => $result['URAIAN_STATUS_PENGUSAHA']
         ];
     }
 
@@ -32,5 +46,3 @@ if ($cek > 0) {
         'result' => 'Data not found'
     ]);
 }
-// header("Content-Type: application/json; charset=UTF-8");
-// echo $response;
