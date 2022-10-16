@@ -6,8 +6,8 @@ $dataREF = $db->query("SELECT a.ID AS ID_REF,a.ALAMAT,a.CONTACT_PERSON,a.EMAIL,a
                         b.KODE_STATUS_PENGUSAHA,b.URAIAN_STATUS_PENGUSAHA
                         FROM referensi_pengusaha AS a
                         LEFT JOIN referensi_status_pengusaha AS b ON a.KODE_ID=b.KODE_STATUS_PENGUSAHA 
-                        WHERE ID_REF=" . $_GET['id'] . "
-                        AND NPWP=" . $_GET['NPWP'] . "
+                        WHERE a.ID=" . $_GET['id'] . "
+                        AND a.NPWP=" . $_GET['NPWP'] . "
                         ORDER BY ID_REF ASC", 0);
 $cek = $dataREF->num_rows;
 
