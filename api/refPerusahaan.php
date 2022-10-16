@@ -1,12 +1,12 @@
 <?php
 include "db.php";
 
-$dataREF = $db->query("SELECT a.ID,a.ALAMAT,a.CONTACT_PERSON,a.EMAIL,a.FAX,a.ID_PENGENAL,a.JENISTPB,a.KODE_ID,a.KODE_KANTOR,a.NAMA,a.NOMOR_PENGENAL,a.NOMOR_SKEP,a.NPWP,a.STATUS_IMPORTIR,
+$dataREF = $db->query("SELECT a.ID AS ID_REF,a.ALAMAT,a.CONTACT_PERSON,a.EMAIL,a.FAX,a.ID_PENGENAL,a.JENISTPB,a.KODE_ID,a.KODE_KANTOR,a.NAMA,a.NOMOR_PENGENAL,a.NOMOR_SKEP,a.NPWP,a.STATUS_IMPORTIR,
                         a.TANGGAL_SKEP,a.TELEPON,a.NPPBKC,
                         b.KODE_STATUS_PENGUSAHA,b.URAIAN_STATUS_PENGUSAHA
                         FROM referensi_pengusaha AS a
                         LEFT JOIN referensi_status_pengusaha AS b ON a.KODE_ID=b.KODE_STATUS_PENGUSAHA 
-                        ORDER BY a.ID DESC", 0);
+                        ORDER BY ID_REF ASC", 0);
 $cek = $dataREF->num_rows;
 
 if ($cek > 0) {
@@ -14,7 +14,7 @@ if ($cek > 0) {
 
     while ($result = $dataREF->fetch_assoc()) {
         $data[] = [
-            'ID' => $result['ID'],
+            'ID' => $result['ID_REF'],
             'ALAMAT' => $result['ALAMAT'],
             'CONTACT_PERSON' => $result['CONTACT_PERSON'],
             'EMAIL' => $result['EMAIL'],
