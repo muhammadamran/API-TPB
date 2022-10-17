@@ -113,10 +113,41 @@ function get_Barang()
         while ($result = $dataGetBC->fetch_assoc()) {
             $data[] = [
                 'ID' => $result['ID'],
-                'URAIAN' => $result['URAIAN'],
+                'URAIAN' => preg_replace('/[^a-zA-Z0-9]/', ' ', $result['URAIAN']),
                 'KODE_BARANG' => $result['KODE_BARANG'],
                 'UKURAN' => $result['UKURAN'],
                 'JUMLAH_SATUAN' => $result['JUMLAH_SATUAN']
+            ];
+        }
+
+        echo json_encode([
+            'status' => 200,
+            'result' => $data
+        ]);
+    } else {
+        echo json_encode([
+            'status' => 404,
+            'result' => 'Data not found'
+        ]);
+    }
+}
+
+
+
+// Barang
+function get_BarangTarif()
+{
+    global $db;
+    $dataGetBC = $db->query("SELECT * FROM tpb_barang_tarif WHERE ID_BARANG='" . $_GET['ID_BARANG'] . "' AND JENIS_TARIF = 'CUKAI'", 0);
+    $cek = $dataGetBC->num_rows;
+
+    if ($cek > 0) {
+        $data = [];
+
+        while ($result = $dataGetBC->fetch_assoc()) {
+            $data[] = [
+                'ID' => $result['ID'],
+                'JUMLAH_SATUAN' => $result['KODE_BARANG']
             ];
         }
 
