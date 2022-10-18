@@ -21,8 +21,8 @@ if ($_GET["Filter"] == 'work') {
                             brg.VOLUME AS VOLUME_BRG 
                             FROM plb_header AS hdr
                             LEFT OUTER JOIN plb_barang AS brg ON hdr.NOMOR_AJU=brg.NOMOR_AJU
-                            WHERE hdr.TANGGAL_BC11 BETWEEN " . $_GET['StartTanggal'] . " AND " . $_GET['EndTanggal'] . "
-                            ORDER BY hdr.TANGGAL_BC11,hdr.NOMOR_AJU,brg.POS_TARIF ASC LIMIT 100", 0);
+                            WHERE hdr.TANGGAL_DAFTAR BETWEEN '" . $_GET['StartTanggal'] . "' AND '" . $_GET['EndTanggal'] . "'
+                            ORDER BY hdr.TANGGAL_DAFTAR,hdr.NOMOR_AJU,brg.POS_TARIF ASC", 0);
 } else {
     $dataGet = $db->query("SELECT *,
                             brg.ID AS ID_BRG,
@@ -43,7 +43,7 @@ if ($_GET["Filter"] == 'work') {
                             brg.VOLUME AS VOLUME_BRG 
                             FROM plb_header AS hdr
                             LEFT OUTER JOIN plb_barang AS brg ON hdr.NOMOR_AJU=brg.NOMOR_AJU
-                            ORDER BY hdr.TANGGAL_BC11,hdr.NOMOR_AJU,brg.POS_TARIF ASC LIMIT 100", 0);
+                            ORDER BY hdr.TANGGAL_DAFTAR,hdr.NOMOR_AJU,brg.POS_TARIF ASC LIMIT 100", 0);
 }
 $cek = $dataGet->num_rows;
 
