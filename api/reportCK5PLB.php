@@ -630,7 +630,7 @@ function get_Status()
         while ($result = $getData->fetch_assoc()) {
             $data[] = [
                 'ID' => $result['ID'],
-                'NOMOR_AJU' => $result['NOMOR_AJU'],
+                'NOMOR_AJU' => $result['NOMOR_AJU_PLB'],
                 'KODE_RESPON' => $result['KODE_RESPON'],
                 'NOMOR_RESPON' => $result['NOMOR_RESPON'],
                 'ck5_plb_submit' => $result['ck5_plb_submit'],
