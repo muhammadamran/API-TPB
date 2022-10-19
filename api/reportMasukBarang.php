@@ -259,7 +259,9 @@ if ($cek > 0) {
             'NAMA_EKSPORTIR' => $result['NAMA_EKSPORTIR'],
             'ALAMAT_EKSPORTIR' => $result['ALAMAT_EKSPORTIR'],
             'KODE_PERHITUNGAN' => $result['KODE_PERHITUNGAN'],
-            'SERI_BARANG_DOK_ASAL' => $result['SERI_BARANG_DOK_ASAL']
+            'SERI_BARANG_DOK_ASAL' => $result['SERI_BARANG_DOK_ASAL'],
+            'ck5_plb_submit' => $result['ck5_plb_submit'],
+            'ck5_plb_export' => $result['ck5_plb_export']
         ];
     }
 
