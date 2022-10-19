@@ -185,10 +185,10 @@ function get_NomorPengajuan()
 }
 
 // AJU
-function get_NoBC27()
+function get_MataUang()
 {
     global $db;
-    $dataGetBC = $db->query("SELECT * FROM tpb_header WHERE NOMOR_AJU LIKE '%" . $_GET['NomorPengajuan'] . "%'", 0);
+    $dataGetBC = $db->query("SELECT * FROM tpb_header WHERE KODE_VALUTA LIKE '%" . $_GET['MataUang'] . "%'", 0);
     $cek = $dataGetBC->num_rows;
 
     if ($cek > 0) {
