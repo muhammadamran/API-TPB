@@ -2,14 +2,12 @@
 include "db.php";
 
 if ($_GET['Month'] == 0 || $_GET['Month'] == '' || $_GET['Month'] == NULL) {
-    $dataGet = $db->query("SELECT brg.KODE_BARANG,brg.URAIAN,brg.UKURAN,brg.SPESIFIKASI_LAIN,brg.KODE_SATUAN,hdr.KODE_DOKUMEN_PABEAN,brg.POS_TARIF,
-                            hdr.NOMOR_BC11,hdr.TANGGAL_BC11,brg.ID AS ID_BARANG
+    $dataGet = $db->query("SELECT *,brg.ID AS ID_BARANG
                             FROM tpb_header AS hdr
                             LEFT OUTER JOIN tpb_barang AS brg ON hdr.ID=brg.ID_HEADER
-                            ORDER BY hdr.TANGGAL_BC11 ASC", 0);
+                            ORDER BY hdr.TANGGAL_BC11 ASC LIMIT 100", 0);
 } else {
-    $dataGet = $db->query("SELECT brg.KODE_BARANG,brg.URAIAN,brg.UKURAN,brg.SPESIFIKASI_LAIN,brg.KODE_SATUAN,hdr.KODE_DOKUMEN_PABEAN,brg.POS_TARIF,
-                            hdr.NOMOR_BC11,hdr.TANGGAL_BC11,brg.ID AS ID_BARANG
+    $dataGet = $db->query("SELECT *,brg.ID AS ID_BARANG
                             FROM tpb_header AS hdr
                             LEFT OUTER JOIN tpb_barang AS brg ON hdr.ID=brg.ID_HEADER
                             WHERE SUBSTR(hdr.TANGGAL_BC11,6,2) LIKE '%" . $_GET['Month'] . "%'
@@ -176,7 +174,7 @@ if ($cek > 0) {
             'KODE_GUDANG_ASAL' => $result['KODE_GUDANG_ASAL'],
             'KODE_GUDANG_TUJUAN' => $result['KODE_GUDANG_TUJUAN'],
             // TPB_BARANG
-            'ID_BARANG' => $result['ID_barang'],
+            'ID_BARANG' => $result['ID_BARANG'],
             'ASURANSI' => $result['ASURANSI'],
             'CIF' => $result['CIF'],
             'CIF_RUPIAH' => $result['CIF_RUPIAH'],
