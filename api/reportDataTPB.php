@@ -9,7 +9,9 @@ if (function_exists($_GET['function'])) {
 function get_NomorPengajuan()
 {
     global $db;
-    $dataGetBC = $db->query("SELECT * FROM tpb_header WHERE NOMOR_AJU LIKE '%" . $_GET['NomorPengajuan'] . "%'", 0);
+    $dataGetBC = $db->query("SELECT *,brg.ID AS ID_BARANG FROM tpb_header AS tpb 
+                            LEFT OUTER JOIN tpb_barang AS brg ON tpb.ID=brg.ID_HEADER 
+                            WHERE tpb.NOMOR_AJU LIKE '%" . $_GET['NomorPengajuan'] . "%'", 0);
     $cek = $dataGetBC->num_rows;
 
     if ($cek > 0) {
@@ -168,7 +170,61 @@ function get_NomorPengajuan()
                 'KODE_PEL_TUJUAN' => $result['KODE_PEL_TUJUAN'],
                 'TANGGAL_STUFFING' => $result['TANGGAL_STUFFING'],
                 'KODE_GUDANG_ASAL' => $result['KODE_GUDANG_ASAL'],
-                'KODE_GUDANG_TUJUAN' => $result['KODE_GUDANG_TUJUAN']
+                'KODE_GUDANG_TUJUAN' => $result['KODE_GUDANG_TUJUAN'],
+
+                'ID_BARANG' => $result['ID_BARANG'],
+                'ASURANSI' => $result['ASURANSI'],
+                'CIF' => $result['CIF'],
+                'CIF_RUPIAH' => $result['CIF_RUPIAH'],
+                'DISKON' => $result['DISKON'],
+                'FLAG_KENDARAAN' => $result['FLAG_KENDARAAN'],
+                'FOB' => $result['FOB'],
+                'FREIGHT' => $result['FREIGHT'],
+                'HARGA_BARANG_LDP' => $result['HARGA_BARANG_LDP'],
+                'HARGA_INVOICE' => $result['HARGA_INVOICE'],
+                'HARGA_PENYERAHAN' => $result['HARGA_PENYERAHAN'],
+                'HARGA_SATUAN' => $result['HARGA_SATUAN'],
+                'JENIS_KENDARAAN' => $result['JENIS_KENDARAAN'],
+                'JUMLAH_BAHAN_BAKU' => $result['JUMLAH_BAHAN_BAKU'],
+                'JUMLAH_KEMASAN' => $result['JUMLAH_KEMASAN'],
+                'JUMLAH_SATUAN' => $result['JUMLAH_SATUAN'],
+                'KAPASITAS_SILINDER' => $result['KAPASITAS_SILINDER'],
+                'KATEGORI_BARANG' => $result['KATEGORI_BARANG'],
+                'KODE_ASAL_BARANG' => $result['KODE_ASAL_BARANG'],
+                'KODE_BARANG' => $result['KODE_BARANG'],
+                'KODE_FASILITAS_DOKUMEN' => $result['KODE_FASILITAS_DOKUMEN'],
+                'KODE_GUNA' => $result['KODE_GUNA'],
+                'KODE_JENIS_NILAI' => $result['KODE_JENIS_NILAI'],
+                'KODE_KEMASAN' => $result['KODE_KEMASAN'],
+                'KODE_LEBIH_DARI4TAHUN' => $result['KODE_LEBIH_DARI4TAHUN'],
+                'KODE_NEGARA_ASAL' => $result['KODE_NEGARA_ASAL'],
+                'KODE_SATUAN' => $result['KODE_SATUAN'],
+                'KODE_SKEMA_TARIF' => $result['KODE_SKEMA_TARIF'],
+                'KODE_STATUS' => $result['KODE_STATUS'],
+                'KONDISI_BARANG' => $result['KONDISI_BARANG'],
+                'MERK' => $result['MERK'],
+                'NETTO' => $result['NETTO'],
+                'NILAI_INCOTERM' => $result['NILAI_INCOTERM'],
+                'NILAI_PABEAN' => $result['NILAI_PABEAN'],
+                'NOMOR_MESIN' => $result['NOMOR_MESIN'],
+                'NOMOR_RANGKA' => $result['NOMOR_RANGKA'],
+                'POS_TARIF' => $result['POS_TARIF'],
+                'SERI_BARANG' => $result['SERI_BARANG'],
+                'SERI_IJIN' => $result['SERI_IJIN'],
+                'SERI_POS_TARIF' => $result['SERI_POS_TARIF'],
+                'SPESIFIKASI_LAIN' => $result['SPESIFIKASI_LAIN'],
+                'TAHUN_PEMBUATAN' => $result['TAHUN_PEMBUATAN'],
+                'TIPE' => $result['TIPE'],
+                'UKURAN' => $result['UKURAN'],
+                'URAIAN' => $result['URAIAN'],
+                'VOLUME' => $result['VOLUME'],
+                'ID_HEADER' => $result['ID_HEADER'],
+                'ID_EKSPORTIR' => $result['ID_EKSPORTIR'],
+                'NAMA_EKSPORTIR' => $result['NAMA_EKSPORTIR'],
+                'ALAMAT_EKSPORTIR' => $result['ALAMAT_EKSPORTIR'],
+                'KODE_PERHITUNGAN' => $result['KODE_PERHITUNGAN'],
+                'SERI_BARANG_DOK_ASAL' => $result['SERI_BARANG_DOK_ASAL']
+
             ];
         }
 
