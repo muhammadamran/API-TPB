@@ -2,12 +2,12 @@
 include "db.php";
 
 if ($_GET['Month'] == 0 || $_GET['Month'] == '' || $_GET['Month'] == NULL) {
-    $dataGet = $db->query("SELECT *,brg.ID AS ID_BARANG
+    $dataGet = $db->query("SELECT *,brg.ID AS ID_BARANG,brg.SPESIFIKASI_LAIN AS SL_BRG
                             FROM tpb_header AS hdr
                             LEFT OUTER JOIN tpb_barang AS brg ON hdr.ID=brg.ID_HEADER
-                            ORDER BY hdr.TANGGAL_BC11 ASC LIMIT 100", 0);
+                            ORDER BY hdr.TANGGAL_BC11 ASC", 0);
 } else {
-    $dataGet = $db->query("SELECT *,brg.ID AS ID_BARANG
+    $dataGet = $db->query("SELECT *,brg.ID AS ID_BARANG,brg.SPESIFIKASI_LAIN AS SL_BRG
                             FROM tpb_header AS hdr
                             LEFT OUTER JOIN tpb_barang AS brg ON hdr.ID=brg.ID_HEADER
                             WHERE SUBSTR(hdr.TANGGAL_BC11,6,2) LIKE '%" . $_GET['Month'] . "%'
@@ -214,7 +214,7 @@ if ($cek > 0) {
             'SERI_BARANG' => $result['SERI_BARANG'],
             'SERI_IJIN' => $result['SERI_IJIN'],
             'SERI_POS_TARIF' => $result['SERI_POS_TARIF'],
-            'SPESIFIKASI_LAIN' => $result['SPESIFIKASI_LAIN'],
+            'SL_BRG' => $result['SL_BRG'],
             'TAHUN_PEMBUATAN' => $result['TAHUN_PEMBUATAN'],
             'TIPE' => $result['TIPE'],
             'UKURAN' => $result['UKURAN'],

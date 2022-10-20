@@ -9,7 +9,7 @@ if (function_exists($_GET['function'])) {
 function get_NomorPengajuan()
 {
     global $db;
-    $getData = $db->query("SELECT *,tpb.CIF AS CIF_HDR,brg.ID AS ID_BARANG,pgs.NAMA,pgs.NPWP AS nm_pengusaha
+    $getData = $db->query("SELECT *,tpb.ID AS ID_HDR,tpb.CIF AS CIF_HDR,brg.ID AS ID_BARANG,pgs.NAMA,pgs.NPWP AS nm_pengusaha
                             FROM tpb_header AS tpb 
                             LEFT OUTER JOIN tpb_barang AS brg ON tpb.ID=brg.ID_HEADER
                             LEFT OUTER JOIN tpb_bahan_baku AS bk ON brg.ID=bk.ID_BARANG
@@ -25,7 +25,7 @@ function get_NomorPengajuan()
         while ($result = $getData->fetch_assoc()) {
             $data[] = [
                 // TPB_HEADER
-                'ID' => $result['ID'],
+                'ID_HDR' => $result['ID_HDR'],
                 'ALAMAT_PEMASOK' => $result['ALAMAT_PEMASOK'],
                 'ALAMAT_PEMILIK' => $result['ALAMAT_PEMILIK'],
                 'ALAMAT_PENERIMA_BARANG' => $result['ALAMAT_PENERIMA_BARANG'],
@@ -258,6 +258,7 @@ function get_NomorPengajuan()
     }
 }
 
+// Detail Kontainer
 function get_NomorPengajuanKon()
 {
     global $db;
