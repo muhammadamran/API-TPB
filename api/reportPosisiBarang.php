@@ -4,12 +4,12 @@ include "db.php";
 if ($_GET["StartTanggal"] == 0 || $_GET["StartTanggal"] == '' || $_GET["StartTanggal"] == NULL) {
     $dataGet = $db->query("SELECT * FROM tpb_header AS hdr
                         LEFT OUTER JOIN tpb_barang AS brg ON hdr.ID=brg.ID_HEADER
-                        ORDER BY hdr.TANGGAL_BC11 ASC LIMIT 0", 0);
+                        ORDER BY hdr.TANGGAL_BC11 ASC", 0);
 } else {
     $dataGet = $db->query("SELECT * FROM tpb_header AS hdr
                          LEFT OUTER JOIN tpb_barang AS brg ON hdr.ID=brg.ID_HEADER
                          WHERE hdr.TANGGAL_BC11 BETWEEN " . $_GET['StartTanggal'] . " AND " . $_GET['EndTanggal'] . "
-                         ORDER BY hdr.TANGGAL_BC11 ASC LIMIT 0", 0);
+                         ORDER BY hdr.TANGGAL_BC11 ASC", 0);
 }
 $cek = $dataGet->num_rows;
 
