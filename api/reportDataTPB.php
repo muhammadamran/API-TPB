@@ -9,16 +9,22 @@ if (function_exists($_GET['function'])) {
 function get_NomorPengajuan()
 {
     global $db;
-    $dataGetBC = $db->query("SELECT *,brg.ID AS ID_BARANG FROM tpb_header AS tpb 
-                            LEFT OUTER JOIN tpb_barang AS brg ON tpb.ID=brg.ID_HEADER 
-                            WHERE tpb.NOMOR_AJU LIKE '%" . $_GET['NomorPengajuan'] . "%'", 0);
-    $cek = $dataGetBC->num_rows;
+    $getData = $db->query("SELECT *,tpb.CIF AS CIF_HDR,brg.ID AS ID_BARANG,pgs.NAMA,pgs.NPWP AS nm_pengusaha
+                            FROM tpb_header AS tpb 
+                            LEFT OUTER JOIN tpb_barang AS brg ON tpb.ID=brg.ID_HEADER
+                            LEFT OUTER JOIN tpb_bahan_baku AS bk ON brg.ID=bk.ID_BARANG
+                            LEFT OUTER JOIN plb_status AS psts ON bk.NOMOR_AJU_DOK_ASAL=psts.NOMOR_AJU_PLB
+                            LEFT OUTER JOIN referensi_pengusaha AS pgs ON tpb.NAMA_PENERIMA_BARANG=pgs.NAMA
+                            WHERE tpb.NOMOR_AJU LIKE '%" . $_GET['NomorPengajuan'] . "%'
+                            GROUP BY tpb.ID", 0);
+    $cek = $getData->num_rows;
 
     if ($cek > 0) {
         $data = [];
 
-        while ($result = $dataGetBC->fetch_assoc()) {
+        while ($result = $getData->fetch_assoc()) {
             $data[] = [
+                // TPB_HEADER
                 'ID' => $result['ID'],
                 'ALAMAT_PEMASOK' => $result['ALAMAT_PEMASOK'],
                 'ALAMAT_PEMILIK' => $result['ALAMAT_PEMILIK'],
@@ -33,7 +39,7 @@ function get_NomorPengajuan()
                 'ASURANSI' => $result['ASURANSI'],
                 'BIAYA_TAMBAHAN' => $result['BIAYA_TAMBAHAN'],
                 'BRUTO' => $result['BRUTO'],
-                'CIF' => $result['CIF'],
+                'CIF_HDR' => $result['CIF_HDR'],
                 'CIF_RUPIAH' => $result['CIF_RUPIAH'],
                 'DISKON' => $result['DISKON'],
                 'FLAG_PEMILIK' => $result['FLAG_PEMILIK'],
@@ -171,7 +177,7 @@ function get_NomorPengajuan()
                 'TANGGAL_STUFFING' => $result['TANGGAL_STUFFING'],
                 'KODE_GUDANG_ASAL' => $result['KODE_GUDANG_ASAL'],
                 'KODE_GUDANG_TUJUAN' => $result['KODE_GUDANG_TUJUAN'],
-
+                // TPB_BARANG
                 'ID_BARANG' => $result['ID_BARANG'],
                 'ASURANSI' => $result['ASURANSI'],
                 'CIF' => $result['CIF'],
@@ -223,8 +229,61 @@ function get_NomorPengajuan()
                 'NAMA_EKSPORTIR' => $result['NAMA_EKSPORTIR'],
                 'ALAMAT_EKSPORTIR' => $result['ALAMAT_EKSPORTIR'],
                 'KODE_PERHITUNGAN' => $result['KODE_PERHITUNGAN'],
-                'SERI_BARANG_DOK_ASAL' => $result['SERI_BARANG_DOK_ASAL']
+                'SERI_BARANG_DOK_ASAL' => $result['SERI_BARANG_DOK_ASAL'],
+                'nm_pengusaha' => $result['nm_pengusaha'],
+                'NPWP' => $result['NPWP'],
+                // TPB_BAHAN_BAKU
+                'KODE_JENIS_DOK_ASAL' => $result['KODE_JENIS_DOK_ASAL'],
+                'NOMOR_AJU_DOK_ASAL' => $result['NOMOR_AJU_DOK_ASAL'],
+                'NOMOR_DAFTAR_DOK_ASAL' => $result['NOMOR_DAFTAR_DOK_ASAL'],
+                'TANGGAL_DAFTAR_DOK_ASAL' => $result['TANGGAL_DAFTAR_DOK_ASAL'],
+                // PLB_STATUS
+                'ck5_plb_submit' => $result['ck5_plb_submit'],
+                'ck5_plb_export' => $result['ck5_plb_export'],
+                'ck5_gb_submit' => $result['ck5_gb_submit'],
+                'ck_gb_export' => $result['ck_gb_export']
 
+            ];
+        }
+
+        echo json_encode([
+            'status' => 200,
+            'result' => $data
+        ]);
+    } else {
+        echo json_encode([
+            'status' => 404,
+            'result' => 'Data not found'
+        ]);
+    }
+}
+
+function get_NomorPengajuanKon()
+{
+    global $db;
+    $getData = $db->query("SELECT * FROM tpb_kontainer WHERE ID_HEADER=" . $_GET['ID'] . "", 0);
+    $cek = $getData->num_rows;
+
+    if ($cek > 0) {
+        $data = [];
+
+        while ($result = $getData->fetch_assoc()) {
+            $data[] = [
+                'ID' => $result['ID'],
+                'KESESUAIAN_DOKUMEN' => $result['KESESUAIAN_DOKUMEN'],
+                'KETERANGAN' => $result['KETERANGAN'],
+                'KODE_STUFFING' => $result['KODE_STUFFING'],
+                'KODE_TIPE_KONTAINER' => $result['KODE_TIPE_KONTAINER'],
+                'KODE_UKURAN_KONTAINER' => $result['KODE_UKURAN_KONTAINER'],
+                'FLAG_GATE_IN' => $result['FLAG_GATE_IN'],
+                'FLAG_GATE_OUT' => $result['FLAG_GATE_OUT'],
+                'NO_POLISI' => $result['NO_POLISI'],
+                'NOMOR_KONTAINER' => $result['NOMOR_KONTAINER'],
+                'NOMOR_SEGEL' => $result['NOMOR_SEGEL'],
+                'SERI_KONTAINER' => $result['SERI_KONTAINER'],
+                'WAKTU_GATE_IN' => $result['WAKTU_GATE_IN'],
+                'WAKTU_GATE_OUT' => $result['WAKTU_GATE_OUT'],
+                'ID_HEADER' => $result['ID_HEADER']
             ];
         }
 
@@ -244,13 +303,13 @@ function get_NomorPengajuan()
 function get_MataUang()
 {
     global $db;
-    $dataGetBC = $db->query("SELECT * FROM tpb_header WHERE KODE_VALUTA LIKE '%" . $_GET['MataUang'] . "%'", 0);
-    $cek = $dataGetBC->num_rows;
+    $getData = $db->query("SELECT * FROM tpb_header WHERE KODE_VALUTA LIKE '%" . $_GET['MataUang'] . "%'", 0);
+    $cek = $getData->num_rows;
 
     if ($cek > 0) {
         $data = [];
 
-        while ($result = $dataGetBC->fetch_assoc()) {
+        while ($result = $getData->fetch_assoc()) {
             $data[] = [
                 'ID' => $result['ID'],
                 'ALAMAT_PEMASOK' => $result['ALAMAT_PEMASOK'],
