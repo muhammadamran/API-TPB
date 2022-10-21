@@ -304,7 +304,14 @@ function get_NomorPengajuanKon()
 function get_MataUang()
 {
     global $db;
-    $getData = $db->query("SELECT * FROM tpb_header WHERE KODE_VALUTA LIKE '%" . $_GET['MataUang'] . "%'", 0);
+    $getData = $db->query("SELECT *,tpb.ID AS ID_HDR,tpb.CIF AS CIF_HDR,brg.ID AS ID_BARANG,pgs.NAMA,pgs.NPWP AS nm_pengusaha
+                            FROM tpb_header AS tpb 
+                            LEFT OUTER JOIN tpb_barang AS brg ON tpb.ID=brg.ID_HEADER
+                            LEFT OUTER JOIN tpb_bahan_baku AS bk ON brg.ID=bk.ID_BARANG
+                            LEFT OUTER JOIN plb_status AS psts ON bk.NOMOR_AJU_DOK_ASAL=psts.NOMOR_AJU_PLB
+                            LEFT OUTER JOIN referensi_pengusaha AS pgs ON tpb.NAMA_PENERIMA_BARANG=pgs.NAMA
+                            WHERE tpb.KODE_VALUTA LIKE '%" . $_GET['MataUang'] . "%'
+                            GROUP BY tpb.ID", 0);
     $cek = $getData->num_rows;
 
     if ($cek > 0) {
@@ -312,7 +319,8 @@ function get_MataUang()
 
         while ($result = $getData->fetch_assoc()) {
             $data[] = [
-                'ID' => $result['ID'],
+                // TPB_HEADER
+                'ID_HDR' => $result['ID_HDR'],
                 'ALAMAT_PEMASOK' => $result['ALAMAT_PEMASOK'],
                 'ALAMAT_PEMILIK' => $result['ALAMAT_PEMILIK'],
                 'ALAMAT_PENERIMA_BARANG' => $result['ALAMAT_PENERIMA_BARANG'],
@@ -326,7 +334,7 @@ function get_MataUang()
                 'ASURANSI' => $result['ASURANSI'],
                 'BIAYA_TAMBAHAN' => $result['BIAYA_TAMBAHAN'],
                 'BRUTO' => $result['BRUTO'],
-                'CIF' => $result['CIF'],
+                'CIF_HDR' => $result['CIF_HDR'],
                 'CIF_RUPIAH' => $result['CIF_RUPIAH'],
                 'DISKON' => $result['DISKON'],
                 'FLAG_PEMILIK' => $result['FLAG_PEMILIK'],
@@ -463,7 +471,73 @@ function get_MataUang()
                 'KODE_PEL_TUJUAN' => $result['KODE_PEL_TUJUAN'],
                 'TANGGAL_STUFFING' => $result['TANGGAL_STUFFING'],
                 'KODE_GUDANG_ASAL' => $result['KODE_GUDANG_ASAL'],
-                'KODE_GUDANG_TUJUAN' => $result['KODE_GUDANG_TUJUAN']
+                'KODE_GUDANG_TUJUAN' => $result['KODE_GUDANG_TUJUAN'],
+                // TPB_BARANG
+                'ID_BARANG' => $result['ID_BARANG'],
+                'ASURANSI' => $result['ASURANSI'],
+                'CIF' => $result['CIF'],
+                'CIF_RUPIAH' => $result['CIF_RUPIAH'],
+                'DISKON' => $result['DISKON'],
+                'FLAG_KENDARAAN' => $result['FLAG_KENDARAAN'],
+                'FOB' => $result['FOB'],
+                'FREIGHT' => $result['FREIGHT'],
+                'HARGA_BARANG_LDP' => $result['HARGA_BARANG_LDP'],
+                'HARGA_INVOICE' => $result['HARGA_INVOICE'],
+                'HARGA_PENYERAHAN' => $result['HARGA_PENYERAHAN'],
+                'HARGA_SATUAN' => $result['HARGA_SATUAN'],
+                'JENIS_KENDARAAN' => $result['JENIS_KENDARAAN'],
+                'JUMLAH_BAHAN_BAKU' => $result['JUMLAH_BAHAN_BAKU'],
+                'JUMLAH_KEMASAN' => $result['JUMLAH_KEMASAN'],
+                'JUMLAH_SATUAN' => $result['JUMLAH_SATUAN'],
+                'KAPASITAS_SILINDER' => $result['KAPASITAS_SILINDER'],
+                'KATEGORI_BARANG' => $result['KATEGORI_BARANG'],
+                'KODE_ASAL_BARANG' => $result['KODE_ASAL_BARANG'],
+                'KODE_BARANG' => $result['KODE_BARANG'],
+                'KODE_FASILITAS_DOKUMEN' => $result['KODE_FASILITAS_DOKUMEN'],
+                'KODE_GUNA' => $result['KODE_GUNA'],
+                'KODE_JENIS_NILAI' => $result['KODE_JENIS_NILAI'],
+                'KODE_KEMASAN' => $result['KODE_KEMASAN'],
+                'KODE_LEBIH_DARI4TAHUN' => $result['KODE_LEBIH_DARI4TAHUN'],
+                'KODE_NEGARA_ASAL' => $result['KODE_NEGARA_ASAL'],
+                'KODE_SATUAN' => $result['KODE_SATUAN'],
+                'KODE_SKEMA_TARIF' => $result['KODE_SKEMA_TARIF'],
+                'KODE_STATUS' => $result['KODE_STATUS'],
+                'KONDISI_BARANG' => $result['KONDISI_BARANG'],
+                'MERK' => $result['MERK'],
+                'NETTO' => $result['NETTO'],
+                'NILAI_INCOTERM' => $result['NILAI_INCOTERM'],
+                'NILAI_PABEAN' => $result['NILAI_PABEAN'],
+                'NOMOR_MESIN' => $result['NOMOR_MESIN'],
+                'NOMOR_RANGKA' => $result['NOMOR_RANGKA'],
+                'POS_TARIF' => $result['POS_TARIF'],
+                'SERI_BARANG' => $result['SERI_BARANG'],
+                'SERI_IJIN' => $result['SERI_IJIN'],
+                'SERI_POS_TARIF' => $result['SERI_POS_TARIF'],
+                'SPESIFIKASI_LAIN' => $result['SPESIFIKASI_LAIN'],
+                'TAHUN_PEMBUATAN' => $result['TAHUN_PEMBUATAN'],
+                'TIPE' => $result['TIPE'],
+                'UKURAN' => $result['UKURAN'],
+                'URAIAN' => $result['URAIAN'],
+                'VOLUME' => $result['VOLUME'],
+                'ID_HEADER' => $result['ID_HEADER'],
+                'ID_EKSPORTIR' => $result['ID_EKSPORTIR'],
+                'NAMA_EKSPORTIR' => $result['NAMA_EKSPORTIR'],
+                'ALAMAT_EKSPORTIR' => $result['ALAMAT_EKSPORTIR'],
+                'KODE_PERHITUNGAN' => $result['KODE_PERHITUNGAN'],
+                'SERI_BARANG_DOK_ASAL' => $result['SERI_BARANG_DOK_ASAL'],
+                'nm_pengusaha' => $result['nm_pengusaha'],
+                'NPWP' => $result['NPWP'],
+                // TPB_BAHAN_BAKU
+                'KODE_JENIS_DOK_ASAL' => $result['KODE_JENIS_DOK_ASAL'],
+                'NOMOR_AJU_DOK_ASAL' => $result['NOMOR_AJU_DOK_ASAL'],
+                'NOMOR_DAFTAR_DOK_ASAL' => $result['NOMOR_DAFTAR_DOK_ASAL'],
+                'TANGGAL_DAFTAR_DOK_ASAL' => $result['TANGGAL_DAFTAR_DOK_ASAL'],
+                // PLB_STATUS
+                'ck5_plb_submit' => $result['ck5_plb_submit'],
+                'ck5_plb_export' => $result['ck5_plb_export'],
+                'ck5_gb_submit' => $result['ck5_gb_submit'],
+                'ck_gb_export' => $result['ck_gb_export']
+
             ];
         }
 
