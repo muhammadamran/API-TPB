@@ -226,7 +226,7 @@ function PostBarangRusak()
     }
 }
 // Rusak All
-function PostBarangRusakiAll()
+function PostBarangRusakAll()
 {
     global $db;
     $AJU            = $_GET['AJU'];
