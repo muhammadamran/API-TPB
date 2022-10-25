@@ -16,7 +16,7 @@ function PostBarangSesuai()
 
     $update = $db->query('UPDATE plb_barang SET STATUS="' . $STATUS . '",
                                                 OPERATOR_ONE="' . $OPERATOR_ONE . '",
-                                                TGL_CEK="' . $TGL_CEK . '",
+                                                TGL_CEK="' . $TGL_CEK . '"
                                                 WHERE ID="' . $ID . '"');
 }
 
