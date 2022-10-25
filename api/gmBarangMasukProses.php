@@ -95,6 +95,7 @@ function PostBarangPecah()
     if ($update) {
         echo
         "<script>window.location.href='https://itinventory-sarinah.com/gm_pemasukan_detail.php?AJU=$AJU;</script>";
+        // header("Location: https://itinventory-sarinah.com/gm_pemasukan_detail.php?AJU=$AJU");
     } else {
         echo
         "<script>window.location.href = 'https://itinventory-sarinah.com/gm_pemasukan_detail.php?SaveFailed=true';</script>";
@@ -118,7 +119,8 @@ function PostBarangRusak()
 
     if ($update) {
         echo
-        "<script>window.location.href='https://itinventory-sarinah.com/gm_pemasukan_detail.php?AJU=$AJU;</script>";
+        // "<script>window.location.href='https://itinventory-sarinah.com/gm_pemasukan_detail.php?AJU=$AJU;</script>";
+        "<script>window.location.href = 'https://itinventory-sarinah.com/gm_pemasukan_detail.php?SaveSuccess=true';</script>";
     } else {
         echo
         "<script>window.location.href = 'https://itinventory-sarinah.com/gm_pemasukan_detail.php?SaveFailed=true';</script>";
