@@ -123,7 +123,11 @@ function get_Barang()
                 'NAMA_EKSPORTIR' => $result['NAMA_EKSPORTIR'],
                 'ALAMAT_EKSPORTIR' => $result['ALAMAT_EKSPORTIR'],
                 'KODE_PERHITUNGAN' => $result['KODE_PERHITUNGAN'],
-                'SERI_BARANG_DOK_ASAL' => $result['SERI_BARANG_DOK_ASAL']
+                'SERI_BARANG_DOK_ASAL' => $result['SERI_BARANG_DOK_ASAL'],
+                'STATUS' => $result['STATUS'],
+                'OPERATOR_ONE' => $result['OPERATOR_ONE'],
+                'OPERATOR_TWO' => $result['OPERATOR_TWO'],
+                'TGL_CEK' => $result['TGL_CEK']
             ];
         }
 
