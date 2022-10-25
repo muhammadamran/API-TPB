@@ -248,3 +248,30 @@ function PostBarangRusakAll()
         ]);
     }
 }
+
+// Add
+function PostADD()
+{
+    global $db;
+    $bm_no_aju_plb          = $_GET['bm_no_aju_plb'];
+    $bk_no_aju_sarinah      = $_GET['bk_no_aju_sarinah'];
+    $bm_tgl_masuk           = $_GET['bm_tgl_masuk'];
+    $bm_nama_operator       = $_GET['bm_nama_operator'];
+    $bm_remarks             = $_GET['bm_remarks'];
+    $newname                = $_GET['newname'];
+
+    $insert = $db->query("INSERT INTO rcd_status
+                            (rcd_id,bm_no_aju_plb,bk_no_aju_sarinah,bm_tgl_masuk,bm_nama_operator,bm_remarks,upload_beritaAcara_PLB)
+                            VALUES
+                            ('','$bm_no_aju_plb','$bk_no_aju_sarinah','$bm_tgl_masuk','$bm_nama_operator','$bm_remarks','$newname')");
+
+    if ($insert) {
+        echo json_encode([
+            'status' => 200,
+        ]);
+    } else {
+        echo json_encode([
+            'status' => 404,
+        ]);
+    }
+}

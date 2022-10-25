@@ -35,12 +35,18 @@ function get_auto_noAJU()
 function get_noAJU()
 {
     global $db;
-    // $dataGet = $db->query("SELECT ID,NOMOR_AJU,SUBSTR(NOMOR_AJU,13,8) AS TGL_AJU,PEMASOK,KODE_NEGARA_PEMASOK,NOMOR_DAFTAR
-    //                     FROM plb_header WHERE NOMOR_AJU LIKE '%" . $_GET['AJU_PLB'] . "%'", 0);
     $dataGet = $db->query("SELECT hdr.ID,hdr.NOMOR_AJU,SUBSTR(hdr.NOMOR_AJU,13,8) AS TGL_AJU,hdr.PEMASOK,hdr.KODE_NEGARA_PEMASOK,hdr.NOMOR_DAFTAR,hdr.PERUSAHAAN,hdr.JUMLAH_BARANG,
-                        rcd.status,rcd.keterangan
+                        rcd.status,rcd.keterangan,plb.ck5_plb_submit,
+                        (SELECT COUNT(*) AS total_bc FROM plb_barang WHERE STATUS='Sesuai') AS total_Sesuai,
+                        (SELECT COUNT(*) AS total_bc FROM plb_barang WHERE STATUS='Kurang') AS total_Kurang,
+                        (SELECT COUNT(*) AS total_bc FROM plb_barang WHERE STATUS='Lebih') AS total_Lebih,
+                        (SELECT COUNT(*) AS total_bc FROM plb_barang WHERE STATUS='Pecah') AS total_Pecah,
+                        (SELECT COUNT(*) AS total_bc FROM plb_barang WHERE STATUS='Rusak') AS total_Rusak,
+                        (SELECT COUNT(*) AS total_bc FROM plb_barang WHERE STATUS IS NOT NULL) AS total_All
                         FROM plb_header AS hdr
-                        LEFT OUTER JOIN rcd_status AS rcd ON hdr.NOMOR_AJU=rcd.bm_no_aju_plb WHERE hdr.NOMOR_AJU LIKE '%" . $_GET['AJU_PLB'] . "%'", 0);
+                        LEFT OUTER JOIN rcd_status AS rcd ON hdr.NOMOR_AJU=rcd.bm_no_aju_plb 
+                        LEFT OUTER JOIN plb_status AS plb ON hdr.NOMOR_AJU=plb.NOMOR_AJU_PLB 
+                        WHERE hdr.NOMOR_AJU LIKE '%" . $_GET['AJU_PLB'] . "%'", 0);
     $cek = $dataGet->num_rows;
 
     if ($cek > 0) {
@@ -59,7 +65,16 @@ function get_noAJU()
                 'JUMLAH_BARANG' => $result['JUMLAH_BARANG'],
                 // STATUS
                 'status' => $result['status'],
-                'keterangan' => $result['keterangan']
+                'keterangan' => $result['keterangan'],
+                // STATUS
+                'total_Sesuai' => $result['total_Sesuai'],
+                'total_Kurang' => $result['total_Kurang'],
+                'total_Lebih' => $result['total_Lebih'],
+                'total_Pecah' => $result['total_Pecah'],
+                'total_Rusak' => $result['total_Rusak'],
+                'total_All' => $result['total_All'],
+                // PLB
+                'ck5_plb_submit' => $result['ck5_plb_submit'],
             ];
         }
 
@@ -78,12 +93,18 @@ function get_noAJU()
 function get_all()
 {
     global $db;
-    // $dataGet = $db->query("SELECT ID,NOMOR_AJU,SUBSTR(NOMOR_AJU,13,8) AS TGL_AJU,PEMASOK,KODE_NEGARA_PEMASOK,NOMOR_DAFTAR 
-    //                     FROM plb_header ORDER BY ID DESC", 0);
     $dataGet = $db->query("SELECT hdr.ID,hdr.NOMOR_AJU,SUBSTR(hdr.NOMOR_AJU,13,8) AS TGL_AJU,hdr.PEMASOK,hdr.KODE_NEGARA_PEMASOK,hdr.NOMOR_DAFTAR,hdr.PERUSAHAAN,hdr.JUMLAH_BARANG,
-                        rcd.status,rcd.keterangan
+                        rcd.status,rcd.keterangan,plb.ck5_plb_submit,
+                        (SELECT COUNT(*) AS total_bc FROM plb_barang WHERE STATUS='Sesuai') AS total_Sesuai,
+                        (SELECT COUNT(*) AS total_bc FROM plb_barang WHERE STATUS='Kurang') AS total_Kurang,
+                        (SELECT COUNT(*) AS total_bc FROM plb_barang WHERE STATUS='Lebih') AS total_Lebih,
+                        (SELECT COUNT(*) AS total_bc FROM plb_barang WHERE STATUS='Pecah') AS total_Pecah,
+                        (SELECT COUNT(*) AS total_bc FROM plb_barang WHERE STATUS='Rusak') AS total_Rusak,
+                        (SELECT COUNT(*) AS total_bc FROM plb_barang WHERE STATUS IS NOT NULL) AS total_All
                         FROM plb_header AS hdr
-                        LEFT OUTER JOIN rcd_status AS rcd ON hdr.NOMOR_AJU=rcd.bm_no_aju_plb ORDER BY hdr.ID DESC", 0);
+                        LEFT OUTER JOIN rcd_status AS rcd ON hdr.NOMOR_AJU=rcd.bm_no_aju_plb 
+                        LEFT OUTER JOIN plb_status AS plb ON hdr.NOMOR_AJU=plb.NOMOR_AJU_PLB 
+                        ORDER BY hdr.ID DESC", 0);
     $cek = $dataGet->num_rows;
 
     if ($cek > 0) {
@@ -102,7 +123,16 @@ function get_all()
                 'JUMLAH_BARANG' => $result['JUMLAH_BARANG'],
                 // STATUS
                 'status' => $result['status'],
-                'keterangan' => $result['keterangan']
+                'keterangan' => $result['keterangan'],
+                // STATUS
+                'total_Sesuai' => $result['total_Sesuai'],
+                'total_Kurang' => $result['total_Kurang'],
+                'total_Lebih' => $result['total_Lebih'],
+                'total_Pecah' => $result['total_Pecah'],
+                'total_Rusak' => $result['total_Rusak'],
+                'total_All' => $result['total_All'],
+                // PLB
+                'ck5_plb_submit' => $result['ck5_plb_submit'],
             ];
         }
 

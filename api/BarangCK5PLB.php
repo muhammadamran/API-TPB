@@ -9,7 +9,7 @@ if (function_exists($_GET['function'])) {
 function get_BarangTotal()
 {
     global $db;
-    $getData = $db->query("SELECT COUNT(*) AS total FROM plb_barang WHERE NOMOR_AJU='" . $_GET['AJU'] . "' ORDER BY SERI_BARANG ASC", 0);
+    $getData = $db->query("SELECT COUNT(*) AS total FROM plb_barang WHERE NOMOR_AJU='" . $_GET['AJU'] . "' ORDER BY ID ASC", 0);
     $cek = $getData->num_rows;
 
     if ($cek > 0) {
@@ -37,7 +37,7 @@ function get_BarangTotal()
 function get_BarangCek()
 {
     global $db;
-    $getData = $db->query("SELECT COUNT(*) AS total_cek FROM plb_barang WHERE STATUS IS NOT NULL AND NOMOR_AJU='" . $_GET['AJU'] . "' ORDER BY SERI_BARANG ASC", 0);
+    $getData = $db->query("SELECT COUNT(*) AS total_cek FROM plb_barang WHERE STATUS IS NOT NULL AND NOMOR_AJU='" . $_GET['AJU'] . "' ORDER BY ID ASC", 0);
     $cek = $getData->num_rows;
 
     if ($cek > 0) {
@@ -65,7 +65,7 @@ function get_BarangCek()
 function get_Barang()
 {
     global $db;
-    $getData = $db->query("SELECT * FROM plb_barang WHERE NOMOR_AJU='" . $_GET['AJU'] . "' ORDER BY SERI_BARANG ASC", 0);
+    $getData = $db->query("SELECT * FROM plb_barang WHERE NOMOR_AJU='" . $_GET['AJU'] . "' ORDER BY ID ASC", 0);
     $cek = $getData->num_rows;
 
     if ($cek > 0) {
