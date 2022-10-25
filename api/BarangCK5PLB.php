@@ -33,6 +33,34 @@ function get_BarangTotal()
     }
 }
 
+// BARANG CEK
+function get_BarangCek()
+{
+    global $db;
+    $getData = $db->query("SELECT COUNT(*) AS total_cek FROM plb_barang WHERE status IS NOT NULL AND NOMOR_AJU='" . $_GET['AJU'] . "' ORDER BY SERI_BARANG ASC", 0);
+    $cek = $getData->num_rows;
+
+    if ($cek > 0) {
+        $data = [];
+
+        while ($result = $getData->fetch_assoc()) {
+            $data[] = [
+                'total' => $result['total']
+            ];
+        }
+
+        echo json_encode([
+            'status' => 200,
+            'result' => $data
+        ]);
+    } else {
+        echo json_encode([
+            'status' => 404,
+            'result' => 'Data not found'
+        ]);
+    }
+}
+
 // BARANG
 function get_Barang()
 {
