@@ -35,12 +35,10 @@ function get_auto_noAJU()
 function get_noAJU()
 {
     global $db;
-    // $dataGet = $db->query("SELECT ID,NOMOR_AJU,SUBSTR(NOMOR_AJU,13,8) AS TGL_AJU,PEMASOK,KODE_NEGARA_PEMASOK,NOMOR_DAFTAR
-    //                     FROM tpb_header WHERE NOMOR_AJU LIKE '%" . $_GET['AJU_PLB'] . "%'", 0);
-    $dataGet = $db->query("SELECT hdr.ID,hdr.NOMOR_AJU,SUBSTR(hdr.NOMOR_AJU,13,8) AS TGL_AJU,hdr.NAMA_PEMASOK,hdr.KODE_NEGARA_PEMASOK,hdr.NOMOR_DAFTAR,hdr.PERUSAHAAN,hdr.JUMLAH_BARANG,
+    $dataGet = $db->query("SELECT hdr.ID,hdr.NOMOR_AJU,SUBSTR(hdr.NOMOR_AJU,13,8) AS TGL_AJU,hdr.NAMA_PEMASOK,hdr.KODE_NEGARA_PEMASOK,hdr.NOMOR_DAFTAR,hdr.NAMA_PENGUSAHA,hdr.JUMLAH_BARANG,
                         rcd.status,rcd.keterangan
                         FROM tpb_header AS hdr
-                        LEFT OUTER JOIN rcd_status AS rcd ON hdr.NOMOR_AJU=rcd.bm_no_aju_plb WHERE hdr.NOMOR_AJU LIKE '%" . $_GET['AJU_PLB'] . "%'", 0);
+                        LEFT OUTER JOIN rcd_status AS rcd ON hdr.NOMOR_AJU=rcd.bm_no_aju_plb WHERE hdr.NOMOR_AJU LIKE '%" . $_GET['AJU_GB'] . "%'", 0);
     $cek = $dataGet->num_rows;
 
     if ($cek > 0) {
@@ -55,7 +53,7 @@ function get_noAJU()
                 'NAMA_PEMASOK' => $result['NAMA_PEMASOK'],
                 'KODE_NEGARA_PEMASOK' => $result['KODE_NEGARA_PEMASOK'],
                 'NOMOR_DAFTAR' => $result['NOMOR_DAFTAR'],
-                'PERUSAHAAN' => $result['PERUSAHAAN'],
+                'NAMA_PENGUSAHA' => $result['NAMA_PENGUSAHA'],
                 'JUMLAH_BARANG' => $result['JUMLAH_BARANG'],
                 // STATUS
                 'status' => $result['status'],
@@ -78,12 +76,10 @@ function get_noAJU()
 function get_all()
 {
     global $db;
-    // $dataGet = $db->query("SELECT ID,NOMOR_AJU,SUBSTR(NOMOR_AJU,13,8) AS TGL_AJU,PEMASOK,KODE_NEGARA_PEMASOK,NOMOR_DAFTAR 
-    //                     FROM tpb_header ORDER BY ID DESC", 0);
-    $dataGet = $db->query("SELECT hdr.ID,hdr.NOMOR_AJU,SUBSTR(hdr.NOMOR_AJU,13,8) AS TGL_AJU,hdr.NAMA_PEMASOK,hdr.KODE_NEGARA_PEMASOK,hdr.NOMOR_DAFTAR,hdr.PERUSAHAAN,hdr.JUMLAH_BARANG,
+    $dataGet = $db->query("SELECT hdr.ID,hdr.NOMOR_AJU,SUBSTR(hdr.NOMOR_AJU,13,8) AS TGL_AJU,hdr.NAMA_PEMASOK,hdr.KODE_NEGARA_PEMASOK,hdr.NOMOR_DAFTAR,hdr.NAMA_PENGUSAHA,hdr.JUMLAH_BARANG,
                         rcd.status,rcd.keterangan
                         FROM tpb_header AS hdr
-                        LEFT OUTER JOIN rcd_status AS rcd ON hdr.NOMOR_AJU=rcd.bm_no_aju_plb ORDER BY hdr.ID DESC", 0);
+                        LEFT OUTER JOIN rcd_status AS rcd ON hdr.NOMOR_AJU=rcd.bk_no_aju_sarinah ORDER BY hdr.ID DESC", 0);
     $cek = $dataGet->num_rows;
 
     if ($cek > 0) {
@@ -98,7 +94,7 @@ function get_all()
                 'NAMA_PEMASOK' => $result['NAMA_PEMASOK'],
                 'KODE_NEGARA_PEMASOK' => $result['KODE_NEGARA_PEMASOK'],
                 'NOMOR_DAFTAR' => $result['NOMOR_DAFTAR'],
-                'PERUSAHAAN' => $result['PERUSAHAAN'],
+                'NAMA_PENGUSAHA' => $result['NAMA_PENGUSAHA'],
                 'JUMLAH_BARANG' => $result['JUMLAH_BARANG'],
                 // STATUS
                 'status' => $result['status'],
