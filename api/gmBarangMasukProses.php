@@ -19,13 +19,37 @@ function PostBarangSesuai()
                                                 OPERATOR_ONE="' . $OPERATOR_ONE . '",
                                                 TGL_CEK="' . $TGL_CEK . '"
                                                 WHERE ID="' . $ID . '"');
-
     if ($update) {
-        echo
-        "<script>window.location.href='https://itinventory-sarinah.com/gm_pemasukan_detail.php?AJU=$AJU;</script>";
+        echo json_encode([
+            'status' => 200,
+        ]);
     } else {
-        echo
-        "<script>window.location.href = 'https://itinventory-sarinah.com/gm_pemasukan_detail.php?SaveFailed=true';</script>";
+        echo json_encode([
+            'status' => 404,
+        ]);
+    }
+}
+// Sesuai All
+function PostBarangSesuaiAll()
+{
+    global $db;
+    $AJU            = $_GET['AJU'];
+    $STATUS         = 'Sesuai';
+    $OPERATOR_ONE   = $_GET['OPERATOR_ONE'];
+    $TGL_CEK        = date('Y-m-d H:m:i');
+
+    $update = $db->query('UPDATE plb_barang SET STATUS="' . $STATUS . '",
+                                                OPERATOR_ONE="' . $OPERATOR_ONE . '",
+                                                TGL_CEK="' . $TGL_CEK . '"
+                                                WHERE ID="' . $AJU . '" AND STATUS IS NULL');
+    if ($update) {
+        echo json_encode([
+            'status' => 200,
+        ]);
+    } else {
+        echo json_encode([
+            'status' => 404,
+        ]);
     }
 }
 
@@ -45,11 +69,36 @@ function PostBarangKurang()
                                                 WHERE ID="' . $ID . '"');
 
     if ($update) {
-        echo
-        "<script>window.location.href='https://itinventory-sarinah.com/gm_pemasukan_detail.php?AJU=$AJU;</script>";
+        echo json_encode([
+            'status' => 200,
+        ]);
     } else {
-        echo
-        "<script>window.location.href = 'https://itinventory-sarinah.com/gm_pemasukan_detail.php?SaveFailed=true';</script>";
+        echo json_encode([
+            'status' => 404,
+        ]);
+    }
+}
+// Kurang All
+function PostBarangKurangiAll()
+{
+    global $db;
+    $AJU            = $_GET['AJU'];
+    $STATUS         = 'Kurang';
+    $OPERATOR_ONE   = $_GET['OPERATOR_ONE'];
+    $TGL_CEK        = date('Y-m-d H:m:i');
+
+    $update = $db->query('UPDATE plb_barang SET STATUS="' . $STATUS . '",
+                                                OPERATOR_ONE="' . $OPERATOR_ONE . '",
+                                                TGL_CEK="' . $TGL_CEK . '"
+                                                WHERE ID="' . $AJU . '" AND STATUS IS NULL');
+    if ($update) {
+        echo json_encode([
+            'status' => 200,
+        ]);
+    } else {
+        echo json_encode([
+            'status' => 404,
+        ]);
     }
 }
 
@@ -69,11 +118,36 @@ function PostBarangLebih()
                                                 WHERE ID="' . $ID . '"');
 
     if ($update) {
-        echo
-        "<script>window.location.href='https://itinventory-sarinah.com/gm_pemasukan_detail.php?AJU=$AJU;</script>";
+        echo json_encode([
+            'status' => 200,
+        ]);
     } else {
-        echo
-        "<script>window.location.href = 'https://itinventory-sarinah.com/gm_pemasukan_detail.php?SaveFailed=true';</script>";
+        echo json_encode([
+            'status' => 404,
+        ]);
+    }
+}
+// Lebih All
+function PostBarangLebihiAll()
+{
+    global $db;
+    $AJU            = $_GET['AJU'];
+    $STATUS         = 'Lebih';
+    $OPERATOR_ONE   = $_GET['OPERATOR_ONE'];
+    $TGL_CEK        = date('Y-m-d H:m:i');
+
+    $update = $db->query('UPDATE plb_barang SET STATUS="' . $STATUS . '",
+                                                OPERATOR_ONE="' . $OPERATOR_ONE . '",
+                                                TGL_CEK="' . $TGL_CEK . '"
+                                                WHERE ID="' . $AJU . '" AND STATUS IS NULL');
+    if ($update) {
+        echo json_encode([
+            'status' => 200,
+        ]);
+    } else {
+        echo json_encode([
+            'status' => 404,
+        ]);
     }
 }
 
@@ -93,12 +167,36 @@ function PostBarangPecah()
                                                 WHERE ID="' . $ID . '"');
 
     if ($update) {
-        echo
-        "<script>window.location.href='https://itinventory-sarinah.com/gm_pemasukan_detail.php?AJU=$AJU;</script>";
-        // header("Location: https://itinventory-sarinah.com/gm_pemasukan_detail.php?AJU=$AJU");
+        echo json_encode([
+            'status' => 200,
+        ]);
     } else {
-        echo
-        "<script>window.location.href = 'https://itinventory-sarinah.com/gm_pemasukan_detail.php?SaveFailed=true';</script>";
+        echo json_encode([
+            'status' => 404,
+        ]);
+    }
+}
+// Pecah All
+function PostBarangPecahiAll()
+{
+    global $db;
+    $AJU            = $_GET['AJU'];
+    $STATUS         = 'Pecah';
+    $OPERATOR_ONE   = $_GET['OPERATOR_ONE'];
+    $TGL_CEK        = date('Y-m-d H:m:i');
+
+    $update = $db->query('UPDATE plb_barang SET STATUS="' . $STATUS . '",
+                                                OPERATOR_ONE="' . $OPERATOR_ONE . '",
+                                                TGL_CEK="' . $TGL_CEK . '"
+                                                WHERE ID="' . $AJU . '" AND STATUS IS NULL');
+    if ($update) {
+        echo json_encode([
+            'status' => 200,
+        ]);
+    } else {
+        echo json_encode([
+            'status' => 404,
+        ]);
     }
 }
 
@@ -118,11 +216,35 @@ function PostBarangRusak()
                                                 WHERE ID="' . $ID . '"');
 
     if ($update) {
-        echo
-        // "<script>window.location.href='https://itinventory-sarinah.com/gm_pemasukan_detail.php?AJU=$AJU;</script>";
-        "<script>window.location.href = 'https://itinventory-sarinah.com/gm_pemasukan_detail.php?SaveSuccess=true';</script>";
+        echo json_encode([
+            'status' => 200,
+        ]);
     } else {
-        echo
-        "<script>window.location.href = 'https://itinventory-sarinah.com/gm_pemasukan_detail.php?SaveFailed=true';</script>";
+        echo json_encode([
+            'status' => 404,
+        ]);
+    }
+}
+// Rusak All
+function PostBarangRusakiAll()
+{
+    global $db;
+    $AJU            = $_GET['AJU'];
+    $STATUS         = 'Rusak';
+    $OPERATOR_ONE   = $_GET['OPERATOR_ONE'];
+    $TGL_CEK        = date('Y-m-d H:m:i');
+
+    $update = $db->query('UPDATE plb_barang SET STATUS="' . $STATUS . '",
+                                                OPERATOR_ONE="' . $OPERATOR_ONE . '",
+                                                TGL_CEK="' . $TGL_CEK . '"
+                                                WHERE ID="' . $AJU . '" AND STATUS IS NULL');
+    if ($update) {
+        echo json_encode([
+            'status' => 200,
+        ]);
+    } else {
+        echo json_encode([
+            'status' => 404,
+        ]);
     }
 }
