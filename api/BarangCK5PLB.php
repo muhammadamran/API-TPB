@@ -37,7 +37,7 @@ function get_BarangTotal()
 function get_BarangCek()
 {
     global $db;
-    $getData = $db->query("SELECT COUNT(*) AS total_cek FROM plb_barang WHERE status IS NOT NULL AND NOMOR_AJU='" . $_GET['AJU'] . "' ORDER BY SERI_BARANG ASC", 0);
+    $getData = $db->query("SELECT COUNT(*) AS total_cek FROM plb_barang WHERE STATUS IS NOT NULL AND NOMOR_AJU='" . $_GET['AJU'] . "' ORDER BY SERI_BARANG ASC", 0);
     $cek = $getData->num_rows;
 
     if ($cek > 0) {
@@ -45,7 +45,7 @@ function get_BarangCek()
 
         while ($result = $getData->fetch_assoc()) {
             $data[] = [
-                'total' => $result['total']
+                'total_cek' => $result['total_cek']
             ];
         }
 
