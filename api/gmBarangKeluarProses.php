@@ -41,7 +41,7 @@ function PostBarangSesuaiAll()
     $update = $db->query('UPDATE tpb_barang SET STATUS="' . $STATUS . '",
                                                 OPERATOR_ONE="' . $OPERATOR_ONE . '",
                                                 TGL_CEK="' . $TGL_CEK . '"
-                                                WHERE NOMOR_AJU="' . $AJU . '" AND STATUS IS NULL');
+                                                WHERE ID="' . $AJU . '" AND STATUS IS NULL');
     if ($update) {
         echo json_encode([
             'status' => 200,
@@ -90,7 +90,7 @@ function PostBarangKurangAll()
     $update = $db->query('UPDATE tpb_barang SET STATUS="' . $STATUS . '",
                                                 OPERATOR_ONE="' . $OPERATOR_ONE . '",
                                                 TGL_CEK="' . $TGL_CEK . '"
-                                                WHERE NOMOR_AJU="' . $AJU . '" AND STATUS IS NULL');
+                                                WHERE ID="' . $AJU . '" AND STATUS IS NULL');
     if ($update) {
         echo json_encode([
             'status' => 200,
@@ -139,7 +139,7 @@ function PostBarangLebihAll()
     $update = $db->query('UPDATE tpb_barang SET STATUS="' . $STATUS . '",
                                                 OPERATOR_ONE="' . $OPERATOR_ONE . '",
                                                 TGL_CEK="' . $TGL_CEK . '"
-                                                WHERE NOMOR_AJU="' . $AJU . '" AND STATUS IS NULL');
+                                                WHERE ID="' . $AJU . '" AND STATUS IS NULL');
     if ($update) {
         echo json_encode([
             'status' => 200,
@@ -188,7 +188,7 @@ function PostBarangPecahAll()
     $update = $db->query('UPDATE tpb_barang SET STATUS="' . $STATUS . '",
                                                 OPERATOR_ONE="' . $OPERATOR_ONE . '",
                                                 TGL_CEK="' . $TGL_CEK . '"
-                                                WHERE NOMOR_AJU="' . $AJU . '" AND STATUS IS NULL');
+                                                WHERE ID="' . $AJU . '" AND STATUS IS NULL');
     if ($update) {
         echo json_encode([
             'status' => 200,
@@ -237,7 +237,7 @@ function PostBarangRusakAll()
     $update = $db->query('UPDATE tpb_barang SET STATUS="' . $STATUS . '",
                                                 OPERATOR_ONE="' . $OPERATOR_ONE . '",
                                                 TGL_CEK="' . $TGL_CEK . '"
-                                                WHERE NOMOR_AJU="' . $AJU . '" AND STATUS IS NULL');
+                                                WHERE ID="' . $AJU . '" AND STATUS IS NULL');
     if ($update) {
         echo json_encode([
             'status' => 200,

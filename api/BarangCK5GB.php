@@ -9,7 +9,7 @@ if (function_exists($_GET['function'])) {
 function get_BarangTotal()
 {
     global $db;
-    $getData = $db->query("SELECT COUNT(*) AS total FROM tpb_barang WHERE NOMOR_AJU='" . $_GET['AJU'] . "' ORDER BY ID ASC", 0);
+    $getData = $db->query("SELECT COUNT(*) AS total FROM tpb_barang WHERE ID_HEADER='" . $_GET['AJU'] . "' ORDER BY ID ASC", 0);
     $cek = $getData->num_rows;
 
     if ($cek > 0) {
@@ -37,7 +37,7 @@ function get_BarangTotal()
 function get_BarangCek()
 {
     global $db;
-    $getData = $db->query("SELECT COUNT(*) AS total_cek FROM tpb_barang WHERE STATUS IS NOT NULL AND NOMOR_AJU='" . $_GET['AJU'] . "' ORDER BY ID ASC", 0);
+    $getData = $db->query("SELECT COUNT(*) AS total_cek FROM tpb_barang WHERE STATUS IS NOT NULL AND ID_HEADER='" . $_GET['AJU'] . "' ORDER BY ID ASC", 0);
     $cek = $getData->num_rows;
 
     if ($cek > 0) {
@@ -65,7 +65,7 @@ function get_BarangCek()
 function get_Barang()
 {
     global $db;
-    $getData = $db->query("SELECT * FROM tpb_barang WHERE NOMOR_AJU='" . $_GET['AJU'] . "' ORDER BY ID ASC", 0);
+    $getData = $db->query("SELECT * FROM tpb_barang WHERE ID_HEADER='" . $_GET['AJU'] . "' ORDER BY ID ASC", 0);
     $cek = $getData->num_rows;
 
     if ($cek > 0) {
@@ -74,7 +74,7 @@ function get_Barang()
         while ($result = $getData->fetch_assoc()) {
             $data[] = [
                 'ID' => $result['ID'],
-                'NOMOR_AJU' => $result['NOMOR_AJU'],
+                'ID_HEADER' => $result['ID_HEADER'],
                 'SERI_BARANG' => $result['SERI_BARANG'],
                 'ASURANSI' => $result['ASURANSI'],
                 'CIF' => $result['CIF'],
@@ -83,7 +83,7 @@ function get_Barang()
                 'FLAG_KENDARAAN' => $result['FLAG_KENDARAAN'],
                 'FOB' => $result['FOB'],
                 'FREIGHT' => $result['FREIGHT'],
-                'BARANG_BARANG_LDP' => $result['BARANG_BARANG_LDP'],
+                'HARGA_BARANG_LDP' => $result['HARGA_BARANG_LDP'],
                 'HARGA_INVOICE' => $result['HARGA_INVOICE'],
                 'HARGA_PENYERAHAN' => $result['HARGA_PENYERAHAN'],
                 'HARGA_SATUAN' => $result['HARGA_SATUAN'],
@@ -95,11 +95,11 @@ function get_Barang()
                 'KATEGORI_BARANG' => $result['KATEGORI_BARANG'],
                 'KODE_ASAL_BARANG' => $result['KODE_ASAL_BARANG'],
                 'KODE_BARANG' => $result['KODE_BARANG'],
-                'KODE_FASILITAS' => $result['KODE_FASILITAS'],
+                'KODE_FASILITAS_DOKUMEN' => $result['KODE_FASILITAS_DOKUMEN'],
                 'KODE_GUNA' => $result['KODE_GUNA'],
                 'KODE_JENIS_NILAI' => $result['KODE_JENIS_NILAI'],
                 'KODE_KEMASAN' => $result['KODE_KEMASAN'],
-                'KODE_LEBIH_DARI_4_TAHUN' => $result['KODE_LEBIH_DARI_4_TAHUN'],
+                'KODE_LEBIH_DARI4TAHUN' => $result['KODE_LEBIH_DARI4TAHUN'],
                 'KODE_NEGARA_ASAL' => $result['KODE_NEGARA_ASAL'],
                 'KODE_SATUAN' => $result['KODE_SATUAN'],
                 'KODE_SKEMA_TARIF' => $result['KODE_SKEMA_TARIF'],
@@ -116,7 +116,7 @@ function get_Barang()
                 'TAHUN_PEMBUATAN' => $result['TAHUN_PEMBUATAN'],
                 'TIPE' => $result['TIPE'],
                 'UKURAN' => $result['UKURAN'],
-                'URAIAN' => $result['URAIAN'],
+                'URAIAN' => preg_replace('/[^a-zA-Z0-9]/', ' ', $result['URAIAN']),
                 'VOLUME' => $result['VOLUME'],
                 'SERI_IJIN' => $result['SERI_IJIN'],
                 'ID_EKSPORTIR' => $result['ID_EKSPORTIR'],
