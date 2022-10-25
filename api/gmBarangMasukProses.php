@@ -255,7 +255,7 @@ function PostADD()
     global $db;
     $bm_no_aju_plb          = $_GET['bm_no_aju_plb'];
     $bk_no_aju_sarinah      = $_GET['bk_no_aju_sarinah'];
-    $bm_tgl_masuk           = $_GET['bm_tgl_masuk'];
+    $bm_tgl_masuk           = $_GET['bm_tgl_masuk'] . ' ' . date('H:m:i');
     $bm_nama_operator       = $_GET['bm_nama_operator'];
     $bm_remarks             = $_GET['bm_remarks'];
     $newname                = $_GET['newname'];
