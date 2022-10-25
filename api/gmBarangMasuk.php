@@ -10,10 +10,10 @@ function get_noAJU()
     global $db;
     // $dataGet = $db->query("SELECT ID,NOMOR_AJU,SUBSTR(NOMOR_AJU,13,8) AS TGL_AJU,PEMASOK,KODE_NEGARA_PEMASOK,NOMOR_DAFTAR
     //                     FROM plb_header WHERE NOMOR_AJU LIKE '%" . $_GET['AJU_PLB'] . "%'", 0);
-    $dataGet = $db->query("SELECT hdr.ID,hdr.NOMOR_AJU,hdr.SUBSTR(NOMOR_AJU,13,8) AS hdr.TGL_AJU,hdr.PEMASOK,hdr.KODE_NEGARA_PEMASOK,hdr.NOMOR_DAFTAR,hdr.PERUSAHAAN,
+    $dataGet = $db->query("SELECT hdr.ID,hdr.NOMOR_AJU,SUBSTR(hdr.NOMOR_AJU,13,8) AS TGL_AJU,hdr.PEMASOK,hdr.KODE_NEGARA_PEMASOK,hdr.NOMOR_DAFTAR,hdr.PERUSAHAAN,
                         rcd.status,rcd.keterangan
                         FROM plb_header AS hdr
-                        LEFT OUTER JOIN rcd_status AS rcd ON hdr.NOMOR_AJU WHERE hdr.NOMOR_AJU LIKE '%" . $_GET['AJU_PLB'] . "%'", 0);
+                        LEFT OUTER JOIN rcd_status AS rcd ON hdr.NOMOR_AJU=rcd.bm_no_aju_plb WHERE hdr.NOMOR_AJU LIKE '%" . $_GET['AJU_PLB'] . "%'", 0);
     $cek = $dataGet->num_rows;
 
     if ($cek > 0) {
@@ -52,10 +52,10 @@ function get_all()
     global $db;
     // $dataGet = $db->query("SELECT ID,NOMOR_AJU,SUBSTR(NOMOR_AJU,13,8) AS TGL_AJU,PEMASOK,KODE_NEGARA_PEMASOK,NOMOR_DAFTAR 
     //                     FROM plb_header ORDER BY ID DESC", 0);
-    $dataGet = $db->query("SELECT hdr.ID,hdr.NOMOR_AJU,hdr.SUBSTR(NOMOR_AJU,13,8) AS hdr.TGL_AJU,hdr.PEMASOK,hdr.KODE_NEGARA_PEMASOK,hdr.NOMOR_DAFTAR,hdr.PERUSAHAAN,
+    $dataGet = $db->query("SELECT hdr.ID,hdr.NOMOR_AJU,SUBSTR(hdr.NOMOR_AJU,13,8) AS TGL_AJU,hdr.PEMASOK,hdr.KODE_NEGARA_PEMASOK,hdr.NOMOR_DAFTAR,hdr.PERUSAHAAN,
                         rcd.status,rcd.keterangan
                         FROM plb_header AS hdr
-                        LEFT OUTER JOIN rcd_status AS rcd ON hdr.NOMOR_AJU ORDER BY hdr.ID DESC", 0);
+                        LEFT OUTER JOIN rcd_status AS rcd ON hdr.NOMOR_AJU=rcd.bm_no_aju_plb ORDER BY hdr.ID DESC", 0);
     $cek = $dataGet->num_rows;
 
     if ($cek > 0) {
