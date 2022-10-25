@@ -8,7 +8,9 @@ if (function_exists($_GET['function'])) {
 function get_auto_noAJU()
 {
     global $db;
-    $dataGet = $db->query("SELECT NOMOR_AJU FROM plb_header WHERE NOMOR AJU LIKE '%" . $_GET['AJU'] . "%'", 0);
+    $dataGet = $db->query("SELECT plb.NOMOR_AJU FROM plb_header AS plb
+                           LEFT OUTER JOIN rcd_status AS rcd ON plb.NOMOR_AJU=rcd.bm_no_aju_plb
+                           WHERE plb.NOMOR_AJU LIKE '%" . $_GET['AJU'] . "%'", 0);
     $cek = $dataGet->num_rows;
 
     if ($cek > 0) {
