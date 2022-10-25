@@ -41,7 +41,7 @@ function PostBarangSesuaiAll()
     $update = $db->query('UPDATE plb_barang SET STATUS="' . $STATUS . '",
                                                 OPERATOR_ONE="' . $OPERATOR_ONE . '",
                                                 TGL_CEK="' . $TGL_CEK . '"
-                                                WHERE ID="' . $AJU . '" AND STATUS IS NULL');
+                                                WHERE NOMOR_AJU="' . $AJU . '" AND STATUS IS NULL');
     if ($update) {
         echo json_encode([
             'status' => 200,
@@ -79,7 +79,7 @@ function PostBarangKurang()
     }
 }
 // Kurang All
-function PostBarangKurangiAll()
+function PostBarangKurangAll()
 {
     global $db;
     $AJU            = $_GET['AJU'];
@@ -90,7 +90,7 @@ function PostBarangKurangiAll()
     $update = $db->query('UPDATE plb_barang SET STATUS="' . $STATUS . '",
                                                 OPERATOR_ONE="' . $OPERATOR_ONE . '",
                                                 TGL_CEK="' . $TGL_CEK . '"
-                                                WHERE ID="' . $AJU . '" AND STATUS IS NULL');
+                                                WHERE NOMOR_AJU="' . $AJU . '" AND STATUS IS NULL');
     if ($update) {
         echo json_encode([
             'status' => 200,
@@ -128,7 +128,7 @@ function PostBarangLebih()
     }
 }
 // Lebih All
-function PostBarangLebihiAll()
+function PostBarangLebihAll()
 {
     global $db;
     $AJU            = $_GET['AJU'];
@@ -139,7 +139,7 @@ function PostBarangLebihiAll()
     $update = $db->query('UPDATE plb_barang SET STATUS="' . $STATUS . '",
                                                 OPERATOR_ONE="' . $OPERATOR_ONE . '",
                                                 TGL_CEK="' . $TGL_CEK . '"
-                                                WHERE ID="' . $AJU . '" AND STATUS IS NULL');
+                                                WHERE NOMOR_AJU="' . $AJU . '" AND STATUS IS NULL');
     if ($update) {
         echo json_encode([
             'status' => 200,
@@ -177,7 +177,7 @@ function PostBarangPecah()
     }
 }
 // Pecah All
-function PostBarangPecahiAll()
+function PostBarangPecahAll()
 {
     global $db;
     $AJU            = $_GET['AJU'];
@@ -188,7 +188,7 @@ function PostBarangPecahiAll()
     $update = $db->query('UPDATE plb_barang SET STATUS="' . $STATUS . '",
                                                 OPERATOR_ONE="' . $OPERATOR_ONE . '",
                                                 TGL_CEK="' . $TGL_CEK . '"
-                                                WHERE ID="' . $AJU . '" AND STATUS IS NULL');
+                                                WHERE NOMOR_AJU="' . $AJU . '" AND STATUS IS NULL');
     if ($update) {
         echo json_encode([
             'status' => 200,
@@ -237,7 +237,7 @@ function PostBarangRusakAll()
     $update = $db->query('UPDATE plb_barang SET STATUS="' . $STATUS . '",
                                                 OPERATOR_ONE="' . $OPERATOR_ONE . '",
                                                 TGL_CEK="' . $TGL_CEK . '"
-                                                WHERE ID="' . $AJU . '" AND STATUS IS NULL');
+                                                WHERE NOMOR_AJU="' . $AJU . '" AND STATUS IS NULL');
     if ($update) {
         echo json_encode([
             'status' => 200,
