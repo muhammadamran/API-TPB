@@ -71,7 +71,7 @@ function get_noAJU()
                         FROM tpb_header AS hdr
                         LEFT OUTER JOIN rcd_status AS rcd ON hdr.NOMOR_AJU=rcd.bk_no_aju_sarinah 
                         LEFT OUTER JOIN plb_header AS plb ON rcd.bm_no_aju_plb=plb.NOMOR_AJU
-                        WHERE hdr.NOMOR_AJU LIKE '%" . $_GET['AJU_GB'] . "%' GROUP BY hdr.NOMOR_AJU ", 0);
+                        WHERE rcd.bm_no_aju_plb IS NOT NULL AND hdr.NOMOR_AJU LIKE '%" . $_GET['AJU_GB'] . "%' GROUP BY hdr.NOMOR_AJU ", 0);
     $cek = $dataGet->num_rows;
 
     if ($cek > 0) {
@@ -176,6 +176,7 @@ function get_all()
                         FROM tpb_header AS hdr
                         LEFT OUTER JOIN rcd_status AS rcd ON hdr.NOMOR_AJU=rcd.bk_no_aju_sarinah 
                         LEFT OUTER JOIN plb_header AS plb ON rcd.bm_no_aju_plb=plb.NOMOR_AJU
+                        WHERE rcd.bm_no_aju_plb IS NOT NULL
                         GROUP BY hdr.NOMOR_AJU", 0);
     $cek = $dataGet->num_rows;
 
