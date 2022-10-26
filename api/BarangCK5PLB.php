@@ -127,7 +127,12 @@ function get_Barang()
                 'STATUS' => $result['STATUS'],
                 'OPERATOR_ONE' => $result['OPERATOR_ONE'],
                 'OPERATOR_TWO' => $result['OPERATOR_TWO'],
-                'TGL_CEK' => $result['TGL_CEK']
+                'TGL_CEK' => $result['TGL_CEK'],
+                'SESUAI' => $result['SESUAI'],
+                'KURANG' => $result['KURANG'],
+                'LEBIH' => $result['LEBIH'],
+                'PECAH' => $result['PECAH'],
+                'KURANG' => $result['KURANG'],
             ];
         }
 
