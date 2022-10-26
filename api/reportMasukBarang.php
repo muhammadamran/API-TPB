@@ -25,11 +25,17 @@ function get_dokplb()
                             brg.KODE_JENIS_NILAI AS KODE_JENIS_NILAI_BRG,
                             brg.NETTO AS NETTO_BRG,
                             brg.NILAI_INCOTERM AS NILAI_INCOTERM_BRG,
-                            brg.VOLUME AS VOLUME_BRG 
+                            brg.VOLUME AS VOLUME_BRG,
+                            brg.OPERATOR_ONE,
+                            brg.TGL_CEK,
+                            ref.URAIAN_KANTOR
                             FROM plb_header AS hdr
                             LEFT OUTER JOIN plb_barang AS brg ON hdr.NOMOR_AJU=brg.NOMOR_AJU
                             LEFT OUTER JOIN plb_status AS pst ON hdr.NOMOR_AJU=pst.NOMOR_AJU_PLB
+                            LEFT OUTER JOIN rcd_status AS rcd ON hdr.NOMOR_AJU=rcd.bm_no_aju_plb
+                            LEFT OUTER JOIN referensi_kantor_pabean AS ref ON hdr.KPPBC=ref.KODE_KANTOR
                             WHERE pst.ck5_plb_submit BETWEEN '" . $_GET['StartTanggal'] . "' AND '" . $_GET['EndTanggal'] . "'
+                            AND hdr.NOMOR_AJU IS NOT NULL AND hdr.NOMOR_AJU!=''
                             ORDER BY pst.ck5_plb_submit,hdr.NOMOR_AJU,brg.POS_TARIF ASC", 0);
     } else {
         $dataGet = $db->query("SELECT *,
@@ -48,10 +54,16 @@ function get_dokplb()
                                 brg.KODE_JENIS_NILAI AS KODE_JENIS_NILAI_BRG,
                                 brg.NETTO AS NETTO_BRG,
                                 brg.NILAI_INCOTERM AS NILAI_INCOTERM_BRG,
-                                brg.VOLUME AS VOLUME_BRG 
+                                brg.VOLUME AS VOLUME_BRG,
+                                brg.OPERATOR_ONE,
+                                brg.TGL_CEK,
+                                ref.URAIAN_KANTOR
                                 FROM plb_header AS hdr
                                 LEFT OUTER JOIN plb_barang AS brg ON hdr.NOMOR_AJU=brg.NOMOR_AJU
                                 LEFT OUTER JOIN plb_status AS pst ON hdr.NOMOR_AJU=pst.NOMOR_AJU_PLB
+                                LEFT OUTER JOIN rcd_status AS rcd ON hdr.NOMOR_AJU=rcd.bm_no_aju_plb
+                                LEFT OUTER JOIN referensi_kantor_pabean AS ref ON hdr.KPPBC=ref.KODE_KANTOR
+                                WHERE hdr.NOMOR_AJU IS NOT NULL AND hdr.NOMOR_AJU!=''
                                 ORDER BY pst.ck5_plb_submit,hdr.NOMOR_AJU,brg.POS_TARIF ASC LIMIT 100", 0);
     }
     $cek = $dataGet->num_rows;
@@ -268,7 +280,11 @@ function get_dokplb()
                 'KODE_PERHITUNGAN' => $result['KODE_PERHITUNGAN'],
                 'SERI_BARANG_DOK_ASAL' => $result['SERI_BARANG_DOK_ASAL'],
                 'ck5_plb_submit' => $result['ck5_plb_submit'],
-                'ck5_plb_export' => $result['ck5_plb_export']
+                'ck5_plb_export' => $result['ck5_plb_export'],
+                'TGL_CEK' => $result['TGL_CEK'],
+                'OPERATOR_ONE' => $result['OPERATOR_ONE'],
+                'URAIAN_KANTOR' => $result['URAIAN_KANTOR'],
+                'upload_beritaAcara_PLB' => $result['upload_beritaAcara_PLB'],
             ];
         }
 
@@ -304,11 +320,16 @@ function get_lap()
                             brg.KODE_JENIS_NILAI AS KODE_JENIS_NILAI_BRG,
                             brg.NETTO AS NETTO_BRG,
                             brg.NILAI_INCOTERM AS NILAI_INCOTERM_BRG,
-                            brg.VOLUME AS VOLUME_BRG 
+                            brg.VOLUME AS VOLUME_BRG ,
+                            brg.OPERATOR_ONE,
+                            brg.TGL_CEK,
+                            ref.URAIAN_KANTOR
                             FROM plb_header AS hdr
                             LEFT OUTER JOIN plb_barang AS brg ON hdr.NOMOR_AJU=brg.NOMOR_AJU
                             LEFT OUTER JOIN plb_status AS pst ON hdr.NOMOR_AJU=pst.NOMOR_AJU_PLB
-                            WHERE pst.ck5_plb_submit BETWEEN '" . $_GET['StartTanggal'] . "' AND '" . $_GET['EndTanggal'] . "'
+                            LEFT OUTER JOIN rcd_status AS rcd ON hdr.NOMOR_AJU=rcd.bm_no_aju_plb
+                            LEFT OUTER JOIN referensi_kantor_pabean AS ref ON hdr.KPPBC=ref.KODE_KANTOR
+                            WHERE hdr.NOMOR_AJU IS NOT NULL AND hdr.NOMOR_AJU!='' AND pst.ck5_plb_submit BETWEEN '" . $_GET['StartTanggal'] . "' AND '" . $_GET['EndTanggal'] . "'
                             ORDER BY pst.ck5_plb_submit,hdr.NOMOR_AJU,brg.POS_TARIF ASC", 0);
     } else {
         $dataGet = $db->query("SELECT *,
@@ -327,10 +348,16 @@ function get_lap()
                                 brg.KODE_JENIS_NILAI AS KODE_JENIS_NILAI_BRG,
                                 brg.NETTO AS NETTO_BRG,
                                 brg.NILAI_INCOTERM AS NILAI_INCOTERM_BRG,
-                                brg.VOLUME AS VOLUME_BRG 
+                                brg.VOLUME AS VOLUME_BRG,
+                                brg.OPERATOR_ONE,
+                                brg.TGL_CEK,
+                                ref.URAIAN_KANTOR
                                 FROM plb_header AS hdr
                                 LEFT OUTER JOIN plb_barang AS brg ON hdr.NOMOR_AJU=brg.NOMOR_AJU
                                 LEFT OUTER JOIN plb_status AS pst ON hdr.NOMOR_AJU=pst.NOMOR_AJU_PLB
+                                LEFT OUTER JOIN rcd_status AS rcd ON hdr.NOMOR_AJU=rcd.bm_no_aju_plb
+                                LEFT OUTER JOIN referensi_kantor_pabean AS ref ON hdr.KPPBC=ref.KODE_KANTOR
+                                WHERE hdr.NOMOR_AJU IS NOT NULL AND hdr.NOMOR_AJU!=''
                                 ORDER BY pst.ck5_plb_submit,hdr.NOMOR_AJU,brg.POS_TARIF ASC LIMIT 100", 0);
     }
     $cek = $dataGet->num_rows;
@@ -547,7 +574,11 @@ function get_lap()
                 'KODE_PERHITUNGAN' => $result['KODE_PERHITUNGAN'],
                 'SERI_BARANG_DOK_ASAL' => $result['SERI_BARANG_DOK_ASAL'],
                 'ck5_plb_submit' => $result['ck5_plb_submit'],
-                'ck5_plb_export' => $result['ck5_plb_export']
+                'ck5_plb_export' => $result['ck5_plb_export'],
+                'TGL_CEK' => $result['TGL_CEK'],
+                'OPERATOR_ONE' => $result['OPERATOR_ONE'],
+                'URAIAN_KANTOR' => $result['URAIAN_KANTOR'],
+                'upload_beritaAcara_PLB' => $result['upload_beritaAcara_PLB'],
             ];
         }
 
