@@ -10,7 +10,7 @@ function PostBarangUpdate()
     global $db;
     $ID                = $_GET['ID'];
     $AJU               = $_GET['AJU'];
-    $STATUS            = $_GET['STATUS'];
+    $STATUS            = 'Sudah DiCek!';
     $OPERATOR_ONE      = $_GET['OPERATOR_ONE'];
     $TGL_CEK           = date('Y-m-d H:m:i');
     $Sesuai            = $_GET['Sesuai'];
@@ -18,13 +18,8 @@ function PostBarangUpdate()
     $Lebih             = $_GET['Lebih'];
     $Pecah             = $_GET['Pecah'];
     $Rusak             = $_GET['Rusak'];
-    $Total             = $_GET['Total'];
 
-    $validasi = $Sesuai + $Kurang + $Lebih + $Pecah + $Rusak;
-
-    if ($validasi == $Total) {
-
-        $update = $db->query("UPDATE plb_barang SET STATUS='"  . $STATUS . "',
+    $update = $db->query("UPDATE plb_barang SET STATUS='"  . $STATUS . "',
                                                 OPERATOR_ONE='" . $OPERATOR_ONE . "',
                                                 TGL_CEK='" . $TGL_CEK . "',
                                                 Sesuai='" . $Sesuai . "',
@@ -33,18 +28,15 @@ function PostBarangUpdate()
                                                 Pecah='" . $Pecah . "',
                                                 Rusak='" . $Rusak . "'
                                                 WHERE ID='" . $ID . "' AND NOMOR_AJU='" . $AJU . "'");
+    if ($update) {
         echo json_encode([
             'status' => 200,
         ]);
     } else {
         echo json_encode([
-            'status' => 402,
+            'status' => 404,
         ]);
     }
-
-    echo json_encode([
-        'status' => 404,
-    ]);
 }
 
 // Add

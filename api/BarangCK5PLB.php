@@ -132,7 +132,7 @@ function get_Barang()
                 'KURANG' => $result['KURANG'],
                 'LEBIH' => $result['LEBIH'],
                 'PECAH' => $result['PECAH'],
-                'KURANG' => $result['KURANG'],
+                'RUSAK' => $result['RUSAK'],
             ];
         }
 
