@@ -19,13 +19,11 @@ $dbhost = "localhost";
 $dbusername = "beacukai";
 $dbpassword = "beacukai";
 $dbname = $apiDB;
-$dbport = "3307";
 // Local Dev
 // $dbusername = "root";
 // $dbpassword = "";
 // $dbname = "tpb";
-// $dbport = "3306";
-$db = new mysqli($dbhost, $dbusername, $dbpassword, $dbname, $dbport) or die(mysqli_connect_errno());
+$db = new mysqli($dbhost, $dbusername, $dbpassword, $dbname) or die(mysqli_connect_errno());
 
 if ($db->connect_error) {
   die("Connection failed: " . $db->connect_error);
