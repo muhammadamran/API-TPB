@@ -56,17 +56,138 @@
                     <p>Referensi</p>
                 </a>
             </li>
+            <li class="nav-header">SINKRONISASI</li>
+            <li class="<?= !empty($_GET['m']) && $_GET['m'] == 'api' ? 'active' : '' ?>">
+                <a href="index.php?m=api&s=api">
+                    <i class="fa-solid fa-code"></i>
+                    <p>API</p>
+                </a>
+            </li>
+
+            <!-- 1 -->
+            <li class="<?= !empty($_GET['m']) && $_GET['m'] == 'TPBBahanBaku' ? 'active' : '' ?>">
+                <a href="index.php?m=TPBBahanBaku&s=TPBBahanBaku">
+                    <i class="fa-solid fa-code"></i>
+                    <p>TPBBahanBaku</p>
+                </a>
+            </li>
+            <!-- 2 -->
+            <li class="<?= !empty($_GET['m']) && $_GET['m'] == 'TPBBahanBakuDokumen' ? 'active' : '' ?>">
+                <a href="index.php?m=TPBBahanBakuDokumen&s=TPBBahanBakuDokumen">
+                    <i class="fa-solid fa-code"></i>
+                    <p>TPBBahanBakuDokumen</p>
+                </a>
+            </li>
+            <!-- 3 -->
+            <li class="<?= !empty($_GET['m']) && $_GET['m'] == 'TPBBahanBakuTarif' ? 'active' : '' ?>">
+                <a href="index.php?m=TPBBahanBakuTarif&s=TPBBahanBakuTarif">
+                    <i class="fa-solid fa-code"></i>
+                    <p>TPBBahanBakuTarif</p>
+                </a>
+            </li>
+            <!-- 4 -->
+            <li class="<?= !empty($_GET['m']) && $_GET['m'] == 'TPBBarang' ? 'active' : '' ?>">
+                <a href="index.php?m=TPBBarang&s=TPBBarang">
+                    <i class="fa-solid fa-code"></i>
+                    <p>TPBBarang</p>
+                </a>
+            </li>
+            <!-- 5 -->
+            <li class="<?= !empty($_GET['m']) && $_GET['m'] == 'TPBBarangDokumen' ? 'active' : '' ?>">
+                <a href="index.php?m=TPBBarangDokumen&s=TPBBarangDokumen">
+                    <i class="fa-solid fa-code"></i>
+                    <p>TPBBarangDokumen</p>
+                </a>
+            </li>
+            <!-- 6 -->
+            <li class="<?= !empty($_GET['m']) && $_GET['m'] == 'TPBBarangPenerima' ? 'active' : '' ?>">
+                <a href="index.php?m=TPBBarangPenerima&s=TPBBarangPenerima">
+                    <i class="fa-solid fa-code"></i>
+                    <p>TPBBarangPenerima</p>
+                </a>
+            </li>
+            <!-- 7 -->
+            <li class="<?= !empty($_GET['m']) && $_GET['m'] == 'TPBBarangTarif' ? 'active' : '' ?>">
+                <a href="index.php?m=TPBBarangTarif&s=TPBBarangTarif">
+                    <i class="fa-solid fa-code"></i>
+                    <p>TPBBarangTarif</p>
+                </a>
+            </li>
+            <!-- 8 -->
+            <li class="<?= !empty($_GET['m']) && $_GET['m'] == 'TPBDetilStatus' ? 'active' : '' ?>">
+                <a href="index.php?m=TPBDetilStatus&s=TPBDetilStatus">
+                    <i class="fa-solid fa-code"></i>
+                    <p>TPBDetilStatus</p>
+                </a>
+            </li>
+            <!-- 9 -->
+            <li class="<?= !empty($_GET['m']) && $_GET['m'] == 'TPBDokumen' ? 'active' : '' ?>">
+                <a href="index.php?m=TPBDokumen&s=TPBDokumen">
+                    <i class="fa-solid fa-code"></i>
+                    <p>TPBDokumen</p>
+                </a>
+            </li>
+            <!-- 10 -->
+            <li class="<?= !empty($_GET['m']) && $_GET['m'] == 'TPBHeader' ? 'active' : '' ?>">
+                <a href="index.php?m=TPBHeader&s=TPBHeader">
+                    <i class="fa-solid fa-code"></i>
+                    <p>TPBHeader</p>
+                </a>
+            </li>
+            <!-- 11 -->
+            <li class="<?= !empty($_GET['m']) && $_GET['m'] == 'TPBJaminan' ? 'active' : '' ?>">
+                <a href="index.php?m=TPBJaminan&s=TPBJaminan">
+                    <i class="fa-solid fa-code"></i>
+                    <p>TPBJaminan</p>
+                </a>
+            </li>
+            <!-- 12 -->
+            <li class="<?= !empty($_GET['m']) && $_GET['m'] == 'TPBKemasan' ? 'active' : '' ?>">
+                <a href="index.php?m=TPBKemasan&s=TPBKemasan">
+                    <i class="fa-solid fa-code"></i>
+                    <p>TPBKemasan</p>
+                </a>
+            </li>
+            <!-- 13 -->
+            <li class="<?= !empty($_GET['m']) && $_GET['m'] == 'TPBKontainer' ? 'active' : '' ?>">
+                <a href="index.php?m=TPBKontainer&s=TPBKontainer">
+                    <i class="fa-solid fa-code"></i>
+                    <p>TPBKontainer</p>
+                </a>
+            </li>
+            <!-- 14 -->
+            <li class="<?= !empty($_GET['m']) && $_GET['m'] == 'TPBNPWPBilling' ? 'active' : '' ?>">
+                <a href="index.php?m=TPBNPWPBilling&s=TPBNPWPBilling">
+                    <i class="fa-solid fa-code"></i>
+                    <p>TPBNPWPBilling</p>
+                </a>
+            </li>
+            <!-- 15 -->
+            <li class="<?= !empty($_GET['m']) && $_GET['m'] == 'TPBPenerima' ? 'active' : '' ?>">
+                <a href="index.php?m=TPBPenerima&s=TPBPenerima">
+                    <i class="fa-solid fa-code"></i>
+                    <p>TPBPenerima</p>
+                </a>
+            </li>
+            <!-- 16 -->
+            <li class="<?= !empty($_GET['m']) && $_GET['m'] == 'TPBPungutan' ? 'active' : '' ?>">
+                <a href="index.php?m=TPBPungutan&s=TPBPungutan">
+                    <i class="fa-solid fa-code"></i>
+                    <p>TPBPungutan</p>
+                </a>
+            </li>
+            <!-- 17 -->
+            <li class="<?= !empty($_GET['m']) && $_GET['m'] == 'TPBPenerima' ? 'active' : '' ?>">
+                <a href="index.php?m=TPBPenerima&s=TPBPenerima">
+                    <i class="fa-solid fa-code"></i>
+                    <p>TPBPenerima</p>
+                </a>
+            </li>
             <li class="nav-header">ADMINISTRATOR</li>
             <li class="<?= !empty($_GET['m']) && $_GET['m'] == 'user' ? 'active' : '' ?>">
                 <a href="index.php?m=user&s=user">
                     <i class="fas fa-users-cog"></i>
                     <p>Users</p>
-                </a>
-            </li>
-            <li class="<?= !empty($_GET['m']) && $_GET['m'] == 'api' ? 'active' : '' ?>">
-                <a href="index.php?m=api&s=api">
-                    <i class="fa-solid fa-code"></i>
-                    <p>API</p>
                 </a>
             </li>
             <hr>

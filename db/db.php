@@ -17,12 +17,18 @@ foreach ($data['result'] as $row) {
 // var_dump($apiDB);
 // exit;
 
-$dbhost = "182.23.104.212";
-$dbusername = "beacukai";
-$dbpassword = "beacukai";
-$dbname = $apiDB;
-$dbport = "3307";
-$db = new mysqli($dbhost, $dbusername, $dbpassword, $dbname, $dbport) or die(mysqli_connect_errno());
+// $dbhost = "182.23.104.212";
+// $dbusername = "beacukai";
+// $dbpassword = "beacukai";
+// $dbname = $apiDB;
+// $dbport = "3307";
+// $db = new mysqli($dbhost, $dbusername, $dbpassword, $dbname, $dbport) or die(mysqli_connect_errno());
+
+$dbhost = "localhost";
+$dbusername = "root";
+$dbpassword = "";
+$dbname = "tpb";
+$db = new mysqli($dbhost, $dbusername, $dbpassword, $dbname) or die(mysqli_connect_errno());
 
 if ($db->connect_error) {
   die("Connection failed: " . $db->connect_error);
