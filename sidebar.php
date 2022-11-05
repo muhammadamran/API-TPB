@@ -70,6 +70,12 @@
                     <p>Users</p>
                 </a>
             </li>
+            <li class="<?= !empty($_GET['m']) && $_GET['m'] == 'settings' ? 'active' : '' ?>">
+                <a href="index.php?m=settings&s=settings">
+                    <i class="fas fa-cog"></i>
+                    <p>Settings</p>
+                </a>
+            </li>
             <hr>
             <li>
                 <a href="logout.php">
