@@ -7,7 +7,7 @@ if ($aksi == 'insert') {
     $forPass = '123123';
     $password = md5($forPass);
     // POST
-    $Nama = $_POST['nama'];
+    $Nama = $_POST['Nama'];
     $Email = $_POST['Email'];
     $Role = $_POST['Role'];
     $ExpiredDate = $_POST['ExpiredDate'];

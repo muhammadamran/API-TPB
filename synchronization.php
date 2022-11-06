@@ -154,9 +154,9 @@ if ($checkCon_tpb_bahan_baku == 404) {
   $btnContpb_bahan_baku = '200';
   // VALIDASI DATA TABEL
   foreach ($datatpb_bahan_baku['result'] as $row) {
-    $listtpb_bahan_baku = $row['NOMOR_AJU'];
+    $listtpb_bahan_baku = $row['ID_HEADER'];
   }
-  if ($listtpb_bahan_baku == $resulttpb_bahan_baku['NOMOR_AJU']) {
+  if ($listtpb_bahan_baku == $resulttpb_bahan_baku['ID_HEADER']) {
     $btnContpb_bahan_baku = 'synchron';
   } else {
     $btnContpb_bahan_baku = 'unsynchron';
@@ -173,9 +173,9 @@ if ($checkCon_tpb_bahan_baku_dokumen == 404) {
   $btnContpb_bahan_baku_dokumen = '200';
   // VALIDASI DATA TABEL
   foreach ($datatpb_bahan_baku_dokumen['result'] as $row) {
-    $listtpb_bahan_baku_dokumen = $row['NOMOR_AJU'];
+    $listtpb_bahan_baku_dokumen = $row['ID_HEADER'];
   }
-  if ($listtpb_bahan_baku_dokumen == $resulttpb_bahan_baku_dokumen['NOMOR_AJU']) {
+  if ($listtpb_bahan_baku_dokumen == $resulttpb_bahan_baku_dokumen['ID_HEADER']) {
     $btnContpb_bahan_baku_dokumen = 'synchron';
   } else {
     $btnContpb_bahan_baku_dokumen = 'unsynchron';
@@ -192,9 +192,9 @@ if ($checkCon_tpb_bahan_baku_tarif == 404) {
   $btnContpb_bahan_baku_tarif = '200';
   // VALIDASI DATA TABEL
   foreach ($datatpb_bahan_baku_tarif['result'] as $row) {
-    $listtpb_bahan_baku_tarif = $row['NOMOR_AJU'];
+    $listtpb_bahan_baku_tarif = $row['ID_HEADER'];
   }
-  if ($listtpb_bahan_baku_tarif == $resulttpb_bahan_baku_tarif['NOMOR_AJU']) {
+  if ($listtpb_bahan_baku_tarif == $resulttpb_bahan_baku_tarif['ID_HEADER']) {
     $btnContpb_bahan_baku_tarif = 'synchron';
   } else {
     $btnContpb_bahan_baku_tarif = 'unsynchron';
@@ -211,9 +211,9 @@ if ($checkCon_tpb_barang == 404) {
   $btnContpb_barang = '200';
   // VALIDASI DATA TABEL
   foreach ($datatpb_barang['result'] as $row) {
-    $listtpb_barang = $row['NOMOR_AJU'];
+    $listtpb_barang = $row['ID_HEADER'];
   }
-  if ($listtpb_barang == $resulttpb_barang['NOMOR_AJU']) {
+  if ($listtpb_barang == $resulttpb_barang['ID_HEADER']) {
     $btnContpb_barang = 'synchron';
   } else {
     $btnContpb_barang = 'unsynchron';
@@ -230,9 +230,9 @@ if ($checkCon_tpb_barang_dokumen == 404) {
   $btnContpb_barang_dokumen = '200';
   // VALIDASI DATA TABEL
   foreach ($datatpb_barang_dokumen['result'] as $row) {
-    $listtpb_barang_dokumen = $row['NOMOR_AJU'];
+    $listtpb_barang_dokumen = $row['ID_HEADER'];
   }
-  if ($listtpb_barang_dokumen == $resulttpb_barang_dokumen['NOMOR_AJU']) {
+  if ($listtpb_barang_dokumen == $resulttpb_barang_dokumen['ID_HEADER']) {
     $btnContpb_barang_dokumen = 'synchron';
   } else {
     $btnContpb_barang_dokumen = 'unsynchron';
@@ -249,9 +249,9 @@ if ($checkCon_tpb_barang_penerima == 404) {
   $btnContpb_barang_penerima = '200';
   // VALIDASI DATA TABEL
   foreach ($datatpb_barang_penerima['result'] as $row) {
-    $listtpb_barang_penerima = $row['NOMOR_AJU'];
+    $listtpb_barang_penerima = $row['ID_HEADER'];
   }
-  if ($listtpb_barang_penerima == $resulttpb_barang_penerima['NOMOR_AJU']) {
+  if ($listtpb_barang_penerima == $resulttpb_barang_penerima['ID_HEADER']) {
     $btnContpb_barang_penerima = 'synchron';
   } else {
     $btnContpb_barang_penerima = 'unsynchron';
@@ -268,9 +268,9 @@ if ($checkCon_tpb_barang_tarif == 404) {
   $btnContpb_barang_tarif = '200';
   // VALIDASI DATA TABEL
   foreach ($datatpb_barang_tarif['result'] as $row) {
-    $listtpb_barang_tarif = $row['NOMOR_AJU'];
+    $listtpb_barang_tarif = $row['ID_HEADER'];
   }
-  if ($listtpb_barang_tarif == $resulttpb_barang_tarif['NOMOR_AJU']) {
+  if ($listtpb_barang_tarif == $resulttpb_barang_tarif['ID_HEADER']) {
     $btnContpb_barang_tarif = 'synchron';
   } else {
     $btnContpb_barang_tarif = 'unsynchron';
@@ -287,9 +287,9 @@ if ($checkCon_tpb_detil_status == 404) {
   $btnContpb_detil_status = '200';
   // VALIDASI DATA TABEL
   foreach ($datatpb_detil_status['result'] as $row) {
-    $listtpb_detil_status = $row['NOMOR_AJU'];
+    $listtpb_detil_status = $row['ID_HEADER'];
   }
-  if ($listtpb_detil_status == $resulttpb_detil_status['NOMOR_AJU']) {
+  if ($listtpb_detil_status == $resulttpb_detil_status['ID_HEADER']) {
     $btnContpb_detil_status = 'synchron';
   } else {
     $btnContpb_detil_status = 'unsynchron';
@@ -306,9 +306,9 @@ if ($checkCon_tpb_dokumen == 404) {
   $btnContpb_dokumen = '200';
   // VALIDASI DATA TABEL
   foreach ($datatpb_dokumen['result'] as $row) {
-    $listtpb_dokumen = $row['NOMOR_AJU'];
+    $listtpb_dokumen = $row['ID_HEADER'];
   }
-  if ($listtpb_dokumen == $resulttpb_dokumen['NOMOR_AJU']) {
+  if ($listtpb_dokumen == $resulttpb_dokumen['ID_HEADER']) {
     $btnContpb_dokumen = 'synchron';
   } else {
     $btnContpb_dokumen = 'unsynchron';
@@ -325,9 +325,9 @@ if ($checkCon_tpb_jaminan == 404) {
   $btnContpb_jaminan = '200';
   // VALIDASI DATA TABEL
   foreach ($datatpb_jaminan['result'] as $row) {
-    $listtpb_jaminan = $row['NOMOR_AJU'];
+    $listtpb_jaminan = $row['ID_HEADER'];
   }
-  if ($listtpb_jaminan == $resulttpb_jaminan['NOMOR_AJU']) {
+  if ($listtpb_jaminan == $resulttpb_jaminan['ID_HEADER']) {
     $btnContpb_jaminan = 'synchron';
   } else {
     $btnContpb_jaminan = 'unsynchron';
@@ -344,9 +344,9 @@ if ($checkCon_tpb_kemasan == 404) {
   $btnContpb_kemasan = '200';
   // VALIDASI DATA TABEL
   foreach ($datatpb_kemasan['result'] as $row) {
-    $listtpb_kemasan = $row['NOMOR_AJU'];
+    $listtpb_kemasan = $row['ID_HEADER'];
   }
-  if ($listtpb_kemasan == $resulttpb_kemasan['NOMOR_AJU']) {
+  if ($listtpb_kemasan == $resulttpb_kemasan['ID_HEADER']) {
     $btnContpb_kemasan = 'synchron';
   } else {
     $btnContpb_kemasan = 'unsynchron';
@@ -363,9 +363,9 @@ if ($checkCon_tpb_kontainer == 404) {
   $btnContpb_kontainer = '200';
   // VALIDASI DATA TABEL
   foreach ($datatpb_kontainer['result'] as $row) {
-    $listtpb_kontainer = $row['NOMOR_AJU'];
+    $listtpb_kontainer = $row['ID_HEADER'];
   }
-  if ($listtpb_kontainer == $resulttpb_kontainer['NOMOR_AJU']) {
+  if ($listtpb_kontainer == $resulttpb_kontainer['ID_HEADER']) {
     $btnContpb_kontainer = 'synchron';
   } else {
     $btnContpb_kontainer = 'unsynchron';
@@ -382,9 +382,9 @@ if ($checkCon_tpb_npwp_billing == 404) {
   $btnContpb_npwp_billing = '200';
   // VALIDASI DATA TABEL
   foreach ($datatpb_npwp_billing['result'] as $row) {
-    $listtpb_npwp_billing = $row['NOMOR_AJU'];
+    $listtpb_npwp_billing = $row['ID_HEADER'];
   }
-  if ($listtpb_npwp_billing == $resulttpb_npwp_billing['NOMOR_AJU']) {
+  if ($listtpb_npwp_billing == $resulttpb_npwp_billing['ID_HEADER']) {
     $btnContpb_npwp_billing = 'synchron';
   } else {
     $btnContpb_npwp_billing = 'unsynchron';
@@ -401,9 +401,9 @@ if ($checkCon_tpb_penerima == 404) {
   $btnContpb_penerima = '200';
   // VALIDASI DATA TABEL
   foreach ($datatpb_penerima['result'] as $row) {
-    $listtpb_penerima = $row['NOMOR_AJU'];
+    $listtpb_penerima = $row['ID_HEADER'];
   }
-  if ($listtpb_penerima == $resulttpb_penerima['NOMOR_AJU']) {
+  if ($listtpb_penerima == $resulttpb_penerima['ID_HEADER']) {
     $btnContpb_penerima = 'synchron';
   } else {
     $btnContpb_penerima = 'unsynchron';
@@ -420,9 +420,9 @@ if ($checkCon_tpb_pungutan == 404) {
   $btnContpb_pungutan = '200';
   // VALIDASI DATA TABEL
   foreach ($datatpb_pungutan['result'] as $row) {
-    $listtpb_pungutan = $row['NOMOR_AJU'];
+    $listtpb_pungutan = $row['ID_HEADER'];
   }
-  if ($listtpb_pungutan == $resulttpb_pungutan['NOMOR_AJU']) {
+  if ($listtpb_pungutan == $resulttpb_pungutan['ID_HEADER']) {
     $btnContpb_pungutan = 'synchron';
   } else {
     $btnContpb_pungutan = 'unsynchron';
@@ -439,9 +439,9 @@ if ($checkCon_tpb_respon == 404) {
   $btnContpb_respon = '200';
   // VALIDASI DATA TABEL
   foreach ($datatpb_respon['result'] as $row) {
-    $listtpb_respon = $row['NOMOR_AJU'];
+    $listtpb_respon = $row['ID_HEADER'];
   }
-  if ($listtpb_respon == $resulttpb_respon['NOMOR_AJU']) {
+  if ($listtpb_respon == $resulttpb_respon['ID_HEADER']) {
     $btnContpb_respon = 'synchron';
   } else {
     $btnContpb_respon = 'unsynchron';

@@ -38,7 +38,7 @@
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label for="IDNama" class="col-form-label">Nama</label>
-                                        <input id="IDNama" name="nama" type="text" class="form-control" placeholder="Nama ...">
+                                        <input id="IDNama" name="Nama" type="text" class="form-control" placeholder="Nama ...">
                                     </div>
                                 </div>
                                 <div class="col-sm-4">

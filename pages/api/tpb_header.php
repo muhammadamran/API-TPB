@@ -17,6 +17,24 @@ if (isset($_POST['findLimit_L'])) {
     }
 }
 ?>
+<!-- DOMAIN -->
+<?php
+// TOTAL RECORD
+$dataD = $dbmain->query("SELECT COUNT(*) AS total FROM tpb_header ORDER BY ID DESC");
+$rowD  = $dataD->fetch_assoc();
+// LAST RECORD
+$dataLastD = $dbmain->query("SELECT * FROM tpb_header ORDER BY ID DESC LIMIT 1");
+$rowLastD  = $dataLastD->fetch_assoc();
+?>
+<!-- LOCAL -->
+<?php
+// TOTAL RECORD
+$dataL = $db->query("SELECT COUNT(*) AS total FROM tpb_header ORDER BY ID DESC");
+$rowL  = $dataL->fetch_assoc();
+// LAST RECORD
+$dataLastL = $db->query("SELECT * FROM tpb_header ORDER BY ID DESC LIMIT 1");
+$rowLastL  = $dataLastL->fetch_assoc();
+?>
 <div class="content">
     <div class="page-header-title">
         <div class="row">
@@ -37,6 +55,44 @@ if (isset($_POST['findLimit_L'])) {
     </div>
 
     <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-body" style="display: flex;justify-content: space-between;align-content: center;align-items: center;">
+                    <div>
+                        <h4 style="margin-top: 5px;margin-bottom: 5px;font-size: 14px;font-weight: 900;"><i class="fas fa-link"></i> Check Status API</h4>
+                        <button type="button" class="btn btn-200"><i class="fas fa-check-circle"></i> Connected</button>
+                        <button type="button" class="btn btn-404"><i class="fas fa-times-circle"></i> Unconnected</button>
+                    </div>
+                    <div>
+                        <h4 style="margin-top: 5px;margin-bottom: 5px;font-size: 14px;font-weight: 900;"><i class="fas fa-exchange-alt"></i> Check Synchron Data</h4>
+                        <button type="button" class="btn btn-synchron"><i class="fas fa-check-circle"></i> Data Synchron</button>
+                        <button type="button" class="btn btn-unsynchron"><i class="fas fa-times-circle"></i> Data Unsynchron</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- BUTTON Synchronize -->
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-body" style="display: flex;justify-content: space-between;align-content: center;align-items: center;">
+                    <div>
+                        <h4 style="margin-top: 5px;margin-bottom: 5px;font-size: 14px;font-weight: 900;"><i class="fas fa-database"></i> Synchronize Data</h4>
+                        <?php if ($btnContpb_header == 'synchron') { ?>
+                            <button class="btn btn-success"><i class="fas fa-check-circle"></i> Data Sudah Synchronize</button>
+                        <?php } else { ?>
+                            <a href="" class="btn btn-primary"><i class="fas fa-refresh"></i> Synchronize Manually</a>
+                        <?php } ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- BUTTON Synchronize -->
+
+    <div class="row">
         <!-- DOMAIN -->
         <div class="col-md-6">
             <div class="card ">
@@ -44,20 +100,17 @@ if (isset($_POST['findLimit_L'])) {
                     <font class="card-title"><i class="fas fa-table"></i> Data IT Inventory</font>
                 </div>
                 <div class="card-body ">
-                    <div style="display: flex;justify-content: flex-start;align-content: center;align-items: center;margin-bottom: 10px;">
+                    <div style="display: flex;justify-content: flex-start;align-content: center;align-items: center;margin-bottom: 10px;background: #ffc107;padding: 15px;border-radius: 5px;">
                         <div style="font-size: 35px;">
                             <i class="fas fa-info-circle"></i>
                         </div>
                         <div style="display: grid;justify-content: flex-start;align-content: center;align-items: center;margin-left: 10px;">
-                            <font>Total Record:</font>
-                            <font>Total Last Data:</font>
+                            <font>Total Record: <?= $rowD['total'] ?></font>
+                            <font>Last Record Nomor AJU: <?= $rowLastD != NULL ? $rowLastD['NOMOR_AJU'] : 'Not Found' ?></font>
+                            <font>Last Record ID HEADER: <?= $rowLastD != NULL ? $rowLastD['ID'] : 'Not Found' ?></font>
                         </div>
                     </div>
                     <div class="line-page"></div>
-                    <?php
-                    // $dataD = $dbmain->query("SELECT COUNT(*) AS total FROM tpb_header ORDER BY ID DESC");
-                    // $rowD  = $dataD->fetch_assoc()
-                    ?>
                     <div class="alert alert-secondary fade show" style="color: #66615b;">
                         <button type="button" class="close" data-dismiss="alert">
                             <span aria-hidden="true" style="color: #66615b47;">×</span>
@@ -250,23 +303,20 @@ if (isset($_POST['findLimit_L'])) {
         <div class="col-md-6">
             <div class="card ">
                 <div class="card-header ">
-                    <font class="card-title"><i class="fas fa-table"></i> Data IT Inventory</font>
+                    <font class="card-title"><i class="fas fa-table"></i> Data Module CIESA</font>
                 </div>
                 <div class="card-body ">
-                    <div style="display: flex;justify-content: flex-start;align-content: center;align-items: center;margin-bottom: 10px;">
+                    <div style="display: flex;justify-content: flex-start;align-content: center;align-items: center;margin-bottom: 10px;background: #ffc107;padding: 15px;border-radius: 5px;">
                         <div style="font-size: 35px;">
                             <i class="fas fa-info-circle"></i>
                         </div>
                         <div style="display: grid;justify-content: flex-start;align-content: center;align-items: center;margin-left: 10px;">
-                            <font>Total Record:</font>
-                            <font>Total Last Data:</font>
+                            <font>Total Record: <?= $rowL['total'] ?></font>
+                            <font>Last Record Nomor AJU: <?= $rowLastL != NULL ? $rowLastL['NOMOR_AJU'] : 'Not Found' ?></font>
+                            <font>Last Record ID HEADER: <?= $rowLastL != NULL ? $rowLastL['ID'] : 'Not Found' ?></font>
                         </div>
                     </div>
                     <div class="line-page"></div>
-                    <?php
-                    $dataL = $db->query("SELECT COUNT(*) AS total FROM tpb_header ORDER BY ID DESC");
-                    $rowL  = $dataL->fetch_assoc()
-                    ?>
                     <div class="alert alert-secondary fade show" style="color: #66615b;">
                         <button type="button" class="close" data-dismiss="alert">
                             <span aria-hidden="true" style="color: #66615b47;">×</span>
