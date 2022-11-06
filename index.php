@@ -1,6 +1,7 @@
 <?php
 session_start();
 include "db/db.php";
+include "db/dbmain.php";
 
 // CEK API
 include "synchronization.php";

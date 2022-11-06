@@ -6,12 +6,12 @@
             <div class="col-md-12 col-sm-12">
                 <div class="title-page">
                     <i class="icon-copy fas fa-code for-icon-page"></i>
-                    <font class="font-title">SYNCHRONIZATION</font>
+                    <font class="font-title">API</font>
                 </div>
                 <nav aria-label="breadcrumb" role="navigation">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="index.php?t=Dashboard" class="breadcrumb-item-title">Dashboard</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Synchronization</li>
+                        <li class="breadcrumb-item active" aria-current="page">API</li>
                     </ol>
                 </nav>
             </div>
