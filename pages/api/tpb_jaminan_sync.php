@@ -42,7 +42,7 @@ foreach ($dataTPB_L as $row_L) {
     }
 }
 if ($query) {
-    echo '<script>alert("Data has been Added");location.href = "../../index.php?m=api&s=tpb_jaminan&t=Data TPB Kemasan"</script>';
+    echo '<script>alert("Data has been Added");location.href = "../../index.php?m=api&s=tpb_jaminan&t=Data TPB Jaminan"</script>';
 } else {
-    echo '<script>alert("Data failed Added");location.href = "../../index.php?m=api&s=tpb_jaminan&t=Data TPB Kemasan"</script>';
+    echo '<script>alert("Data failed Added");location.href = "../../index.php?m=api&s=tpb_jaminan&t=Data TPB Jaminan"</script>';
 }
