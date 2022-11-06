@@ -42,7 +42,7 @@ foreach ($dataTPB_L as $row_L) {
     }
 }
 if ($query) {
-    echo '<script>alert("Data has been Added");location.href = "../../index.php?m=api&s=tpb_respon&t=Data TPB Pungutan"</script>';
+    echo '<script>alert("Data has been Added");location.href = "../../index.php?m=api&s=tpb_respon&t=Data TPB Respon"</script>';
 } else {
-    echo '<script>alert("Data failed Added");location.href = "../../index.php?m=api&s=tpb_respon&t=Data TPB Pungutan"</script>';
+    echo '<script>alert("Data failed Added");location.href = "../../index.php?m=api&s=tpb_respon&t=Data TPB Respon"</script>';
 }
