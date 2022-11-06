@@ -82,6 +82,7 @@ $rowLastL  = $dataLastL->fetch_assoc();
                         <h4 style="margin-top: 5px;margin-bottom: 5px;font-size: 14px;font-weight: 900;"><i class="fas fa-database"></i> Synchronize Data</h4>
                         <?php if ($btnContpb_barang == 'synchron') { ?>
                             <button class="btn btn-success"><i class="fas fa-check-circle"></i> Data Sudah Synchronize</button>
+                            <a href="index.php?m=api&s=tpb_barang_sync&t=Sync Data TPB Barang" class="btn btn-primary"><i class="fas fa-refresh"></i> Synchronize Manually</a>
                         <?php } else { ?>
                             <a href="index.php?m=api&s=tpb_barang_sync&t=Sync Data TPB Barang" class="btn btn-primary"><i class="fas fa-refresh"></i> Synchronize Manually</a>
                         <?php } ?>
