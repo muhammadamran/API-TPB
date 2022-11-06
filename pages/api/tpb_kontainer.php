@@ -97,7 +97,7 @@ $rowLastL  = $dataLastL->fetch_assoc();
         <div class="col-md-6">
             <div class="card ">
                 <div class="card-header ">
-                    <font class="card-title"><i class="fas fa-table"></i> Data IT Inventory <?= $btnContpb_kontainer ?></font>
+                    <font class="card-title"><i class="fas fa-table"></i> Data IT Inventory</font>
                 </div>
                 <div class="card-body ">
                     <div style="display: flex;justify-content: flex-start;align-content: center;align-items: center;margin-bottom: 10px;background: #ffc107;padding: 15px;border-radius: 5px;">
