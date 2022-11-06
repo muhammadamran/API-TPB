@@ -51,6 +51,18 @@
                                 <br>
                                 <font class="list-font">Status Synchron: </font>
                                 <font class="list-font" style="text-transform: uppercase;"><?= $btnContpb_header ?></font>
+                                <?php
+                                $showLtpb_header = $db->query("SELECT COUNT(*) AS TOTAL FROM tpb_header");
+                                $resultLtpb_header = mysqli_fetch_array($showLtpb_header);
+                                ?>
+                                <hr>
+                                <font class="list-font">Total Record Local Table: <?= $resultLtpb_header['TOTAL']; ?></font>
+                                <?php
+                                $showDtpb_header = $dbmain->query("SELECT COUNT(*) AS TOTAL FROM tpb_header");
+                                $resultDtpb_header = mysqli_fetch_array($showDtpb_header);
+                                ?>
+                                <font class="list-font">Total Record Domain Table: <?= $resultDtpb_header['TOTAL']; ?></font>
+                                <hr>
                             </a>
                         </div>
                         <!-- tpb_bahan_baku	 - TPB Bahan Baku -->
@@ -62,6 +74,18 @@
                                 <br>
                                 <font class="list-font">Status Synchron: </font>
                                 <font class="list-font" style="text-transform: uppercase;"><?= $btnContpb_bahan_baku ?></font>
+                                <?php
+                                $showLtpb_bahan_baku = $db->query("SELECT COUNT(*) AS TOTAL FROM tpb_bahan_baku");
+                                $resultLtpb_bahan_baku = mysqli_fetch_array($showLtpb_bahan_baku);
+                                ?>
+                                <hr>
+                                <font class="list-font">Total Record Local Table: <?= $resultLtpb_bahan_baku['TOTAL']; ?></font>
+                                <?php
+                                $showDtpb_bahan_baku = $dbmain->query("SELECT COUNT(*) AS TOTAL FROM tpb_bahan_baku");
+                                $resultDtpb_bahan_baku = mysqli_fetch_array($showDtpb_bahan_baku);
+                                ?>
+                                <font class="list-font">Total Record Domain Table: <?= $resultDtpb_bahan_baku['TOTAL']; ?></font>
+                                <hr>
                             </a>
                         </div>
                         <!-- tpb_bahan_baku_dokumen	 - TPB Bahan Baku Dokumen -->
@@ -73,6 +97,18 @@
                                 <br>
                                 <font class="list-font">Status Synchron: </font>
                                 <font class="list-font" style="text-transform: uppercase;"><?= $btnContpb_bahan_baku_dokumen ?></font>
+                                <?php
+                                $showLtpb_bahan_baku_dokumen = $db->query("SELECT COUNT(*) AS TOTAL FROM tpb_bahan_baku_dokumen");
+                                $resultLtpb_bahan_baku_dokumen = mysqli_fetch_array($showLtpb_bahan_baku_dokumen);
+                                ?>
+                                <hr>
+                                <font class="list-font">Total Record Local Table: <?= $resultLtpb_bahan_baku_dokumen['TOTAL']; ?></font>
+                                <?php
+                                $showDtpb_bahan_baku_dokumen = $dbmain->query("SELECT COUNT(*) AS TOTAL FROM tpb_bahan_baku_dokumen");
+                                $resultDtpb_bahan_baku_dokumen = mysqli_fetch_array($showDtpb_bahan_baku_dokumen);
+                                ?>
+                                <font class="list-font">Total Record Domain Table: <?= $resultDtpb_bahan_baku_dokumen['TOTAL']; ?></font>
+                                <hr>
                             </a>
                         </div>
                         <!-- tpb_bahan_baku_tarif	 - TPB Bahan Baku Tarif -->
@@ -84,6 +120,18 @@
                                 <br>
                                 <font class="list-font">Status Synchron: </font>
                                 <font class="list-font" style="text-transform: uppercase;"><?= $btnContpb_bahan_baku_tarif ?></font>
+                                <?php
+                                $showLtpb_bahan_baku_tarif = $db->query("SELECT COUNT(*) AS TOTAL FROM tpb_bahan_baku_tarif");
+                                $resultLtpb_bahan_baku_tarif = mysqli_fetch_array($showLtpb_bahan_baku_tarif);
+                                ?>
+                                <hr>
+                                <font class="list-font">Total Record Local Table: <?= $resultLtpb_bahan_baku_tarif['TOTAL']; ?></font>
+                                <?php
+                                $showDtpb_bahan_baku_tarif = $dbmain->query("SELECT COUNT(*) AS TOTAL FROM tpb_bahan_baku_tarif");
+                                $resultDtpb_bahan_baku_tarif = mysqli_fetch_array($showDtpb_bahan_baku_tarif);
+                                ?>
+                                <font class="list-font">Total Record Domain Table: <?= $resultDtpb_bahan_baku_tarif['TOTAL']; ?></font>
+                                <hr>
                             </a>
                         </div>
                         <!-- tpb_barang	 - TPB Barang -->
@@ -95,6 +143,18 @@
                                 <br>
                                 <font class="list-font">Status Synchron: </font>
                                 <font class="list-font" style="text-transform: uppercase;"><?= $btnContpb_barang ?></font>
+                                <?php
+                                $showLtpb_barang = $db->query("SELECT COUNT(*) AS TOTAL FROM tpb_barang");
+                                $resultLtpb_barang = mysqli_fetch_array($showLtpb_barang);
+                                ?>
+                                <hr>
+                                <font class="list-font">Total Record Local Table: <?= $resultLtpb_barang['TOTAL']; ?></font>
+                                <?php
+                                $showDtpb_barang = $dbmain->query("SELECT COUNT(*) AS TOTAL FROM tpb_barang");
+                                $resultDtpb_barang = mysqli_fetch_array($showDtpb_barang);
+                                ?>
+                                <font class="list-font">Total Record Domain Table: <?= $resultDtpb_barang['TOTAL']; ?></font>
+                                <hr>
                             </a>
                         </div>
                         <!-- tpb_barang_dokumen	 - TPB Barang Dokumen -->
@@ -106,6 +166,18 @@
                                 <br>
                                 <font class="list-font">Status Synchron: </font>
                                 <font class="list-font" style="text-transform: uppercase;"><?= $btnContpb_barang_dokumen ?></font>
+                                <?php
+                                $showLtpb_barang_dokumen = $db->query("SELECT COUNT(*) AS TOTAL FROM tpb_barang_dokumen");
+                                $resultLtpb_barang_dokumen = mysqli_fetch_array($showLtpb_barang_dokumen);
+                                ?>
+                                <hr>
+                                <font class="list-font">Total Record Local Table: <?= $resultLtpb_barang_dokumen['TOTAL']; ?></font>
+                                <?php
+                                $showDtpb_barang_dokumen = $dbmain->query("SELECT COUNT(*) AS TOTAL FROM tpb_barang_dokumen");
+                                $resultDtpb_barang_dokumen = mysqli_fetch_array($showDtpb_barang_dokumen);
+                                ?>
+                                <font class="list-font">Total Record Domain Table: <?= $resultDtpb_barang_dokumen['TOTAL']; ?></font>
+                                <hr>
                             </a>
                         </div>
                         <!-- tpb_barang_penerima	 - TPB Barang Penerima -->
@@ -117,6 +189,18 @@
                                 <br>
                                 <font class="list-font">Status Synchron: </font>
                                 <font class="list-font" style="text-transform: uppercase;"><?= $btnContpb_barang_penerima ?></font>
+                                <?php
+                                $showLtpb_barang_penerima = $db->query("SELECT COUNT(*) AS TOTAL FROM tpb_barang_penerima");
+                                $resultLtpb_barang_penerima = mysqli_fetch_array($showLtpb_barang_penerima);
+                                ?>
+                                <hr>
+                                <font class="list-font">Total Record Local Table: <?= $resultLtpb_barang_penerima['TOTAL']; ?></font>
+                                <?php
+                                $showDtpb_barang_penerima = $dbmain->query("SELECT COUNT(*) AS TOTAL FROM tpb_barang_penerima");
+                                $resultDtpb_barang_penerima = mysqli_fetch_array($showDtpb_barang_penerima);
+                                ?>
+                                <font class="list-font">Total Record Domain Table: <?= $resultDtpb_barang_penerima['TOTAL']; ?></font>
+                                <hr>
                             </a>
                         </div>
                         <!-- tpb_barang_tarif	 - TPB Barang Tarif -->
@@ -128,6 +212,18 @@
                                 <br>
                                 <font class="list-font">Status Synchron: </font>
                                 <font class="list-font" style="text-transform: uppercase;"><?= $btnContpb_barang_tarif ?></font>
+                                <?php
+                                $showLtpb_barang_tarif = $db->query("SELECT COUNT(*) AS TOTAL FROM tpb_barang_tarif");
+                                $resultLtpb_barang_tarif = mysqli_fetch_array($showLtpb_barang_tarif);
+                                ?>
+                                <hr>
+                                <font class="list-font">Total Record Local Table: <?= $resultLtpb_barang_tarif['TOTAL']; ?></font>
+                                <?php
+                                $showDtpb_barang_tarif = $dbmain->query("SELECT COUNT(*) AS TOTAL FROM tpb_barang_tarif");
+                                $resultDtpb_barang_tarif = mysqli_fetch_array($showDtpb_barang_tarif);
+                                ?>
+                                <font class="list-font">Total Record Domain Table: <?= $resultDtpb_barang_tarif['TOTAL']; ?></font>
+                                <hr>
                             </a>
                         </div>
                         <!-- tpb_detil_status	 - TPB Detil Status -->
@@ -139,6 +235,18 @@
                                 <br>
                                 <font class="list-font">Status Synchron: </font>
                                 <font class="list-font" style="text-transform: uppercase;"><?= $btnContpb_detil_status ?></font>
+                                <?php
+                                $showLtpb_detil_status = $db->query("SELECT COUNT(*) AS TOTAL FROM tpb_detil_status");
+                                $resultLtpb_detil_status = mysqli_fetch_array($showLtpb_detil_status);
+                                ?>
+                                <hr>
+                                <font class="list-font">Total Record Local Table: <?= $resultLtpb_detil_status['TOTAL']; ?></font>
+                                <?php
+                                $showDtpb_detil_status = $dbmain->query("SELECT COUNT(*) AS TOTAL FROM tpb_detil_status");
+                                $resultDtpb_detil_status = mysqli_fetch_array($showDtpb_detil_status);
+                                ?>
+                                <font class="list-font">Total Record Domain Table: <?= $resultDtpb_detil_status['TOTAL']; ?></font>
+                                <hr>
                             </a>
                         </div>
                         <!-- tpb_dokumen	 - TPB Dokumen -->
@@ -150,6 +258,18 @@
                                 <br>
                                 <font class="list-font">Status Synchron: </font>
                                 <font class="list-font" style="text-transform: uppercase;"><?= $btnContpb_dokumen ?></font>
+                                <?php
+                                $showLtpb_dokumen = $db->query("SELECT COUNT(*) AS TOTAL FROM tpb_dokumen");
+                                $resultLtpb_dokumen = mysqli_fetch_array($showLtpb_dokumen);
+                                ?>
+                                <hr>
+                                <font class="list-font">Total Record Local Table: <?= $resultLtpb_dokumen['TOTAL']; ?></font>
+                                <?php
+                                $showDtpb_dokumen = $dbmain->query("SELECT COUNT(*) AS TOTAL FROM tpb_dokumen");
+                                $resultDtpb_dokumen = mysqli_fetch_array($showDtpb_dokumen);
+                                ?>
+                                <font class="list-font">Total Record Domain Table: <?= $resultDtpb_dokumen['TOTAL']; ?></font>
+                                <hr>
                             </a>
                         </div>
                         <!-- tpb_jaminan	 - TPB Jaminan -->
@@ -161,6 +281,18 @@
                                 <br>
                                 <font class="list-font">Status Synchron: </font>
                                 <font class="list-font" style="text-transform: uppercase;"><?= $btnContpb_jaminan ?></font>
+                                <?php
+                                $showLtpb_jaminan = $db->query("SELECT COUNT(*) AS TOTAL FROM tpb_jaminan");
+                                $resultLtpb_jaminan = mysqli_fetch_array($showLtpb_jaminan);
+                                ?>
+                                <hr>
+                                <font class="list-font">Total Record Local Table: <?= $resultLtpb_jaminan['TOTAL']; ?></font>
+                                <?php
+                                $showDtpb_jaminan = $dbmain->query("SELECT COUNT(*) AS TOTAL FROM tpb_jaminan");
+                                $resultDtpb_jaminan = mysqli_fetch_array($showDtpb_jaminan);
+                                ?>
+                                <font class="list-font">Total Record Domain Table: <?= $resultDtpb_jaminan['TOTAL']; ?></font>
+                                <hr>
                             </a>
                         </div>
                         <!-- tpb_kemasan	 - TPB Kemasan -->
@@ -172,6 +304,18 @@
                                 <br>
                                 <font class="list-font">Status Synchron: </font>
                                 <font class="list-font" style="text-transform: uppercase;"><?= $btnContpb_kemasan ?></font>
+                                <?php
+                                $showLtpb_kemasan = $db->query("SELECT COUNT(*) AS TOTAL FROM tpb_kemasan");
+                                $resultLtpb_kemasan = mysqli_fetch_array($showLtpb_kemasan);
+                                ?>
+                                <hr>
+                                <font class="list-font">Total Record Local Table: <?= $resultLtpb_kemasan['TOTAL']; ?></font>
+                                <?php
+                                $showDtpb_kemasan = $dbmain->query("SELECT COUNT(*) AS TOTAL FROM tpb_kemasan");
+                                $resultDtpb_kemasan = mysqli_fetch_array($showDtpb_kemasan);
+                                ?>
+                                <font class="list-font">Total Record Domain Table: <?= $resultDtpb_kemasan['TOTAL']; ?></font>
+                                <hr>
                             </a>
                         </div>
                         <!-- tpb_kontainer	 - TPB Kontainer -->
@@ -183,6 +327,18 @@
                                 <br>
                                 <font class="list-font">Status Synchron: </font>
                                 <font class="list-font" style="text-transform: uppercase;"><?= $btnContpb_kontainer ?></font>
+                                <?php
+                                $showLtpb_kontainer = $db->query("SELECT COUNT(*) AS TOTAL FROM tpb_kontainer");
+                                $resultLtpb_kontainer = mysqli_fetch_array($showLtpb_kontainer);
+                                ?>
+                                <hr>
+                                <font class="list-font">Total Record Local Table: <?= $resultLtpb_kontainer['TOTAL']; ?></font>
+                                <?php
+                                $showDtpb_kontainer = $dbmain->query("SELECT COUNT(*) AS TOTAL FROM tpb_kontainer");
+                                $resultDtpb_kontainer = mysqli_fetch_array($showDtpb_kontainer);
+                                ?>
+                                <font class="list-font">Total Record Domain Table: <?= $resultDtpb_kontainer['TOTAL']; ?></font>
+                                <hr>
                             </a>
                         </div>
                         <!-- tpb_npwp_billing	 - TPB Npwp Billing -->
@@ -194,6 +350,18 @@
                                 <br>
                                 <font class="list-font">Status Synchron: </font>
                                 <font class="list-font" style="text-transform: uppercase;"><?= $btnContpb_npwp_billing ?></font>
+                                <?php
+                                $showLtpb_npwp_billing = $db->query("SELECT COUNT(*) AS TOTAL FROM tpb_npwp_billing");
+                                $resultLtpb_npwp_billing = mysqli_fetch_array($showLtpb_npwp_billing);
+                                ?>
+                                <hr>
+                                <font class="list-font">Total Record Local Table: <?= $resultLtpb_npwp_billing['TOTAL']; ?></font>
+                                <?php
+                                $showDtpb_npwp_billing = $dbmain->query("SELECT COUNT(*) AS TOTAL FROM tpb_npwp_billing");
+                                $resultDtpb_npwp_billing = mysqli_fetch_array($showDtpb_npwp_billing);
+                                ?>
+                                <font class="list-font">Total Record Domain Table: <?= $resultDtpb_npwp_billing['TOTAL']; ?></font>
+                                <hr>
                             </a>
                         </div>
                         <!-- tpb_penerima	 - TPB Penerima -->
@@ -205,6 +373,18 @@
                                 <br>
                                 <font class="list-font">Status Synchron: </font>
                                 <font class="list-font" style="text-transform: uppercase;"><?= $btnContpb_penerima ?></font>
+                                <?php
+                                $showLtpb_penerima = $db->query("SELECT COUNT(*) AS TOTAL FROM tpb_penerima");
+                                $resultLtpb_penerima = mysqli_fetch_array($showLtpb_penerima);
+                                ?>
+                                <hr>
+                                <font class="list-font">Total Record Local Table: <?= $resultLtpb_penerima['TOTAL']; ?></font>
+                                <?php
+                                $showDtpb_penerima = $dbmain->query("SELECT COUNT(*) AS TOTAL FROM tpb_penerima");
+                                $resultDtpb_penerima = mysqli_fetch_array($showDtpb_penerima);
+                                ?>
+                                <font class="list-font">Total Record Domain Table: <?= $resultDtpb_penerima['TOTAL']; ?></font>
+                                <hr>
                             </a>
                         </div>
                         <!-- tpb_pungutan	 - TPB Pungutan -->
@@ -216,6 +396,18 @@
                                 <br>
                                 <font class="list-font">Status Synchron: </font>
                                 <font class="list-font" style="text-transform: uppercase;"><?= $btnContpb_pungutan ?></font>
+                                <?php
+                                $showLtpb_pungutan = $db->query("SELECT COUNT(*) AS TOTAL FROM tpb_pungutan");
+                                $resultLtpb_pungutan = mysqli_fetch_array($showLtpb_pungutan);
+                                ?>
+                                <hr>
+                                <font class="list-font">Total Record Local Table: <?= $resultLtpb_pungutan['TOTAL']; ?></font>
+                                <?php
+                                $showDtpb_pungutan = $dbmain->query("SELECT COUNT(*) AS TOTAL FROM tpb_pungutan");
+                                $resultDtpb_pungutan = mysqli_fetch_array($showDtpb_pungutan);
+                                ?>
+                                <font class="list-font">Total Record Domain Table: <?= $resultDtpb_pungutan['TOTAL']; ?></font>
+                                <hr>
                             </a>
                         </div>
                         <!-- tpb_respon	 - TPB Respon -->
@@ -227,6 +419,18 @@
                                 <br>
                                 <font class="list-font">Status Synchron: </font>
                                 <font class="list-font" style="text-transform: uppercase;"><?= $btnContpb_respon ?></font>
+                                <?php
+                                $showLtpb_respon = $db->query("SELECT COUNT(*) AS TOTAL FROM tpb_respon");
+                                $resultLtpb_respon = mysqli_fetch_array($showLtpb_respon);
+                                ?>
+                                <hr>
+                                <font class="list-font">Total Record Local Table: <?= $resultLtpb_respon['TOTAL']; ?></font>
+                                <?php
+                                $showDtpb_respon = $dbmain->query("SELECT COUNT(*) AS TOTAL FROM tpb_respon");
+                                $resultDtpb_respon = mysqli_fetch_array($showDtpb_respon);
+                                ?>
+                                <font class="list-font">Total Record Domain Table: <?= $resultDtpb_respon['TOTAL']; ?></font>
+                                <hr>
                             </a>
                         </div>
                     </div>
