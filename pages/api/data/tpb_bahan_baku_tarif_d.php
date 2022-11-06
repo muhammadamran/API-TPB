@@ -1,8 +1,8 @@
 <?php
 if (isset($_POST['findLimit_D'])) {
-    $data = $dbmain->query("SELECT * FROM tpb_bahan_baku_tarif ORDER BY ID DESC LIMIT " . $_POST['Limit_D'] . "", 0);
+    $data = $dbmain->query("SELECT * FROM tpb_bahan_baku_tarif ORDER BY ID_HEADER DESC, JENIS_TARIF ASC LIMIT " . $_POST['Limit_D'] . "", 0);
 } else {
-    $data = $dbmain->query("SELECT * FROM tpb_bahan_baku_tarif ORDER BY ID DESC LIMIT 100", 0);
+    $data = $dbmain->query("SELECT * FROM tpb_bahan_baku_tarif ORDER BY ID_HEADER DESC, JENIS_TARIF ASC LIMIT 100", 0);
 }
 
 $no = 0;

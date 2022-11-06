@@ -10,7 +10,7 @@ $resulttpb_bahan_baku = mysqli_fetch_array($datatpb_bahan_baku);
 $datatpb_bahan_baku_dokumen = $db->query("SELECT * FROM tpb_bahan_baku_dokumen ORDER BY ID DESC LIMIT 1");
 $resulttpb_bahan_baku_dokumen = mysqli_fetch_array($datatpb_bahan_baku_dokumen);
 // tpb_bahan_baku_tarif
-$datatpb_bahan_baku_tarif = $db->query("SELECT * FROM tpb_bahan_baku_tarif ORDER BY ID DESC LIMIT 1");
+$datatpb_bahan_baku_tarif = $db->query("SELECT * FROM tpb_bahan_baku_tarif ORDER BY ID_HEADER DESC LIMIT 1");
 $resulttpb_bahan_baku_tarif = mysqli_fetch_array($datatpb_bahan_baku_tarif);
 // tpb_barang
 $datatpb_barang = $db->query("SELECT * FROM tpb_barang ORDER BY ID DESC LIMIT 1");
