@@ -21,8 +21,8 @@ if (isset($_POST['findLimit'])) {
         <div class="row">
             <div class="col-md-12 col-sm-12">
                 <div class="title-page">
-                    <i class="icon-copy fas fa-cog for-icon-page"></i>
-                    <font class="font-title">Settings</font>
+                    <i class="icon-copy fas fa-table for-icon-page"></i>
+                    <font class="font-title">Referensi</font>
                 </div>
                 <nav aria-label="breadcrumb" role="navigation">
                     <ol class="breadcrumb">
