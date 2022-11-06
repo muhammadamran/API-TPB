@@ -16,14 +16,14 @@ foreach ($data['result'] as $row) {
 
 $dbhost = "localhost";
 // Local Main
-$dbusername = "beacukai";
-$dbpassword = "beacukai";
-$dbname = $apiDB;
+// $dbusername = "beacukai";
+// $dbpassword = "beacukai";
+// $dbname = $apiDB;
 
 // Local Dev
-// $dbusername = "root";
-// $dbpassword = "";
-// $dbname = "tpb";
+$dbusername = "root";
+$dbpassword = "";
+$dbname = "tpb";
 $db = new mysqli($dbhost, $dbusername, $dbpassword, $dbname) or die(mysqli_connect_errno());
 
 if ($db->connect_error) {
