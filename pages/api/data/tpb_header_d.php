@@ -1,0 +1,167 @@
+<?php
+if (isset($_POST['findLimit_D'])) {
+    $data = $dbmain->query("SELECT * FROM tpb_header ORDER BY ID DESC LIMIT " . $_POST['Limit_D'] . "", 0);
+} else {
+    $data = $dbmain->query("SELECT * FROM tpb_header ORDER BY ID DESC LIMIT 100", 0);
+}
+
+$no = 0;
+while ($row = $data->fetch_assoc()) {
+    $no++;
+?>
+    <tr>
+        <td width="1%" class="f-s-600 text-inverse"><?= $no ?>.</td>
+        <td style="text-align: center;"><?= $row['ID']; ?></td>
+        <td style="text-align: center;"><?= $row['ALAMAT_PEMASOK']; ?></td>
+        <td style="text-align: center;"><?= $row['ALAMAT_PEMILIK']; ?></td>
+        <td style="text-align: center;"><?= $row['ALAMAT_PENERIMA_BARANG']; ?></td>
+        <td style="text-align: center;"><?= $row['ALAMAT_PENGIRIM']; ?></td>
+        <td style="text-align: center;"><?= $row['ALAMAT_PENGUSAHA']; ?></td>
+        <td style="text-align: center;"><?= $row['ALAMAT_PPJK']; ?></td>
+        <td style="text-align: center;"><?= $row['API_PEMILIK']; ?></td>
+        <td style="text-align: center;"><?= $row['API_PENERIMA']; ?></td>
+        <td style="text-align: center;"><?= $row['API_PENGUSAHA']; ?></td>
+        <td style="text-align: center;"><?= $row['ASAL_DATA']; ?></td>
+        <td style="text-align: center;"><?= $row['ASURANSI']; ?></td>
+        <td style="text-align: center;"><?= $row['BIAYA_TAMBAHAN']; ?></td>
+        <td style="text-align: center;"><?= $row['BRUTO']; ?></td>
+        <td style="text-align: center;"><?= $row['CIF']; ?></td>
+        <td style="text-align: center;"><?= $row['CIF_RUPIAH']; ?></td>
+        <td style="text-align: center;"><?= $row['DISKON']; ?></td>
+        <td style="text-align: center;"><?= $row['FLAG_PEMILIK']; ?></td>
+        <td style="text-align: center;"><?= $row['FLAG_URL_DOKUMEN_PABEAN']; ?></td>
+        <td style="text-align: center;"><?= $row['FOB']; ?></td>
+        <td style="text-align: center;"><?= $row['FREIGHT']; ?></td>
+        <td style="text-align: center;"><?= $row['HARGA_BARANG_LDP']; ?></td>
+        <td style="text-align: center;"><?= $row['HARGA_INVOICE']; ?></td>
+        <td style="text-align: center;"><?= $row['HARGA_PENYERAHAN']; ?></td>
+        <td style="text-align: center;"><?= $row['HARGA_TOTAL']; ?></td>
+        <td style="text-align: center;"><?= $row['ID_MODUL']; ?></td>
+        <td style="text-align: center;"><?= $row['ID_PEMASOK']; ?></td>
+        <td style="text-align: center;"><?= $row['ID_PEMILIK']; ?></td>
+        <td style="text-align: center;"><?= $row['ID_PENERIMA_BARANG']; ?></td>
+        <td style="text-align: center;"><?= $row['ID_PENGIRIM']; ?></td>
+        <td style="text-align: center;"><?= $row['ID_PENGUSAHA']; ?></td>
+        <td style="text-align: center;"><?= $row['ID_PPJK']; ?></td>
+        <td style="text-align: center;"><?= $row['JABATAN_TTD']; ?></td>
+        <td style="text-align: center;"><?= $row['JUMLAH_BARANG']; ?></td>
+        <td style="text-align: center;"><?= $row['JUMLAH_KEMASAN']; ?></td>
+        <td style="text-align: center;"><?= $row['JUMLAH_KONTAINER']; ?></td>
+        <td style="text-align: center;"><?= $row['KESESUAIAN_DOKUMEN']; ?></td>
+        <td style="text-align: center;"><?= $row['KETERANGAN']; ?></td>
+        <td style="text-align: center;"><?= $row['KODE_ASAL_BARANG']; ?></td>
+        <td style="text-align: center;"><?= $row['KODE_ASURANSI']; ?></td>
+        <td style="text-align: center;"><?= $row['KODE_BENDERA']; ?></td>
+        <td style="text-align: center;"><?= $row['KODE_CARA_ANGKUT']; ?></td>
+        <td style="text-align: center;"><?= $row['KODE_CARA_BAYAR']; ?></td>
+        <td style="text-align: center;"><?= $row['KODE_DAERAH_ASAL']; ?></td>
+        <td style="text-align: center;"><?= $row['KODE_DOKUMEN_PABEAN']; ?></td>
+        <td style="text-align: center;"><?= $row['KODE_FASILITAS']; ?></td>
+        <td style="text-align: center;"><?= $row['KODE_FTZ']; ?></td>
+        <td style="text-align: center;"><?= $row['KODE_HARGA']; ?></td>
+        <td style="text-align: center;"><?= $row['KODE_ID_PEMASOK']; ?></td>
+        <td style="text-align: center;"><?= $row['KODE_ID_PEMILIK']; ?></td>
+        <td style="text-align: center;"><?= $row['KODE_ID_PENERIMA_BARANG']; ?></td>
+        <td style="text-align: center;"><?= $row['KODE_ID_PENGIRIM']; ?></td>
+        <td style="text-align: center;"><?= $row['KODE_ID_PENGUSAHA']; ?></td>
+        <td style="text-align: center;"><?= $row['KODE_ID_PPJK']; ?></td>
+        <td style="text-align: center;"><?= $row['KODE_JENIS_API']; ?></td>
+        <td style="text-align: center;"><?= $row['KODE_JENIS_API_PEMILIK']; ?></td>
+        <td style="text-align: center;"><?= $row['KODE_JENIS_API_PENERIMA']; ?></td>
+        <td style="text-align: center;"><?= $row['KODE_JENIS_API_PENGUSAHA']; ?></td>
+        <td style="text-align: center;"><?= $row['KODE_JENIS_BARANG']; ?></td>
+        <td style="text-align: center;"><?= $row['KODE_JENIS_BC25']; ?></td>
+        <td style="text-align: center;"><?= $row['KODE_JENIS_NILAI']; ?></td>
+        <td style="text-align: center;"><?= $row['KODE_JENIS_PEMASUKAN01']; ?></td>
+        <td style="text-align: center;"><?= $row['KODE_JENIS_PEMASUKAN02']; ?></td>
+        <td style="text-align: center;"><?= $row['KODE_JENIS_TPB']; ?></td>
+        <td style="text-align: center;"><?= $row['KODE_KANTOR']; ?></td>
+        <td style="text-align: center;"><?= $row['KODE_KANTOR_BONGKAR']; ?></td>
+        <td style="text-align: center;"><?= $row['KODE_KANTOR_TUJUAN']; ?></td>
+        <td style="text-align: center;"><?= $row['KODE_LOKASI_BAYAR']; ?></td>
+        <td style="text-align: center;"><?= $row['KODE_NEGARA_PEMASOK']; ?></td>
+        <td style="text-align: center;"><?= $row['KODE_NEGARA_PEMILIK']; ?></td>
+        <td style="text-align: center;"><?= $row['KODE_NEGARA_PENGIRIM']; ?></td>
+        <td style="text-align: center;"><?= $row['KODE_NEGARA_TUJUAN']; ?></td>
+        <td style="text-align: center;"><?= $row['KODE_PEL_BONGKAR']; ?></td>
+        <td style="text-align: center;"><?= $row['KODE_PEL_MUAT']; ?></td>
+        <td style="text-align: center;"><?= $row['KODE_PEL_TRANSIT']; ?></td>
+        <td style="text-align: center;"><?= $row['KODE_PEMBAYAR']; ?></td>
+        <td style="text-align: center;"><?= $row['KODE_STATUS']; ?></td>
+        <td style="text-align: center;"><?= $row['KODE_STATUS_PENGUSAHA']; ?></td>
+        <td style="text-align: center;"><?= $row['KODE_STATUS_PERBAIKAN']; ?></td>
+        <td style="text-align: center;"><?= $row['KODE_TPS']; ?></td>
+        <td style="text-align: center;"><?= $row['KODE_TUJUAN_PEMASUKAN']; ?></td>
+        <td style="text-align: center;"><?= $row['KODE_TUJUAN_PENGIRIMAN']; ?></td>
+        <td style="text-align: center;"><?= $row['KODE_TUJUAN_TPB']; ?></td>
+        <td style="text-align: center;"><?= $row['KODE_TUTUP_PU']; ?></td>
+        <td style="text-align: center;"><?= $row['KODE_VALUTA']; ?></td>
+        <td style="text-align: center;"><?= $row['KOTA_TTD']; ?></td>
+        <td style="text-align: center;"><?= $row['LOKASI_ASAL']; ?></td>
+        <td style="text-align: center;"><?= $row['LOKASI_TUJUAN']; ?></td>
+        <td style="text-align: center;"><?= $row['NAMA_PEMASOK']; ?></td>
+        <td style="text-align: center;"><?= $row['NAMA_PEMILIK']; ?></td>
+        <td style="text-align: center;"><?= $row['NAMA_PENERIMA_BARANG']; ?></td>
+        <td style="text-align: center;"><?= $row['NAMA_PENGANGKUT']; ?></td>
+        <td style="text-align: center;"><?= $row['NAMA_PENGIRIM']; ?></td>
+        <td style="text-align: center;"><?= $row['NAMA_PENGUSAHA']; ?></td>
+        <td style="text-align: center;"><?= $row['NAMA_PPJK']; ?></td>
+        <td style="text-align: center;"><?= $row['NAMA_TTD']; ?></td>
+        <td style="text-align: center;"><?= $row['NDPBM']; ?></td>
+        <td style="text-align: center;"><?= $row['NETTO']; ?></td>
+        <td style="text-align: center;"><?= $row['NILAI_INCOTERM']; ?></td>
+        <td style="text-align: center;"><?= $row['NIPER_PENERIMA']; ?></td>
+        <td style="text-align: center;"><?= $row['NOMOR_AJU']; ?></td>
+        <td style="text-align: center;"><?= $row['NOMOR_API']; ?></td>
+        <td style="text-align: center;"><?= $row['NOMOR_BC11']; ?></td>
+        <td style="text-align: center;"><?= $row['NOMOR_BILLING']; ?></td>
+        <td style="text-align: center;"><?= $row['NOMOR_DAFTAR']; ?></td>
+        <td style="text-align: center;"><?= $row['NOMOR_IJIN_BPK_PEMASOK']; ?></td>
+        <td style="text-align: center;"><?= $row['NOMOR_IJIN_BPK_PENGUSAHA']; ?></td>
+        <td style="text-align: center;"><?= $row['NOMOR_IJIN_TPB']; ?></td>
+        <td style="text-align: center;"><?= $row['NOMOR_IJIN_TPB_PENERIMA']; ?></td>
+        <td style="text-align: center;"><?= $row['NOMOR_POLISI']; ?></td>
+        <td style="text-align: center;"><?= $row['NOMOR_VOY_FLIGHT']; ?></td>
+        <td style="text-align: center;"><?= $row['NPPPJK']; ?></td>
+        <td style="text-align: center;"><?= $row['NPWP_BILLING']; ?></td>
+        <td style="text-align: center;"><?= $row['POS_BC11']; ?></td>
+        <td style="text-align: center;"><?= $row['SERI']; ?></td>
+        <td style="text-align: center;"><?= $row['SUBPOS_BC11']; ?></td>
+        <td style="text-align: center;"><?= $row['SUBSUBPOS_BC11']; ?></td>
+        <td style="text-align: center;"><?= $row['TANGGAL_AJU']; ?></td>
+        <td style="text-align: center;"><?= $row['TANGGAL_BC11']; ?></td>
+        <td style="text-align: center;"><?= $row['TANGGAL_BERANGKAT']; ?></td>
+        <td style="text-align: center;"><?= $row['TANGGAL_BILLING']; ?></td>
+        <td style="text-align: center;"><?= $row['TANGGAL_DAFTAR']; ?></td>
+        <td style="text-align: center;"><?= $row['TANGGAL_IJIN_BPK_PEMASOK']; ?></td>
+        <td style="text-align: center;"><?= $row['TANGGAL_IJIN_BPK_PENGUSAHA']; ?></td>
+        <td style="text-align: center;"><?= $row['TANGGAL_IJIN_TPB']; ?></td>
+        <td style="text-align: center;"><?= $row['TANGGAL_NPPPJK']; ?></td>
+        <td style="text-align: center;"><?= $row['TANGGAL_TIBA']; ?></td>
+        <td style="text-align: center;"><?= $row['TANGGAL_TTD']; ?></td>
+        <td style="text-align: center;"><?= $row['TGL_JATUH_TEMPO_BILLING']; ?></td>
+        <td style="text-align: center;"><?= $row['TOTAL_BAYAR']; ?></td>
+        <td style="text-align: center;"><?= $row['TOTAL_BEBAS']; ?></td>
+        <td style="text-align: center;"><?= $row['TOTAL_DILUNASI']; ?></td>
+        <td style="text-align: center;"><?= $row['TOTAL_JAMIN']; ?></td>
+        <td style="text-align: center;"><?= $row['TOTAL_SUDAH_DILUNASI']; ?></td>
+        <td style="text-align: center;"><?= $row['TOTAL_TANGGUH']; ?></td>
+        <td style="text-align: center;"><?= $row['TOTAL_TANGGUNG']; ?></td>
+        <td style="text-align: center;"><?= $row['TOTAL_TIDAK_DIPUNGUT']; ?></td>
+        <td style="text-align: center;"><?= $row['URL_DOKUMEN_PABEAN']; ?></td>
+        <td style="text-align: center;"><?= $row['VERSI_MODUL']; ?></td>
+        <td style="text-align: center;"><?= $row['VOLUME']; ?></td>
+        <td style="text-align: center;"><?= $row['WAKTU_BONGKAR']; ?></td>
+        <td style="text-align: center;"><?= $row['WAKTU_STUFFING']; ?></td>
+        <td style="text-align: center;"><?= $row['TANGGAL_MUAT']; ?></td>
+        <td style="text-align: center;"><?= $row['TEMPAT_STUFFING']; ?></td>
+        <td style="text-align: center;"><?= $row['CALL_SIGN']; ?></td>
+        <td style="text-align: center;"><?= $row['JUMLAH_TANDA_PENGAMAN']; ?></td>
+        <td style="text-align: center;"><?= $row['KODE_JENIS_TANDA_PENGAMAN']; ?></td>
+        <td style="text-align: center;"><?= $row['KODE_KANTOR_MUAT']; ?></td>
+        <td style="text-align: center;"><?= $row['KODE_PEL_TUJUAN']; ?></td>
+        <td style="text-align: center;"><?= $row['TANGGAL_STUFFING']; ?></td>
+        <td style="text-align: center;"><?= $row['KODE_GUDANG_ASAL']; ?></td>
+        <td style="text-align: center;"><?= $row['KODE_GUDANG_TUJUAN']; ?></td>
+    </tr>
+<?php } ?>

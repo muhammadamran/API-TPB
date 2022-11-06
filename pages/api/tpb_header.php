@@ -55,20 +55,20 @@ if (isset($_POST['findLimit_L'])) {
                     </div>
                     <div class="line-page"></div>
                     <?php
-                    $dataD = $dbmain->query("SELECT COUNT(*) AS total FROM tpb_header ORDER BY ID DESC");
-                    $rowD  = $dataD->fetch_assoc()
+                    // $dataD = $dbmain->query("SELECT COUNT(*) AS total FROM tpb_header ORDER BY ID DESC");
+                    // $rowD  = $dataD->fetch_assoc()
                     ?>
                     <div class="alert alert-secondary fade show" style="color: #66615b;">
                         <button type="button" class="close" data-dismiss="alert">
                             <span aria-hidden="true" style="color: #66615b47;">×</span>
                         </button>
-                        <p>Menampilkan <b>Limit <?= $Limit ?> Data TPB Header</b> terakhir. Silahkan tambah Limit Data TPB Header pada form Limit.<br> Total Data TPB Header pada Sistem sebanyak <b><?= $rowD['total'] ?> Data TPB Header.</b></p>
+                        <p>Menampilkan <b>Limit <?= $Limit_D ?> Data TPB Header</b> terakhir. Silahkan tambah Limit Data TPB Header pada form Limit.<br> Total Data TPB Header pada Sistem sebanyak <b><?= $rowD['total'] ?> Data TPB Header.</b></p>
                     </div>
                     <div class="row">
                         <div class="col-sm-4">
                             <form action="" method="POST">
                                 <div class="form-group">
-                                    <label for="IDLimit_D" class="col-form-label">Limit D</label>
+                                    <label for="IDLimit_D" class="col-form-label">Limit</label>
                                     <input id="IDLimit_D" name="Limit_D" type="number" class="form-control" value="<?= $Limit_D ?>" placeholder="Limit ...">
                                     <div>
                                         <button type="submit" name="findLimit_D" class="btn btn-sm btn-secondary">
@@ -250,29 +250,205 @@ if (isset($_POST['findLimit_L'])) {
         <div class="col-md-6">
             <div class="card ">
                 <div class="card-header ">
-                    <font class="card-title"><i class="fas fa-table"></i> Data</font>
+                    <font class="card-title"><i class="fas fa-table"></i> Data IT Inventory</font>
                 </div>
                 <div class="card-body ">
+                    <div style="display: flex;justify-content: flex-start;align-content: center;align-items: center;margin-bottom: 10px;">
+                        <div style="font-size: 35px;">
+                            <i class="fas fa-info-circle"></i>
+                        </div>
+                        <div style="display: grid;justify-content: flex-start;align-content: center;align-items: center;margin-left: 10px;">
+                            <font>Total Record:</font>
+                            <font>Total Last Data:</font>
+                        </div>
+                    </div>
                     <div class="line-page"></div>
+                    <?php
+                    $dataL = $db->query("SELECT COUNT(*) AS total FROM tpb_header ORDER BY ID DESC");
+                    $rowL  = $dataL->fetch_assoc()
+                    ?>
+                    <div class="alert alert-secondary fade show" style="color: #66615b;">
+                        <button type="button" class="close" data-dismiss="alert">
+                            <span aria-hidden="true" style="color: #66615b47;">×</span>
+                        </button>
+                        <p>Menampilkan <b>Limit <?= $Limit_L ?> Data TPB Header</b> terakhir. Silahkan tambah Limit Data TPB Header pada form Limit.<br> Total Data TPB Header pada Sistem sebanyak <b><?= $rowL['total'] ?> Data TPB Header.</b></p>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <form action="" method="POST">
+                                <div class="form-group">
+                                    <label for="IDLimit_L" class="col-form-label">Limit</label>
+                                    <input id="IDLimit_L" name="Limit_L" type="number" class="form-control" value="<?= $Limit_L ?>" placeholder="Limit ...">
+                                    <div>
+                                        <button type="submit" name="findLimit_L" class="btn btn-sm btn-secondary">
+                                            <font style="font-size: 12px;font-weight: 500;"><i class="fas fa-list-ol"></i> Tampilkan</font>
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
                     <div class="table-responsive">
                         <table id="local" class="table table-striped table-bordered table-td-valign-middle">
                             <thead>
                                 <tr>
-                                    <th rowspan="2" width="1%">#</th>
-                                    <th class="text-nowrap" rowspan="2" style="text-align: center;">Nomor Pengajuan</th>
-                                    <th class="text-nowrap" rowspan="2" style="text-align: center;">Pemasok</th>
-                                    <th class="text-nowrap" rowspan="2" style="text-align: center;">Pengangkut</th>
-                                    <th class="text-nowrap" colspan="3" style="text-align: center;">Jumlah</th>
-                                    <th class="text-nowrap" rowspan="2" style="text-align: center;">Status</th>
-                                </tr>
-                                <tr>
-                                    <th class="text-nowrap" style="text-align: center;">Barang</th>
-                                    <th class="text-nowrap" style="text-align: center;">Kontainer</th>
-                                    <th class="text-nowrap" style="text-align: center;">Kemasan</th>
+                                    <th width="1%">#</th>
+                                    <th class="text-nowrap" style="text-align: center;">ID</th>
+                                    <th class="text-nowrap" style="text-align: center;">ALAMAT PEMASOK</th>
+                                    <th class="text-nowrap" style="text-align: center;">ALAMAT PEMILIK</th>
+                                    <th class="text-nowrap" style="text-align: center;">ALAMAT PENERIMA BARANG</th>
+                                    <th class="text-nowrap" style="text-align: center;">ALAMAT PENGIRIM</th>
+                                    <th class="text-nowrap" style="text-align: center;">ALAMAT PENGUSAHA</th>
+                                    <th class="text-nowrap" style="text-align: center;">ALAMAT PPJK</th>
+                                    <th class="text-nowrap" style="text-align: center;">API PEMILIK</th>
+                                    <th class="text-nowrap" style="text-align: center;">API PENERIMA</th>
+                                    <th class="text-nowrap" style="text-align: center;">API PENGUSAHA</th>
+                                    <th class="text-nowrap" style="text-align: center;">ASAL DATA</th>
+                                    <th class="text-nowrap" style="text-align: center;">ASURANSI</th>
+                                    <th class="text-nowrap" style="text-align: center;">BIAYA TAMBAHAN</th>
+                                    <th class="text-nowrap" style="text-align: center;">BRUTO</th>
+                                    <th class="text-nowrap" style="text-align: center;">CIF</th>
+                                    <th class="text-nowrap" style="text-align: center;">CIF RUPIAH</th>
+                                    <th class="text-nowrap" style="text-align: center;">DISKON</th>
+                                    <th class="text-nowrap" style="text-align: center;">FLAG PEMILIK</th>
+                                    <th class="text-nowrap" style="text-align: center;">FLAG URL DOKUMEN PABEAN</th>
+                                    <th class="text-nowrap" style="text-align: center;">FOB</th>
+                                    <th class="text-nowrap" style="text-align: center;">FREIGHT</th>
+                                    <th class="text-nowrap" style="text-align: center;">HARGA BARANG LDP</th>
+                                    <th class="text-nowrap" style="text-align: center;">HARGA INVOICE</th>
+                                    <th class="text-nowrap" style="text-align: center;">HARGA PENYERAHAN</th>
+                                    <th class="text-nowrap" style="text-align: center;">HARGA TOTAL</th>
+                                    <th class="text-nowrap" style="text-align: center;">ID MODUL</th>
+                                    <th class="text-nowrap" style="text-align: center;">ID PEMASOK</th>
+                                    <th class="text-nowrap" style="text-align: center;">ID PEMILIK</th>
+                                    <th class="text-nowrap" style="text-align: center;">ID PENERIMA BARANG</th>
+                                    <th class="text-nowrap" style="text-align: center;">ID PENGIRIM</th>
+                                    <th class="text-nowrap" style="text-align: center;">ID PENGUSAHA</th>
+                                    <th class="text-nowrap" style="text-align: center;">ID PPJK</th>
+                                    <th class="text-nowrap" style="text-align: center;">JABATAN TTD</th>
+                                    <th class="text-nowrap" style="text-align: center;">JUMLAH BARANG</th>
+                                    <th class="text-nowrap" style="text-align: center;">JUMLAH KEMASAN</th>
+                                    <th class="text-nowrap" style="text-align: center;">JUMLAH KONTAINER</th>
+                                    <th class="text-nowrap" style="text-align: center;">KESESUAIAN DOKUMEN</th>
+                                    <th class="text-nowrap" style="text-align: center;">KETERANGAN</th>
+                                    <th class="text-nowrap" style="text-align: center;">KODE ASAL BARANG</th>
+                                    <th class="text-nowrap" style="text-align: center;">KODE ASURANSI</th>
+                                    <th class="text-nowrap" style="text-align: center;">KODE BENDERA</th>
+                                    <th class="text-nowrap" style="text-align: center;">KODE CARA ANGKUT</th>
+                                    <th class="text-nowrap" style="text-align: center;">KODE CARA BAYAR</th>
+                                    <th class="text-nowrap" style="text-align: center;">KODE DAERAH ASAL</th>
+                                    <th class="text-nowrap" style="text-align: center;">KODE DOKUMEN PABEAN</th>
+                                    <th class="text-nowrap" style="text-align: center;">KODE FASILITAS</th>
+                                    <th class="text-nowrap" style="text-align: center;">KODE FTZ</th>
+                                    <th class="text-nowrap" style="text-align: center;">KODE HARGA</th>
+                                    <th class="text-nowrap" style="text-align: center;">KODE ID PEMASOK</th>
+                                    <th class="text-nowrap" style="text-align: center;">KODE ID PEMILIK</th>
+                                    <th class="text-nowrap" style="text-align: center;">KODE ID PENERIMA BARANG</th>
+                                    <th class="text-nowrap" style="text-align: center;">KODE ID PENGIRIM</th>
+                                    <th class="text-nowrap" style="text-align: center;">KODE ID PENGUSAHA</th>
+                                    <th class="text-nowrap" style="text-align: center;">KODE ID PPJK</th>
+                                    <th class="text-nowrap" style="text-align: center;">KODE JENIS API</th>
+                                    <th class="text-nowrap" style="text-align: center;">KODE JENIS API PEMILIK</th>
+                                    <th class="text-nowrap" style="text-align: center;">KODE JENIS API PENERIMA</th>
+                                    <th class="text-nowrap" style="text-align: center;">KODE JENIS API PENGUSAHA</th>
+                                    <th class="text-nowrap" style="text-align: center;">KODE JENIS BARANG</th>
+                                    <th class="text-nowrap" style="text-align: center;">KODE JENIS BC25</th>
+                                    <th class="text-nowrap" style="text-align: center;">KODE JENIS NILAI</th>
+                                    <th class="text-nowrap" style="text-align: center;">KODE JENIS PEMASUKAN01</th>
+                                    <th class="text-nowrap" style="text-align: center;">KODE JENIS PEMASUKAN02</th>
+                                    <th class="text-nowrap" style="text-align: center;">KODE JENIS TPB</th>
+                                    <th class="text-nowrap" style="text-align: center;">KODE KANTOR</th>
+                                    <th class="text-nowrap" style="text-align: center;">KODE KANTOR BONGKAR</th>
+                                    <th class="text-nowrap" style="text-align: center;">KODE KANTOR TUJUAN</th>
+                                    <th class="text-nowrap" style="text-align: center;">KODE LOKASI BAYAR</th>
+                                    <th class="text-nowrap" style="text-align: center;">KODE NEGARA PEMASOK</th>
+                                    <th class="text-nowrap" style="text-align: center;">KODE NEGARA PEMILIK</th>
+                                    <th class="text-nowrap" style="text-align: center;">KODE NEGARA PENGIRIM</th>
+                                    <th class="text-nowrap" style="text-align: center;">KODE NEGARA TUJUAN</th>
+                                    <th class="text-nowrap" style="text-align: center;">KODE PEL BONGKAR</th>
+                                    <th class="text-nowrap" style="text-align: center;">KODE PEL MUAT</th>
+                                    <th class="text-nowrap" style="text-align: center;">KODE PEL TRANSIT</th>
+                                    <th class="text-nowrap" style="text-align: center;">KODE PEMBAYAR</th>
+                                    <th class="text-nowrap" style="text-align: center;">KODE STATUS</th>
+                                    <th class="text-nowrap" style="text-align: center;">KODE STATUS PENGUSAHA</th>
+                                    <th class="text-nowrap" style="text-align: center;">KODE STATUS PERBAIKAN</th>
+                                    <th class="text-nowrap" style="text-align: center;">KODE TPS</th>
+                                    <th class="text-nowrap" style="text-align: center;">KODE TUJUAN PEMASUKAN</th>
+                                    <th class="text-nowrap" style="text-align: center;">KODE TUJUAN PENGIRIMAN</th>
+                                    <th class="text-nowrap" style="text-align: center;">KODE TUJUAN TPB</th>
+                                    <th class="text-nowrap" style="text-align: center;">KODE TUTUP PU</th>
+                                    <th class="text-nowrap" style="text-align: center;">KODE VALUTA</th>
+                                    <th class="text-nowrap" style="text-align: center;">KOTA TTD</th>
+                                    <th class="text-nowrap" style="text-align: center;">LOKASI ASAL</th>
+                                    <th class="text-nowrap" style="text-align: center;">LOKASI TUJUAN</th>
+                                    <th class="text-nowrap" style="text-align: center;">NAMA PEMASOK</th>
+                                    <th class="text-nowrap" style="text-align: center;">NAMA PEMILIK</th>
+                                    <th class="text-nowrap" style="text-align: center;">NAMA PENERIMA BARANG</th>
+                                    <th class="text-nowrap" style="text-align: center;">NAMA PENGANGKUT</th>
+                                    <th class="text-nowrap" style="text-align: center;">NAMA PENGIRIM</th>
+                                    <th class="text-nowrap" style="text-align: center;">NAMA PENGUSAHA</th>
+                                    <th class="text-nowrap" style="text-align: center;">NAMA PPJK</th>
+                                    <th class="text-nowrap" style="text-align: center;">NAMA TTD</th>
+                                    <th class="text-nowrap" style="text-align: center;">NDPBM</th>
+                                    <th class="text-nowrap" style="text-align: center;">NETTO</th>
+                                    <th class="text-nowrap" style="text-align: center;">NILAI INCOTERM</th>
+                                    <th class="text-nowrap" style="text-align: center;">NIPER PENERIMA</th>
+                                    <th class="text-nowrap" style="text-align: center;">NOMOR AJU</th>
+                                    <th class="text-nowrap" style="text-align: center;">NOMOR API</th>
+                                    <th class="text-nowrap" style="text-align: center;">NOMOR BC11</th>
+                                    <th class="text-nowrap" style="text-align: center;">NOMOR BILLING</th>
+                                    <th class="text-nowrap" style="text-align: center;">NOMOR DAFTAR</th>
+                                    <th class="text-nowrap" style="text-align: center;">NOMOR IJIN BPK PEMASOK</th>
+                                    <th class="text-nowrap" style="text-align: center;">NOMOR IJIN BPK PENGUSAHA</th>
+                                    <th class="text-nowrap" style="text-align: center;">NOMOR IJIN TPB</th>
+                                    <th class="text-nowrap" style="text-align: center;">NOMOR IJIN TPB PENERIMA</th>
+                                    <th class="text-nowrap" style="text-align: center;">NOMOR POLISI</th>
+                                    <th class="text-nowrap" style="text-align: center;">NOMOR VOY FLIGHT</th>
+                                    <th class="text-nowrap" style="text-align: center;">NPPPJK</th>
+                                    <th class="text-nowrap" style="text-align: center;">NPWP BILLING</th>
+                                    <th class="text-nowrap" style="text-align: center;">POS BC11</th>
+                                    <th class="text-nowrap" style="text-align: center;">SERI</th>
+                                    <th class="text-nowrap" style="text-align: center;">SUBPOS BC11</th>
+                                    <th class="text-nowrap" style="text-align: center;">SUBSUBPOS BC11</th>
+                                    <th class="text-nowrap" style="text-align: center;">TANGGAL AJU</th>
+                                    <th class="text-nowrap" style="text-align: center;">TANGGAL BC11</th>
+                                    <th class="text-nowrap" style="text-align: center;">TANGGAL BERANGKAT</th>
+                                    <th class="text-nowrap" style="text-align: center;">TANGGAL BILLING</th>
+                                    <th class="text-nowrap" style="text-align: center;">TANGGAL DAFTAR</th>
+                                    <th class="text-nowrap" style="text-align: center;">TANGGAL IJIN BPK PEMASOK</th>
+                                    <th class="text-nowrap" style="text-align: center;">TANGGAL IJIN BPK PENGUSAHA</th>
+                                    <th class="text-nowrap" style="text-align: center;">TANGGAL IJIN TPB</th>
+                                    <th class="text-nowrap" style="text-align: center;">TANGGAL NPPPJK</th>
+                                    <th class="text-nowrap" style="text-align: center;">TANGGAL TIBA</th>
+                                    <th class="text-nowrap" style="text-align: center;">TANGGAL TTD</th>
+                                    <th class="text-nowrap" style="text-align: center;">TGL JATUH TEMPO BILLING</th>
+                                    <th class="text-nowrap" style="text-align: center;">TOTAL BAYAR</th>
+                                    <th class="text-nowrap" style="text-align: center;">TOTAL BEBAS</th>
+                                    <th class="text-nowrap" style="text-align: center;">TOTAL DILUNASI</th>
+                                    <th class="text-nowrap" style="text-align: center;">TOTAL JAMIN</th>
+                                    <th class="text-nowrap" style="text-align: center;">TOTAL SUDAH DILUNASI</th>
+                                    <th class="text-nowrap" style="text-align: center;">TOTAL TANGGUH</th>
+                                    <th class="text-nowrap" style="text-align: center;">TOTAL TANGGUNG</th>
+                                    <th class="text-nowrap" style="text-align: center;">TOTAL TIDAK DIPUNGUT</th>
+                                    <th class="text-nowrap" style="text-align: center;">URL DOKUMEN PABEAN</th>
+                                    <th class="text-nowrap" style="text-align: center;">VERSI MODUL</th>
+                                    <th class="text-nowrap" style="text-align: center;">VOLUME</th>
+                                    <th class="text-nowrap" style="text-align: center;">WAKTU BONGKAR</th>
+                                    <th class="text-nowrap" style="text-align: center;">WAKTU STUFFING</th>
+                                    <th class="text-nowrap" style="text-align: center;">TANGGAL MUAT</th>
+                                    <th class="text-nowrap" style="text-align: center;">TEMPAT STUFFING</th>
+                                    <th class="text-nowrap" style="text-align: center;">CALL SIGN</th>
+                                    <th class="text-nowrap" style="text-align: center;">JUMLAH TANDA PENGAMAN</th>
+                                    <th class="text-nowrap" style="text-align: center;">KODE JENIS TANDA PENGAMAN</th>
+                                    <th class="text-nowrap" style="text-align: center;">KODE KANTOR MUAT</th>
+                                    <th class="text-nowrap" style="text-align: center;">KODE PEL TUJUAN</th>
+                                    <th class="text-nowrap" style="text-align: center;">TANGGAL STUFFING</th>
+                                    <th class="text-nowrap" style="text-align: center;">KODE GUDANG ASAL</th>
+                                    <th class="text-nowrap" style="text-align: center;">KODE GUDANG TUJUAN</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php include 'pages/dokumen-pabean/data/tables23.php'; ?>
+                                <?php include 'pages/api/data/tpb_header_l.php'; ?>
                             </tbody>
                         </table>
                     </div>
