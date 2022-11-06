@@ -55,7 +55,7 @@ if ($result == NULL) {
     if ($loginArea == 2) {
       echo '<script>
       alert("Hai, ' . $nama . '. kamu berhasil login");
-      location.href = "index.php"
+      location.href = "index.php?t=Dashboard"
       </script>';
     } else if ($loginArea == 1) {
       echo '<script>
