@@ -10,10 +10,12 @@ if (isset($_POST["SaveAPInDB"])) {
     $url_api           = $_POST['url_api'];
     $user_api          = $_POST['user_api'];
     $pass_api          = md5($_POST['pass_api']);
+    $reload_api        = $_POST['reload_api'];
 
     $query = $db->query("UPDATE api_cloud SET url_api='$url_api',
                                            user_api='$user_api',
-                                           pass_api='$pass_api'
+                                           pass_api='$pass_api',
+                                           reload_api='$reload_api'
                             WHERE id='$ID'");
     if ($query) {
         echo '<script>alert("Data has been Added");location.href = "index.php?m=settings&s=settings&t=Settings - Configuration API"</script>';
@@ -29,10 +31,12 @@ if (isset($_POST["EditAPInDB"])) {
     $url_api           = $_POST['url_api'];
     $user_api          = $_POST['user_api'];
     $pass_api          = md5($_POST['pass_api']);
+    $reload_api        = $_POST['reload_api'];
 
-    $query = $db->query("UPDATE api SET url_api='$url_api',
+    $query = $db->query("UPDATE api_cloud SET url_api='$url_api',
                                            user_api='$user_api',
-                                           pass_api='$pass_api'
+                                           pass_api='$pass_api',
+                                           reload_api='$reload_api'
                             WHERE id='$ID'");
     if ($query) {
         echo '<script>alert("Data has been Added");location.href = "index.php?m=settings&s=settings&t=Settings - Configuration API"</script>';
@@ -122,6 +126,12 @@ if (isset($_POST["EditAPInDB"])) {
                                             <input type="text" class="form-control" name="database_module" value="" placeholder="Database ..." readonly>
                                         </div>
                                     </div>
+                                    <div class="form-group row m-b-15">
+                                        <label class="col-md-3 col-form-label">Reload API</label>
+                                        <div class="col-md-7">
+                                            <input type="text" class="form-control" name="reload_api" value="<?= $row['reload_api']; ?>" placeholder="Reload API ...">
+                                        </div>
+                                    </div>
                                     <div class="form-group row">
                                         <div class="col-md-7 offset-md-3">
                                             <button type="submit" class="btn btn-primary m-r-5" name="EditAPInDB"><i class="fa fa-save"></i> Simpan</button>
@@ -162,6 +172,12 @@ if (isset($_POST["EditAPInDB"])) {
                                         <label class="col-md-3 col-form-label">Database</label>
                                         <div class="col-md-7">
                                             <input type="text" class="form-control" name="database_module" value="" placeholder="Database ..." readonly>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row m-b-15">
+                                        <label class="col-md-3 col-form-label">Reload API</label>
+                                        <div class="col-md-7">
+                                            <input type="text" class="form-control" name="reload_api" value="<?= $row['reload_api']; ?>" placeholder="Reload API ...">
                                         </div>
                                     </div>
                                     <div class="form-group row">
