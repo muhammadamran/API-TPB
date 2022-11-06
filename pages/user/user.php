@@ -25,7 +25,7 @@
                     <font class="card-title"><i class="fas fa-table"></i> Data</font>
                 </div>
                 <div class="card-body ">
-                    <a href="index.php?m=user&s=user_add" class="btn btn-sm btn-dark" title="Add User"><i class="fas fa-plus-circle"></i> Add User</a>
+                    <a href="index.php?m=user&s=user_add&t=Add User" class="btn btn-sm btn-dark" title="Add User"><i class="fas fa-plus-circle"></i> Add User</a>
                     <div class="line-page"></div>
                     <div class="table-responsive">
                         <table id="example" class="table table-striped table-bordered table-td-valign-middle">

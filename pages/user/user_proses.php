@@ -17,7 +17,7 @@ if ($aksi == 'insert') {
                           ("' . $Nama . '","' . $Email . '", "' . $Role . '", ' . ($ExpiredDate == '' || empty($ExpiredDate) ? "NULL" : '"' . $ExpiredDate . '", "' . $username . '", "' . $password . '"') . ')');
 
     if ($insert) {
-        echo '<script>alert("Data has been Added");location.href = "../../index.php?m=user&s=user"</script>';
+        echo '<script>alert("Data has been Added");location.href = "../../index.php?m=user&s=user&t=Users"</script>';
     } else {
         echo '<script>alert("Data failed Added");history.go(-1)</script>';
     }
@@ -31,7 +31,7 @@ if ($aksi == 'insert') {
     $update = $db->query('UPDATE user SET nama="' . $Nama . '", email="' . $Email . '", role="' . $Role . '", expired_date=' . ($ExpiredDate == '' || empty($ExpiredDate) ? "NULL" : '"' . $ExpiredDate . '"') . ' WHERE id="' . $id . '"');
 
     if ($update) {
-        echo '<script>alert("Data has been Updated");location.href = "../../index.php?m=user&s=user"</script>';
+        echo '<script>alert("Data has been Updated");location.href = "../../index.php?m=user&s=user&t=Users"</script>';
     } else {
         echo '<script>alert("Data failed Updated");history.go(-1)</script>';
     }
@@ -40,7 +40,7 @@ if ($aksi == 'insert') {
     $hapus = $db->query('DELETE FROM user WHERE id="' . $id . '"');
 
     if ($hapus) {
-        echo '<script>alert("Data has been Deleted");location.href = "../../index.php?m=user&s=user"</script>';
+        echo '<script>alert("Data has been Deleted");location.href = "../../index.php?m=user&s=user&t=Users"</script>';
     } else {
         echo '<script>alert("Data failed Deleted");history.go(-1)</script>';
     }
@@ -51,7 +51,7 @@ if ($aksi == 'insert') {
     $change = $db->query('UPDATE user SET password="' . $password . '" WHERE id="' . $id . '"');
 
     if ($change) {
-        echo '<script>alert("Password has been Changed");location.href = "../../index.php?m=user&s=user"</script>';
+        echo '<script>alert("Password has been Changed");location.href = "../../index.php?m=user&s=user&t=Users"</script>';
     } else {
         echo '<script>alert("Password failed Changed");history.go(-1)</script>';
     }

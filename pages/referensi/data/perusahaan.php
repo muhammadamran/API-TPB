@@ -28,12 +28,12 @@ while ($row = $data->fetch_assoc()) {
         <td style="text-align: center;"><?= $row['NOMOR_SKEP'] ?></td>
         <td style="text-align: center;">
             <?php if ($row['NPPBKC'] == NULL) { ?>
-                <a href="index.php?m=referensi&s=perusahaan_edit&t=Perusahaan&id=<?= $row['ID_REF'] ?>" class="btn btn-sm btn-aksi btn-primary" title="Edit"><i class="fas fa-edit"></i></a>
+                <a href="index.php?m=referensi&s=perusahaan_edit&t=NPPBKC Perusahaan&id=<?= $row['ID_REF'] ?>" class="btn btn-sm btn-aksi btn-primary" title="Edit"><i class="fas fa-edit"></i></a>
             <?php } else { ?>
                 <div class="aksi-table">
                     <?= $row['NPPBKC'] ?>
                     <div style="margin-left: 10px;">
-                        <a href="index.php?m=referensi&s=perusahaan_edit&t=Perusahaan&id=<?= $row['ID_REF'] ?>" title="Edit"><i class="fas fa-edit"></i></a>
+                        <a href="index.php?m=referensi&s=perusahaan_edit&t=NPPBKC Perusahaan&id=<?= $row['ID_REF'] ?>" title="Edit"><i class="fas fa-edit"></i></a>
                     </div>
                 </div>
             <?php } ?>

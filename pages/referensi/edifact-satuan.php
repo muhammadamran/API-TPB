@@ -27,7 +27,6 @@ if (isset($_POST['findLimit'])) {
                 <nav aria-label="breadcrumb" role="navigation">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="index.php?t=Dashboard" class="breadcrumb-item-title">Dashboard</a></li>
-                        <li class="breadcrumb-item" aria-current="page">Settings</li>
                         <li class="breadcrumb-item" aria-current="page">Referensi</li>
                         <li class="breadcrumb-item" aria-current="page">Edifact</li>
                         <li class="breadcrumb-item active" aria-current="page">Satuan</li>
