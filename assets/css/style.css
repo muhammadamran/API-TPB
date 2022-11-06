@@ -95,6 +95,140 @@
     box-shadow: 10px 7px 0px 0px rgb(0 0 0 / 15%);
 }
 
+/* Status API 200 */
+.c-200 {
+    background: linear-gradient(45deg, #28a745, #673ab7);
+    border-radius: 5px;
+    padding: 65px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin: 10px;
+    text-align: center;
+}
+
+.c-200:hover {
+    background: linear-gradient(45deg, #28a745, #673ab7);
+    border-radius: 5px;
+    padding: 65px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin: 10px;
+    text-align: center;
+}
+/* Status API 200 */
+/* Status Synchron synchron */
+.c-synchron {
+    background: linear-gradient(45deg, #007bff, #673ab7);
+    border-radius: 5px;
+    padding: 65px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin: 10px;
+    text-align: center;
+}
+
+.c-synchron:hover {
+    background: linear-gradient(45deg, #007bff, #673ab7);
+    border-radius: 5px;
+    padding: 65px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin: 10px;
+    text-align: center;
+}
+/* Status Synchron synchron */
+
+.btn-200 {
+    background: linear-gradient(45deg, #28a745, #673ab7);
+    color: #FFFFFF;
+}
+
+.btn-200:hover {
+    background: linear-gradient(45deg, #28a745, #673ab7);
+    color: #FFFFFF;
+}
+
+.btn-synchron {
+    background: linear-gradient(45deg, #007bff, #673ab7);
+    color: #FFFFFF;
+}
+
+.btn-synchron:hover {
+    background: linear-gradient(45deg, #007bff, #673ab7);
+    color: #FFFFFF;
+}
+
+/* Status API 404 */
+.c-404 {
+    background: linear-gradient(45deg, #ffc107, #673ab7);
+    border-radius: 5px;
+    padding: 65px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin: 10px;
+    text-align: center;
+}
+
+.c-404:hover {
+    background: linear-gradient(45deg, #ffc107, #673ab7);
+    border-radius: 5px;
+    padding: 65px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin: 10px;
+    text-align: center;
+}
+/* Status API 404 */
+/* Status Synchron unsynchron  */
+.c-unsynchron {
+    background: linear-gradient(45deg, #dc3545, #dc3545);
+    border-radius: 5px;
+    padding: 65px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin: 10px;
+    text-align: center;
+}
+
+.c-unsynchron:hover {
+    background: linear-gradient(45deg, #dc3545, #dc3545);
+    border-radius: 5px;
+    padding: 65px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin: 10px;
+    text-align: center;
+}
+/* Status Synchron unsynchron  */
+
+.btn-404 {
+    background: linear-gradient(45deg, #ffc107, #673ab7);
+    color: #FFFFFF;
+}
+
+.btn-404:hover {
+    background: linear-gradient(45deg, #ffc107, #673ab7);
+    color: #FFFFFF;
+}
+
+.btn-unsynchron {
+    background: linear-gradient(45deg, #dc3545, #dc3545);
+    color: #FFFFFF;
+}
+
+.btn-unsynchron:hover {
+    background: linear-gradient(45deg, #dc3545, #dc3545);
+    color: #FFFFFF;
+}
+
 /* Blink */
 .blink {
     animation: 1s linear infinite condemned_blink_effect;

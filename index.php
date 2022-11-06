@@ -2,6 +2,10 @@
 session_start();
 include "db/db.php";
 
+// CEK API
+include "synchronization.php";
+// END CEK API
+
 $url = $_SERVER['REQUEST_URI'];
 $get_api = explode('/', $url);
 

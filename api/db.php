@@ -1,5 +1,4 @@
 <?php
-
 // API - 
 include "get_api.php";
 $content = get_content('https://itinventory-sarinah.com/api/databases.php');
@@ -33,53 +32,3 @@ if ($db->connect_error) {
 // QUERY SETTING API
 $dataAPI = $db->query("SELECT * FROM api_cloud ORDER BY id ASC LIMIT 1");
 $resultAPI = mysqli_fetch_array($dataAPI);
-
-class helpers
-{
-  function dateIndonesia($date)
-  {
-    $result = '';
-    if (!empty($date) && $date !== '0000-00-00') {
-      $BulanIndo = array("Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember");
-      $tahun = substr($date, 0, 4);
-      $bulan = substr($date, 5, 2);
-      $tgl   = substr($date, 8, 2);
-
-      $result = $tgl . " " . $BulanIndo[(int)$bulan - 1] . " " . $tahun;
-    }
-    return $result;
-  }
-
-  function dateTimeIndonesia($date)
-  {
-    $result = '';
-    if (!empty($date) && $date !== '0000-00-00 00:00:00') {
-      $BulanIndo = array("Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember");
-      $tahun = substr($date, 0, 4);
-      $bulan = substr($date, 5, 2);
-      $tgl   = substr($date, 8, 2);
-
-      $result = $tgl . " " . $BulanIndo[(int)$bulan - 1] . " " . $tahun . ' - ' . substr($date, 11, 19);
-    }
-    return $result;
-  }
-
-  function berita($content)
-  {
-    $isi = strip_tags($content);
-    if (strlen($isi) > 80) {
-      $berita = substr($isi, 0, 80) . ' ...';
-    } else {
-      $berita = $content;
-    }
-
-    return $berita;
-  }
-
-  function hargaRupiah($harga)
-  {
-    return "Rp. " . number_format($harga, 0, ',', '.');
-  }
-}
-
-$helpers = new helpers();
