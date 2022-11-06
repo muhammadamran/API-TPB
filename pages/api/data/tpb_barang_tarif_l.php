@@ -1,8 +1,8 @@
 <?php
 if (isset($_POST['findLimit_L'])) {
-    $data = $db->query("SELECT * FROM tpb_barang_tarif ORDER BY ID DESC LIMIT " . $_POST['Limit_L'] . "", 0);
+    $data = $db->query("SELECT * FROM tpb_barang_tarif ORDER BY ID_HEADER DESC, JENIS_TARIF ASC LIMIT " . $_POST['Limit_L'] . "", 0);
 } else {
-    $data = $db->query("SELECT * FROM tpb_barang_tarif ORDER BY ID DESC LIMIT 100", 0);
+    $data = $db->query("SELECT * FROM tpb_barang_tarif ORDER BY ID_HEADER DESC, JENIS_TARIF ASC LIMIT 100", 0);
 }
 
 $no = 0;

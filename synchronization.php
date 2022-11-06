@@ -22,7 +22,7 @@ $resulttpb_barang_dokumen = mysqli_fetch_array($datatpb_barang_dokumen);
 $datatpb_barang_penerima = $db->query("SELECT * FROM tpb_barang_penerima ORDER BY ID DESC LIMIT 1");
 $resulttpb_barang_penerima = mysqli_fetch_array($datatpb_barang_penerima);
 // tpb_barang_tarif
-$datatpb_barang_tarif = $db->query("SELECT * FROM tpb_barang_tarif ORDER BY ID DESC LIMIT 1");
+$datatpb_barang_tarif = $db->query("SELECT * FROM tpb_barang_tarif ORDER BY ID_HEADER DESC LIMIT 1");
 $resulttpb_barang_tarif = mysqli_fetch_array($datatpb_barang_tarif);
 // tpb_detil_status
 $datatpb_detil_status = $db->query("SELECT * FROM tpb_detil_status ORDER BY ID DESC LIMIT 1");
