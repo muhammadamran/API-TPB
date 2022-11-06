@@ -1,8 +1,8 @@
 <?php
-if (isset($_POST['findLimit_D'])) {
-    $data = $dbmain->query("SELECT * FROM tpb_barang ORDER BY ID DESC LIMIT " . $_POST['Limit_D'] . "", 0);
+if (isset($_POST['findLimit_L'])) {
+    $data = $db->query("SELECT * FROM tpb_dokumen ORDER BY ID DESC LIMIT " . $_POST['Limit_L'] . "", 0);
 } else {
-    $data = $dbmain->query("SELECT * FROM tpb_barang ORDER BY ID DESC LIMIT 100", 0);
+    $data = $db->query("SELECT * FROM tpb_dokumen ORDER BY ID DESC LIMIT 100", 0);
 }
 
 $no = 0;
