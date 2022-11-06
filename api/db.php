@@ -30,6 +30,10 @@ if ($db->connect_error) {
   die("Connection failed: " . $db->connect_error);
 }
 
+// QUERY SETTING API
+$dataAPI = $db->query("SELECT * FROM api_cloud ORDER BY id ASC LIMIT 1");
+$resultAPI = mysqli_fetch_array($dataAPI);
+
 class helpers
 {
   function dateIndonesia($date)
