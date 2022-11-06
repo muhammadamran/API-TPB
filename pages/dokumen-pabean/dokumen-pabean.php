@@ -1,7 +1,6 @@
 <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
 <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.2.3/css/buttons.dataTables.min.css">
 <div class="content">
-
     <div class="page-header-title">
         <div class="row">
             <div class="col-md-12 col-sm-12">
@@ -11,7 +10,7 @@
                 </div>
                 <nav aria-label="breadcrumb" role="navigation">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="index.php" class="breadcrumb-item-title">Dashboard</a></li>
+                        <li class="breadcrumb-item"><a href="index.php?t=Dashboard" class="breadcrumb-item-title">Dashboard</a></li>
                         <li class="breadcrumb-item active" aria-current="page">Dokumen Pabean</li>
                     </ol>
                 </nav>
@@ -25,32 +24,32 @@
                 <div class="card-body ">
                     <div class="row" style="justify-content: center;">
                         <div class="col-md-3 cj">
-                            <a href="index.php?m=dokumen-pabean&s=dokumen-pabean-23">
+                            <a href="index.php?m=dokumen-pabean&s=dokumen-pabean-23&t=BC 2.3">
                                 <font class="list-font">BC 2.3</font>
                             </a>
                         </div>
                         <div class="col-md-3 cj">
-                            <a href="index.php?m=dokumen-pabean&s=dokumen-pabean-25">
+                            <a href="index.php?m=dokumen-pabean&s=dokumen-pabean-25&t=BC 2.5">
                                 <font class="list-font">BC 2.5</font>
                             </a>
                         </div>
                         <div class="col-md-3 cj">
-                            <a href="index.php?m=dokumen-pabean&s=dokumen-pabean-261">
+                            <a href="index.php?m=dokumen-pabean&s=dokumen-pabean-261&t=BC 2.6.1">
                                 <font class="list-font">BC 2.6.1</font>
                             </a>
                         </div>
                         <div class="col-md-3 cj">
-                            <a href="index.php?m=dokumen-pabean&s=dokumen-pabean-27">
+                            <a href="index.php?m=dokumen-pabean&s=dokumen-pabean-27&t=BC 2.7">
                                 <font class="list-font">BC 2.7</font>
                             </a>
                         </div>
                         <div class="col-md-3 cj">
-                            <a href="index.php?m=dokumen-pabean&s=dokumen-pabean-40">
+                            <a href="index.php?m=dokumen-pabean&s=dokumen-pabean-40&t=BC 4.0">
                                 <font class="list-font">BC 4.0</font>
                             </a>
                         </div>
                         <div class="col-md-3 cj">
-                            <a href="index.php?m=dokumen-pabean&s=dokumen-pabean-41">
+                            <a href="index.php?m=dokumen-pabean&s=dokumen-pabean-41&t=BC 4.1">
                                 <font class="list-font">BC 4.1</font>
                             </a>
                         </div>

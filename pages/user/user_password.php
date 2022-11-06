@@ -13,7 +13,7 @@ $row = $data->fetch_assoc()
         </div>
         <nav aria-label="breadcrumb" role="navigation">
           <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="index.php" class="breadcrumb-item-title">Dashboard</a></li>
+            <li class="breadcrumb-item"><a href="index.php?t=Dashboard" class="breadcrumb-item-title">Dashboard</a></li>
             <li class="breadcrumb-item" aria-current="page">Users</li>
             <li class="breadcrumb-item active" aria-current="page">Change Password</li>
           </ol>

@@ -11,7 +11,7 @@
                 </div>
                 <nav aria-label="breadcrumb" role="navigation">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="index.php" class="breadcrumb-item-title">Dashboard</a></li>
+                        <li class="breadcrumb-item"><a href="index.php?t=Dashboard" class="breadcrumb-item-title">Dashboard</a></li>
                         <li class="breadcrumb-item active" aria-current="page">Referensi</li>
                     </ol>
                 </nav>
@@ -25,44 +25,44 @@
                 <div class="card-body ">
                     <div class="row" style="justify-content: center;">
                         <div class="col-md-2 cj">
-                            <a href="index.php?m=referensi&s=daftar-barang">
+                            <a href="index.php?m=referensi&s=daftar-barang&t=Daftar Barang">
                                 <font class="list-font">Daftar Barang</font>
                             </a>
                         </div>
                         <div class="col-md-2 cj">
-                            <a href="index.php?m=referensi&s=tarif-hs">
+                            <a href="index.php?m=referensi&s=tarif-hs&t=Tarif HS">
                                 <font class="list-font">Tarif HS</font>
                             </a>
                         </div>
                         <div class="col-md-2 cj">
-                            <a href="index.php?m=referensi&s=pemasok">
+                            <a href="index.php?m=referensi&s=pemasok&t=Pemasok">
                                 <font class="list-font">Pemasok</font>
                             </a>
                         </div>
                         <div class="col-md-2 cj">
-                            <a href="index.php?m=referensi&s=perusahaan">
+                            <a href="index.php?m=referensi&s=perusahaan&t=Perusahaan">
                                 <font class="list-font">Perusahaan</font>
                             </a>
                         </div>
                     </div>
                     <div class="row" style="justify-content: center;">
                         <div class="col-md-2 cj">
-                            <a href="index.php?m=referensi&s=alat-angkut">
+                            <a href="index.php?m=referensi&s=alat-angkut&t=Alat Angkut">
                                 <font class="list-font">Alat Angkut</font>
                             </a>
                         </div>
                         <div class="col-md-2 cj">
-                            <a href="index.php?m=referensi&s=tempat-penimbunan">
+                            <a href="index.php?m=referensi&s=tempat-penimbunan&t=Tempat Penimbunan">
                                 <font class="list-font">Tempat Penimbunan</font>
                             </a>
                         </div>
                         <div class="col-md-2 cj">
-                            <a href="index.php?m=referensi&s=kantor-beacukai">
+                            <a href="index.php?m=referensi&s=kantor-beacukai&t=Kantor Bea Cukai">
                                 <font class="list-font">Kantor Bea Cukai</font>
                             </a>
                         </div>
                         <div class="col-md-2 cj">
-                            <a href="index.php?m=referensi&s=edifact">
+                            <a href="index.php?m=referensi&s=edifact-negara&t=Edifact - Negara">
                                 <font class="list-font">Edifact</font>
                             </a>
                         </div>

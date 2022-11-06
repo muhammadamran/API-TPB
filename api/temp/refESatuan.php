@@ -1,7 +1,7 @@
 <?php
 include "db.php";
 
-$dataREF = $db->query("SELECT * FROM referensi_kemasan", 0);
+$dataREF = $db->query("SELECT * FROM referensi_satuan ORDER BY ID ASC", 0);
 $cek = $dataREF->num_rows;
 
 if ($cek > 0) {
@@ -10,8 +10,8 @@ if ($cek > 0) {
     while ($result = $dataREF->fetch_assoc()) {
         $data[] = [
             'ID' => $result['ID'],
-            'KODE_KEMASAN' => $result['KODE_KEMASAN'],
-            'URAIAN_KEMASAN' => $result['URAIAN_KEMASAN']
+            'KODE_SATUAN' => $result['KODE_SATUAN'],
+            'URAIAN_SATUAN' => $result['URAIAN_SATUAN']
         ];
     }
 

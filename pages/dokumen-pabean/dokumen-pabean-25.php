@@ -11,7 +11,7 @@
                 </div>
                 <nav aria-label="breadcrumb" role="navigation">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="index.php" class="breadcrumb-item-title">Dashboard</a></li>
+                        <li class="breadcrumb-item"><a href="index.php?t=Dashboard" class="breadcrumb-item-title">Dashboard</a></li>
                         <li class="breadcrumb-item active" aria-current="page">Dokumen Pabean</li>
                         <li class="breadcrumb-item active" aria-current="page">BC 2.5</li>
                     </ol>
@@ -57,21 +57,21 @@
 
 </div>
 <script>
-$(document).ready(function() {
-    $('#example').DataTable({
-        dom: 'Bfrtip',
-        buttons: [
-            'copy', 'csv', 'excel', 'pdf', 'print'
-        ]
+    $(document).ready(function() {
+        $('#example').DataTable({
+            dom: 'Bfrtip',
+            buttons: [
+                'copy', 'csv', 'excel', 'pdf', 'print'
+            ]
+        });
     });
-});
 
-function deleteData(id) {
-    var r = confirm("Are you sure you want to delete this record?");
-    if (r == true) {
-        location.href = "pages/user/user_proses.php?aksi=hapus&id=" + id;
+    function deleteData(id) {
+        var r = confirm("Are you sure you want to delete this record?");
+        if (r == true) {
+            location.href = "pages/user/user_proses.php?aksi=hapus&id=" + id;
+        }
     }
-}
 </script>
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>

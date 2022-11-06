@@ -9,7 +9,7 @@
                 </div>
                 <nav aria-label="breadcrumb" role="navigation">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="index.php" class="breadcrumb-item-title">Dashboard</a></li>
+                        <li class="breadcrumb-item"><a href="index.php?t=Dashboard" class="breadcrumb-item-title">Dashboard</a></li>
                         <li class="breadcrumb-item" aria-current="page">Users</li>
                         <li class="breadcrumb-item active" aria-current="page">Add User</li>
                     </ol>
@@ -32,22 +32,19 @@
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label for="IDUsername" class="col-form-label">Username</label>
-                                        <input id="IDUsername" name="username" type="text" class="form-control"
-                                            placeholder="Username ...">
+                                        <input id="IDUsername" name="username" type="text" class="form-control" placeholder="Username ...">
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label for="IDNama" class="col-form-label">Nama</label>
-                                        <input id="IDNama" name="nama" type="text" class="form-control"
-                                            placeholder="Nama ...">
+                                        <input id="IDNama" name="nama" type="text" class="form-control" placeholder="Nama ...">
                                     </div>
                                 </div>
                                 <div class="col-sm-4">
                                     <div class="form-group">
                                         <label for="IDEmail" class="col-form-label">Email</label>
-                                        <input id="IDEmail" name="Email" type="email" class="form-control"
-                                            placeholder="Email ...">
+                                        <input id="IDEmail" name="Email" type="email" class="form-control" placeholder="Email ...">
                                     </div>
                                 </div>
                                 <div class="col-sm-4">
@@ -63,8 +60,7 @@
                                 <div class="col-sm-4">
                                     <div class="form-group">
                                         <label for="IDExpired" class="col-form-label">Expired Date</label>
-                                        <input id="IDExpired" name="ExpiredDate" type="date" min="<?= date('Y-m-d') ?>"
-                                            class="form-control">
+                                        <input id="IDExpired" name="ExpiredDate" type="date" min="<?= date('Y-m-d') ?>" class="form-control">
                                     </div>
                                 </div>
                                 <div class="col-sm-12">

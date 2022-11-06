@@ -6,7 +6,7 @@ $dataREF = $db->query("SELECT a.ID AS ID_REF,a.ALAMAT,a.CONTACT_PERSON,a.EMAIL,a
                         b.KODE_STATUS_PENGUSAHA,b.URAIAN_STATUS_PENGUSAHA
                         FROM referensi_pengusaha AS a
                         LEFT JOIN referensi_status_pengusaha AS b ON a.KODE_ID=b.KODE_STATUS_PENGUSAHA 
-                        ORDER BY ID_REF ASC", 0);
+                        ORDER BY a.ID ASC", 0);
 $cek = $dataREF->num_rows;
 
 if ($cek > 0) {

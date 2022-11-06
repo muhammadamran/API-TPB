@@ -13,7 +13,7 @@ $row = $data->fetch_assoc()
                 </div>
                 <nav aria-label="breadcrumb" role="navigation">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="index.php" class="breadcrumb-item-title">Dashboard</a></li>
+                        <li class="breadcrumb-item"><a href="index.php?t=Dashboard" class="breadcrumb-item-title">Dashboard</a></li>
                         <li class="breadcrumb-item" aria-current="page">Users</li>
                         <li class="breadcrumb-item active" aria-current="page">Edit User</li>
                     </ol>
@@ -36,22 +36,19 @@ $row = $data->fetch_assoc()
                                 <div class="col-sm-12">
                                     <div class="form-group">
                                         <label for="IDUsername" class="col-form-label">Username</label>
-                                        <input id="IDUsername" name="Username" type="text" class="form-control"
-                                            placeholder="Username ..." value="<?= $row['username']; ?>" readonly>
+                                        <input id="IDUsername" name="Username" type="text" class="form-control" placeholder="Username ..." value="<?= $row['username']; ?>" readonly>
                                     </div>
                                 </div>
                                 <div class="col-sm-12">
                                     <div class="form-group">
                                         <label for="IDNama" class="col-form-label">Nama</label>
-                                        <input id="IDNama" name="Nama" type="text" class="form-control"
-                                            placeholder="Nama ..." value="<?= $row['nama']; ?>">
+                                        <input id="IDNama" name="Nama" type="text" class="form-control" placeholder="Nama ..." value="<?= $row['nama']; ?>">
                                     </div>
                                 </div>
                                 <div class="col-sm-12">
                                     <div class="form-group">
                                         <label for="IDEmail" class="col-form-label">Email</label>
-                                        <input id="IDEmail" name="Email" type="email" class="form-control"
-                                            placeholder="Email ..." value="<?= $row['email']; ?>">
+                                        <input id="IDEmail" name="Email" type="email" class="form-control" placeholder="Email ..." value="<?= $row['email']; ?>">
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
@@ -68,14 +65,12 @@ $row = $data->fetch_assoc()
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label for="IDExpired" class="col-form-label">Expired Date</label>
-                                        <input id="IDExpired" name="ExpiredDate" type="date" min="<?= date('Y-m-d') ?>"
-                                            class="form-control" value="<?= $row['expired_date']; ?>">
+                                        <input id="IDExpired" name="ExpiredDate" type="date" min="<?= date('Y-m-d') ?>" class="form-control" value="<?= $row['expired_date']; ?>">
                                     </div>
                                 </div>
                                 <div class="col-sm-12">
                                     <div class="form-group">
-                                        <button type="submit" class="btn btn-primary" name="Edit"><i
-                                                class="fas fa-edit"> Edit</i></button>
+                                        <button type="submit" class="btn btn-primary" name="Edit"><i class="fas fa-edit"> Edit</i></button>
                                     </div>
                                 </div>
                             </div>

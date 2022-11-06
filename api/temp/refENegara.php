@@ -1,7 +1,7 @@
 <?php
 include "db.php";
 
-$dataREF = $db->query("SELECT * FROM referensi_satuan ORDER BY ID ASC", 0);
+$dataREF = $db->query("SELECT * FROM referensi_negara ORDER BY URAIAN_NEGARA ASC", 0);
 $cek = $dataREF->num_rows;
 
 if ($cek > 0) {
@@ -10,8 +10,8 @@ if ($cek > 0) {
     while ($result = $dataREF->fetch_assoc()) {
         $data[] = [
             'ID' => $result['ID'],
-            'KODE_SATUAN' => $result['KODE_SATUAN'],
-            'URAIAN_SATUAN' => $result['URAIAN_SATUAN']
+            'KODE_NEGARA' => $result['KODE_NEGARA'],
+            'URAIAN_NEGARA' => preg_replace('/[^a-zA-Z0-9]/', ' ', $result['URAIAN_NEGARA'])
         ];
     }
 

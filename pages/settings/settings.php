@@ -16,9 +16,9 @@ if (isset($_POST["SaveAPInDB"])) {
                                            pass_api='$pass_api'
                             WHERE id='$ID'");
     if ($query) {
-        echo '<script>alert("Data has been Added");location.href = "index.php?m=settings&s=settings"</script>';
+        echo '<script>alert("Data has been Added");location.href = "index.php?m=settings&s=settings&t=Settings - Configuration API"</script>';
     } else {
-        echo '<script>alert("Data failed Added");location.href = "index.php?m=settings&s=settings"</script>';
+        echo '<script>alert("Data failed Added");location.href = "index.php?m=settings&s=settings&t=Settings - Configuration API"</script>';
     }
 }
 
@@ -35,9 +35,9 @@ if (isset($_POST["EditAPInDB"])) {
                                            pass_api='$pass_api'
                             WHERE id='$ID'");
     if ($query) {
-        echo '<script>alert("Data has been Added");location.href = "index.php?m=settings&s=settings"</script>';
+        echo '<script>alert("Data has been Added");location.href = "index.php?m=settings&s=settings&t=Settings - Configuration API"</script>';
     } else {
-        echo '<script>alert("Data failed Added");location.href = "index.php?m=settings&s=settings"</script>';
+        echo '<script>alert("Data failed Added");location.href = "index.php?m=settings&s=settings&t=Settings - Configuration API"</script>';
     }
 }
 ?>
@@ -59,7 +59,7 @@ if (isset($_POST["EditAPInDB"])) {
                 </div>
                 <nav aria-label="breadcrumb" role="navigation">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="index.php" class="breadcrumb-item-title">Dashboard</a></li>
+                        <li class="breadcrumb-item"><a href="index.php?t=Dashboard" class="breadcrumb-item-title">Dashboard</a></li>
                         <li class="breadcrumb-item active" aria-current="page">Settings</li>
                     </ol>
                 </nav>
@@ -74,17 +74,9 @@ if (isset($_POST["EditAPInDB"])) {
                     <ul class="mk-setting-nav mk-nav mk-nav-pills flex-column m-0 py-3 px-2 h-100">
                         <li class="mk-nav-item" id="tab-header-1" panel_id="tab-1">
                             <div class="box-select mk-nav-link active">
-                                <a href="index.php?m=settings&s=settings" class="a-settings">
+                                <a href="index.php?m=settings&s=settings&t=Settings - Configuration API" class="a-settings">
                                     <i class="fas fa-code"></i>
                                     <font class="label-settings">Configuration API</font>
-                                </a>
-                            </div>
-                        </li>
-                        <li class="mk-nav-item" id="tab-header-1" panel_id="tab-1">
-                            <div class="box-select mk-nav-link">
-                                <a href="index.php?m=settings&s=reload" class="a-settings">
-                                    <i class="fa-solid fa-arrows-rotate"></i>
-                                    <font class="label-settings">Reload Page</font>
                                 </a>
                             </div>
                         </li>

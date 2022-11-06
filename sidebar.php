@@ -1,6 +1,6 @@
 <div class="sidebar" data-color="white" data-active-color="danger">
     <div class="logo">
-        <a href="index.php" class="simple-text logo-mini">
+        <a href="index.php?t=Dashboard" class="simple-text logo-mini">
             <!-- <div class="logo-image-small">
                 <img src="assets/logo/logo.png">
             </div> -->
@@ -8,7 +8,7 @@
                 <font class="text-sidebar-tpb">LTE</font>
             </div>
         </a>
-        <a href="index.php" class="simple-text logo-normal">
+        <a href="index.php?t=Dashboard" class="simple-text logo-normal">
             TPB Backend
         </a>
     </div>
@@ -25,7 +25,7 @@
         <ul class="nav">
             <li class="nav-header">NAVIGATION</li>
             <li class="<?= empty($_GET['m']) ? 'active' : '' ?>">
-                <a href="index.php">
+                <a href="index.php?t=Dashboard">
                     <i class="fas fa-chart-pie"></i>
                     <p>Dashboard</p>
                 </a>
@@ -33,45 +33,45 @@
             <li class="nav-header">MODULES</li>
             <li class="nav-header"></li>
             <li class="<?= !empty($_GET['m']) && $_GET['m'] == 'dokumen-pabean' ? 'active' : '' ?>">
-                <a href="index.php?m=dokumen-pabean&s=dokumen-pabean">
+                <a href="index.php?m=dokumen-pabean&s=dokumen-pabean&t=Dokumen Pabean">
                     <i class="fas fa-file-import"></i>
                     <p>Dokumen Pabean</p>
                 </a>
             </li>
-            <li class="<?= !empty($_GET['m']) && $_GET['m'] == 'gate-mandiri' ? 'active' : '' ?>">
+            <!-- <li class="<?= !empty($_GET['m']) && $_GET['m'] == 'gate-mandiri' ? 'active' : '' ?>">
                 <a href="index.php?m=gate-mandiri&s=gate-mandiri">
                     <i class="fas fa-university"></i>
                     <p>Gate Mandiri</p>
                 </a>
-            </li>
-            <li class="<?= !empty($_GET['m']) && $_GET['m'] == 'komunikasi' ? 'active' : '' ?>">
+            </li> -->
+            <!-- <li class="<?= !empty($_GET['m']) && $_GET['m'] == 'komunikasi' ? 'active' : '' ?>">
                 <a href="index.php?m=komunikasi&s=komunikasi">
                     <i class="fas fa-window-restore"></i>
                     <p>Komunikasi</p>
                 </a>
-            </li>
+            </li> -->
             <li class="<?= !empty($_GET['m']) && $_GET['m'] == 'referensi' ? 'active' : '' ?>">
-                <a href="index.php?m=referensi&s=referensi">
+                <a href="index.php?m=referensi&s=referensi&t=Referensi">
                     <i class="fas fa-table"></i>
                     <p>Referensi</p>
                 </a>
             </li>
             <li class="nav-header">SYNCHRONIZATION</li>
             <li class="<?= !empty($_GET['m']) && $_GET['m'] == 'api' ? 'active' : '' ?>">
-                <a href="index.php?m=api&s=api">
+                <a href="index.php?m=api&s=api&t=API">
                     <i class="fa-solid fa-code"></i>
                     <p>API</p>
                 </a>
             </li>
             <li class="nav-header">ADMINISTRATOR</li>
             <li class="<?= !empty($_GET['m']) && $_GET['m'] == 'user' ? 'active' : '' ?>">
-                <a href="index.php?m=user&s=user">
+                <a href="index.php?m=user&s=user&t=Users">
                     <i class="fas fa-users-cog"></i>
                     <p>Users</p>
                 </a>
             </li>
             <li class="<?= !empty($_GET['m']) && $_GET['m'] == 'settings' ? 'active' : '' ?>">
-                <a href="index.php?m=settings&s=settings">
+                <a href="index.php?m=settings&s=settings&t=Settings - Configuration API">
                     <i class="fas fa-cog"></i>
                     <p>Settings</p>
                 </a>

@@ -19,6 +19,7 @@ $dbhost = "localhost";
 $dbusername = "beacukai";
 $dbpassword = "beacukai";
 $dbname = $apiDB;
+
 // Local Dev
 // $dbusername = "root";
 // $dbpassword = "";
