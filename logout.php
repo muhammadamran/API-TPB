@@ -12,6 +12,4 @@
 	unset($_SESSION['nama']);
 	unset($_SESSION['role']);
 
-	header('Location: index.php'); 
-?>
-
+	header('Location: index.php?t=Dashboard');
